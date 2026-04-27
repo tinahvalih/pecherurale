@@ -1,0 +1,1 @@
+<img src="assets/img/grain.gif" class="grain-overlay" alt="Texture granuleuse">

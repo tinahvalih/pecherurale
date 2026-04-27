@@ -14,11 +14,11 @@ $pageTitle = "Vivre de la mer à Geoje";
 </head>
 
 <body class="home-page">
-
   <?php include 'includes/header.php'; ?>
 
   <main class="hero-home">
-
+    
+  <?php include 'includes/grainytexture.php'; ?>
     <video class="hero-video" autoplay muted loop playsinline preload="metadata">
       <source src="assets/video/hero.mp4" type="video/mp4">
     </video>
@@ -37,16 +37,16 @@ $pageTitle = "Vivre de la mer à Geoje";
 
       <nav class="hero-actions" aria-label="Actions principales">
         <a href="experience.php" class="hero-link">
-          Commencer à naviguer
+          Commencer à naviguer ⛵
         </a>
 
         <button class="hero-link hero-link-button" type="button" data-video="documentaire-complet">
-          Regarder le documentaire en entier
+          Regarder le documentaire en entier 🐟
         </button>
       </nav>
 
       <div class="headphones-note">
-        <span class="headphones-icon">⌕</span>
+        <span class="headphones-icon">🎧</span>        
         <p>Profitez d’une meilleure expérience avec un casque</p>
       </div>
     </section>
