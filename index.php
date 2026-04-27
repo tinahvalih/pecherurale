@@ -17,8 +17,7 @@ $pageTitle = "Vivre de la mer à Geoje";
   <?php include 'includes/header.php'; ?>
 
   <main class="hero-home">
-    
-  <?php include 'includes/grainytexture.php'; ?>
+
     <video class="hero-video" autoplay muted loop playsinline preload="metadata">
       <source src="assets/video/hero.mp4" type="video/mp4">
     </video>

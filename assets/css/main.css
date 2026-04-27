@@ -140,7 +140,6 @@ body.home-page {
   object-fit: cover;
 
   transform: scale(1.06);
-  animation: videoBreath 18s ease-in-out infinite alternate;
 }
 
 .hero-overlay {
@@ -337,16 +336,6 @@ body.home-page {
     opacity: 1;
     transform: translateY(0) scale(1);
     filter: blur(0);
-  }
-}
-
-@keyframes videoBreath {
-  from {
-    transform: scale(1.06);
-  }
-
-  to {
-    transform: scale(1.11);
   }
 }
 
