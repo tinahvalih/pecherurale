@@ -15,6 +15,7 @@ $pageTitle = "Vivre de la mer à Geoje";
 
 <body class="home-page">
   <?php include 'includes/header.php'; ?>
+  <?php include 'includes/lang.php'; ?>
 
   <main class="hero-home">
 
@@ -35,8 +36,8 @@ $pageTitle = "Vivre de la mer à Geoje";
       </div>
 
       <nav class="hero-actions" aria-label="Actions principales">
-        <a href="experience.php" class="hero-link">
-          Commencer à naviguer ⛵
+        <a href="experience.php?lang=<?= $lang ?>" class="hero-link">
+          <?= t('firstcta') ?> ⛵
         </a>
 
         <button class="hero-link hero-link-button" type="button" data-video="documentaire-complet">
