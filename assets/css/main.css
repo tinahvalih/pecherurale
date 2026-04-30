@@ -16,11 +16,11 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   background: var(--color-black);
   color: var(--color-white);
-  overflow: hidden;
 }
 
 body.home-page {
   position: relative;
+  overflow: hidden;
 }
 
 /* HEADER */
@@ -386,28 +386,62 @@ body.home-page {
   position: fixed;
   inset: 0;
   z-index: 100;
-  display: none;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1),
+    visibility 0.6s;
 }
 
+
+/* ACTIVE */
 .video-modal.is-open {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
+/* BACKDROP */
 .video-modal__backdrop {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.92);
+
+  opacity: 0;
+  transition: opacity 0.6s ease;
 }
 
+.video-modal.is-open .video-modal__backdrop {
+  opacity: 1;
+}
+
+/* CONTENT ANIMATION */
 .video-modal__content {
   position: relative;
   z-index: 2;
   width: 100vw;
   height: 100vh;
+
   padding: 56px 6vw;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  transform: scale(0.8);
+  opacity: 0;
+
+  transition:
+    transform 0.7s cubic-bezier(0.77, 0, 0.175, 1),
+    opacity 0.6s ease;
+}
+
+.video-modal.is-open .video-modal__content {
+  transform: scale(1) translateY(0);
+  opacity: 1;
 }
 
 .video-modal__close {
@@ -461,4 +495,134 @@ body.home-page {
 
 body.video-open {
   overflow: hidden;
+}
+
+/*CSS INTRO KINDINDRENINY*/
+
+
+.intro-video {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+
+  background: rgba(0,0,0,0.92);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#skipIntro {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+
+  padding: 12px 18px;
+
+  border: 1px solid rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.05);
+
+  color: white;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+
+  backdrop-filter: blur(10px);
+
+  cursor: pointer;
+
+  transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* HOVER */
+#skipIntro:hover {
+  background: white;
+  color: black;
+
+  transform: translateY(-3px);
+  border-color: white;
+}
+.intro-video.is-hidden {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+/** CSS SCROLL VIDEO (PROPER GSAP) */
+
+#container {
+  position: relative;
+}
+
+.ma-video-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.video-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container-block {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  text-align: center;
+  color: white;
+  max-width: 600px;
+}
+
+.label {
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  opacity: 0.7;
+}
+
+h2 {
+  font-size: 48px;
+  margin: 10px 0;
+}
+
+p {
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+#introPlayerWrapper {
+  position: relative;
+
+  width: min(1100px, 88vw);
+  aspect-ratio: 16 / 9;
+
+  border-radius: 12px;
+  overflow: hidden;
+
+  box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+}
+
+#introPlayer {
+  width: 100%;
+  height: 100%;
+}
+
+/* ANIMATION */
+.intro-video {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.intro-video.is-hidden {
+  opacity: 0;
+  transition: opacity 0.8s ease;
 }

@@ -5,11 +5,11 @@
     <button class="video-modal__close" type="button" data-video-close aria-label="Fermer la vidéo">
       ×
     </button>
-
+<!-- 
     <div class="video-modal__text">
       <p class="video-modal__eyebrow" id="videoEyebrow"></p>
       <h2 class="video-modal__title" id="videoTitle"></h2>
-    </div>
+    </div> -->
 
     <div class="video-modal__frame" id="videoFrame"></div>
   </div>
