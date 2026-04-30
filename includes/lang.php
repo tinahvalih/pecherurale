@@ -22,3 +22,4 @@ function t($key) {
     global $translations;
     return $translations[$key] ?? $key;
 }
+

@@ -13,7 +13,9 @@ $pageTitle = "Vivre de la mer à Geoje";
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
+
 <body class="home-page">
+
   <?php include 'includes/header.php'; ?>
   <?php include 'includes/lang.php'; ?>
 
@@ -40,14 +42,21 @@ $pageTitle = "Vivre de la mer à Geoje";
           <?= t('firstcta') ?> ⛵
         </a>
 
-        <button class="hero-link hero-link-button" type="button" data-video="documentaire-complet">
-          Regarder le documentaire en entier 🐟
+        <button
+          class="hero-link hero-link-button js-video-open"
+          type="button"
+          data-video-provider="vimeo"
+          data-video-id="762021629"
+          data-video-eyebrow="Documentaire complet"
+          data-video-title="Vivre de la mer à Geoje"
+        >
+          <?= t('secondcta') ?> 🐟
         </button>
       </nav>
 
       <div class="headphones-note">
         <span class="headphones-icon">🎧</span>        
-        <p>Profitez d’une meilleure expérience avec un casque</p>
+        <p><?= t('headphones') ?></p>
       </div>
     </section>
 
@@ -59,5 +68,7 @@ $pageTitle = "Vivre de la mer à Geoje";
   </main>
 
   <script src="assets/js/main.js"></script>
+
+  <?php include 'includes/video-modal.php'; ?>
 </body>
 </html>
