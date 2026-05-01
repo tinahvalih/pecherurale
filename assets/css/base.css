@@ -1,0 +1,70 @@
+:root {
+  --color-white: #ffffff;
+  --color-black: #050505;
+  --ease-premium: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+  background: var(--color-black);
+  color: var(--color-white);
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+button,
+a {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+/* Global animations */
+
+@keyframes headerReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes titleReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes geojeReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}

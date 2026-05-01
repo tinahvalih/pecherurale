@@ -15,6 +15,16 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
 
 <body>
 
+<!-- Bullet Nav -->
+
+<nav class="nav-chapitres" aria-label="Navigation des chapitres">
+  <ul>
+    <li><a href="#chapitre-1" aria-label="Chapitre 1"></a></li>
+    <li><a href="#chapitre-2" aria-label="Chapitre 2"></a></li>
+    <li><a href="#chapitre-3" aria-label="Chapitre 3"></a></li>
+  </ul>
+</nav>
+
 <?php include 'includes/header.php'; ?>
 
 <main id="experience">
@@ -45,11 +55,11 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
     </div>
 
     <!-- PART 1 -->
-    <section class="container-block">
+    <section class="container-block" id="chapitre-1">
       <div class="content">
-        <span class="label">01 — MATIN</span>
+        <span class="label">Première partie :</span>
         <h2>La vie du pêcheur</h2>
-        <p>À l’aube, le pêcheur quitte le port et prépare ses filets.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
 
         <button
           class="js-video-open"
@@ -64,11 +74,11 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
     </section>
 
     <!-- PART 2 -->
-    <section class="container-block">
+    <section class="container-block" id="chapitre-2">
       <div class="content">
-        <span class="label">02 — MIDI</span>
+        <span class="label">Deuxième partie :</span>
         <h2>La poissonnerie</h2>
-        <p>Le poisson arrive au marché, trié et vendu.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
 
         <button class="js-video-open" data-video-id="762023173">
           Explorer la poissonnerie
@@ -77,11 +87,11 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
     </section>
 
     <!-- PART 3 -->
-    <section class="container-block">
+    <section class="container-block" id="chapitre-3">
       <div class="content">
-        <span class="label">03 — SOIR</span>
+        <span class="label">Troisième partie :</span>
         <h2>Le restaurant</h2>
-        <p>La mer devient repas et mémoire vivante.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
 
         <button class="js-video-open" data-video-id="762021539">
           Découvrir le restaurant
