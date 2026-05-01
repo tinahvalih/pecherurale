@@ -15,6 +15,17 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
 
 <body>
 
+<!-- NOLAN NAV -->
+
+<nav class="nav-chapitres" aria-label="Navigation des chapitres">
+  <ul>
+    <li><a href="#chapitre-1" aria-label="Chapitre 1"></a></li>
+    <li><a href="#chapitre-2" aria-label="Chapitre 2"></a></li>
+    <li><a href="#chapitre-3" aria-label="Chapitre 3"></a></li>
+  </ul>
+</nav>
+
+
 <?php include 'includes/header.php'; ?>
 
 <main id="experience">
@@ -45,7 +56,7 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
     </div>
 
     <!-- PART 1 -->
-    <section class="container-block">
+    <section class="container-block" id="chapitre-1">
       <div class="content">
         <span class="label">01 — MATIN</span>
         <h2>La vie du pêcheur</h2>
@@ -64,7 +75,7 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
     </section>
 
     <!-- PART 2 -->
-    <section class="container-block">
+    <section class="container-block" id="chapitre-2">
       <div class="content">
         <span class="label">02 — MIDI</span>
         <h2>La poissonnerie</h2>
@@ -77,7 +88,7 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
     </section>
 
     <!-- PART 3 -->
-    <section class="container-block">
+    <section class="container-block" id="chapitre-3">
       <div class="content">
         <span class="label">03 — SOIR</span>
         <h2>Le restaurant</h2>
