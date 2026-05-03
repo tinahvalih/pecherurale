@@ -72,7 +72,7 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
           data-video-title="<?= t('chapter_1_title') ?>"
           data-video-eyebrow="<?= t('chapter_1_label') ?>"
         >
-          <?= t('chapter_1_cta') ?>
+          <?= t('chapter_1_cta') ?>🐟
         </button>
       </div>
     </section>
