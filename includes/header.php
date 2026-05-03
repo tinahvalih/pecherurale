@@ -3,7 +3,7 @@
   <nav class="language-switcher" aria-label="<?= t('aria_language_switcher') ?>">
     <a
       href="?lang=fr"
-      class="lang-item <?= $lang === 'fr' ? 'is-active' : '' ?>"
+      class="lang-item js-lang-switch <?= $lang === 'fr' ? 'is-active' : '' ?>"
       aria-label="<?= t('lang_fr') ?>"
     >
       FR
@@ -11,7 +11,7 @@
 
     <a
       href="?lang=ko"
-      class="lang-item <?= $lang === 'ko' ? 'is-active' : '' ?>"
+      class="lang-item js-lang-switch <?= $lang === 'ko' ? 'is-active' : '' ?>"
       aria-label="<?= t('lang_ko') ?>"
     >
       KR

@@ -135,6 +135,7 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 <script src="assets/js/menu.js"></script>
+<script src="assets/js/page-transition.js"></script>
 <script src="assets/js/intro-video.js"></script>
 <script src="assets/js/video-modal.js"></script>
 <script src="assets/js/experience-scroll.js"></script>

@@ -68,3 +68,23 @@ iframe {
     filter: blur(0);
   }
 }
+
+/* Page Transition */
+
+body {
+  opacity: 0;
+  transition:
+    opacity 0.42s var(--ease-premium),
+    filter 0.42s var(--ease-premium),
+    transform 0.42s var(--ease-premium);
+}
+
+body.page-is-ready {
+  opacity: 1;
+}
+
+body.page-is-leaving {
+  opacity: 0;
+  filter: blur(10px);
+  transform: scale(0.985);
+}

@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
         initMenu();
     }
 
+    if (typeof initPageTransition === "function") {
+        initPageTransition();
+    }
+
     if (typeof initIntroVideo === "function") {
         initIntroVideo();
     }
