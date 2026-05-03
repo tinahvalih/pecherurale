@@ -71,8 +71,11 @@ $pageTitle = "Vivre de la mer à Geoje";
   </main>
 
   
-  <script src="https://player.vimeo.com/api/player.js"></script>
-  <script src="assets/js/main.js"></script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+<script src="assets/js/menu.js"></script>
+<script src="assets/js/video-modal.js"></script>
+<script src="assets/js/main.js"></script>
 
   <?php include 'includes/video-modal.php'; ?>
 </body>
