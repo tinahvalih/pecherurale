@@ -27,7 +27,7 @@
 .video-modal__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.92);
+  background: rgba(0, 0, 0, 0.94);
 
   opacity: 0;
   transition: opacity 0.6s ease;
@@ -95,7 +95,7 @@
 }
 
 .video-modal__close:hover {
-  transform: rotate(90deg) scale(1.04);
+  transform: scale(1.04);
   background: white;
   color: black;
 }

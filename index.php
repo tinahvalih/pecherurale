@@ -19,8 +19,8 @@ $pageTitle = "Vivre de la mer à Geoje";
 
 <body class="home-page">
 
-  <?php include 'includes/header.php'; ?>
   <?php include 'includes/lang.php'; ?>
+  <?php include 'includes/header.php'; ?>
 
   <main class="hero-home">
 
@@ -71,12 +71,13 @@ $pageTitle = "Vivre de la mer à Geoje";
   </main>
 
   
+  <?php include 'includes/video-modal.php'; ?>
+  
 <script src="https://player.vimeo.com/api/player.js"></script>
 
 <script src="assets/js/menu.js"></script>
 <script src="assets/js/video-modal.js"></script>
 <script src="assets/js/main.js"></script>
 
-  <?php include 'includes/video-modal.php'; ?>
 </body>
 </html>

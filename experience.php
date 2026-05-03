@@ -15,6 +15,9 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
 
 <body>
 
+  <?php include 'includes/lang.php'; ?>
+  <?php include 'includes/header.php'; ?>
+
 <!-- Bullet Nav -->
 
 <nav class="nav-chapitres" aria-label="Navigation des chapitres">
@@ -25,7 +28,7 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
   </ul>
 </nav>
 
-<?php include 'includes/header.php'; ?>
+
 
 <main id="experience">
 
@@ -41,8 +44,9 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
         ></iframe>
     </div>
 
-    <button id="skipIntro">Passer</button>
-  </div>
+  <button id="skipIntro"><?= t('skip_intro') ?></button>
+  
+</div>
 
   <!-- SCROLL EXPERIENCE -->
   <section id="container">
@@ -55,46 +59,58 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
     </div>
 
     <!-- PART 1 -->
-    <section class="container-block" id="chapitre-1">
+    <section class="container-block chapitre" id="chapitre-1">
       <div class="content">
-        <span class="label">Première partie :</span>
-        <h2>La vie du pêcheur</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+        <span class="label"><?= t('chapter_1_label') ?></span>
+        <h2><?= t('chapter_1_title') ?></h2>
+        <p><?= t('chapter_1_text') ?></p>
 
         <button
           class="js-video-open"
           data-video-provider="vimeo"
           data-video-id="762023745"
-          data-video-title="Le pêcheur"
-          data-video-eyebrow="Partie 1"
+          data-video-title="<?= t('chapter_1_title') ?>"
+          data-video-eyebrow="<?= t('chapter_1_label') ?>"
         >
-          Commencer à pêcher
+          <?= t('chapter_1_cta') ?>
         </button>
       </div>
     </section>
 
     <!-- PART 2 -->
-    <section class="container-block" id="chapitre-2">
+    <section class="container-block chapitre" id="chapitre-2">
       <div class="content">
-        <span class="label">Deuxième partie :</span>
-        <h2>La poissonnerie</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+        <span class="label"><?= t('chapter_2_label') ?></span>
+        <h2><?= t('chapter_2_title') ?></h2>
+        <p><?= t('chapter_2_text') ?></p>
 
-        <button class="js-video-open" data-video-id="762023173">
-          Explorer la poissonnerie
+        <button
+          class="js-video-open"
+          data-video-provider="vimeo"
+          data-video-id="762023173"
+          data-video-title="<?= t('chapter_2_title') ?>"
+          data-video-eyebrow="<?= t('chapter_2_label') ?>"
+        >
+          <?= t('chapter_2_cta') ?>
         </button>
       </div>
     </section>
 
     <!-- PART 3 -->
-    <section class="container-block" id="chapitre-3">
+    <section class="container-block chapitre" id="chapitre-3">
       <div class="content">
-        <span class="label">Troisième partie :</span>
-        <h2>Le restaurant</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+        <span class="label"><?= t('chapter_3_label') ?></span>
+        <h2><?= t('chapter_3_title') ?></h2>
+        <p><?= t('chapter_3_text') ?></p>
 
-        <button class="js-video-open" data-video-id="762021539">
-          Découvrir le restaurant
+        <button
+          class="js-video-open"
+          data-video-provider="vimeo"
+          data-video-id="762021539"
+          data-video-title="<?= t('chapter_3_title') ?>"
+          data-video-eyebrow="<?= t('chapter_3_label') ?>"
+        >
+          <?= t('chapter_3_cta') ?>
         </button>
       </div>
     </section>
@@ -102,9 +118,9 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
     <!-- CONCLUSION -->
     <section class="container-block">
       <div class="content">
-        <span class="label">Conclusion</span>
-        <h2>La mer reste</h2>
-        <p>Les gestes changent, la mémoire dépend de ceux qui la transmettent.</p>
+        <span class="label"><?= t('conclusion_label') ?></span>
+        <h2><?= t('conclusion_title') ?></h2>
+        <p><?= t('conclusion_text') ?></p>
       </div>
     </section>
 

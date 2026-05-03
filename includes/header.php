@@ -1,12 +1,32 @@
-<header class="site-header" aria-label="Navigation principale">
+<header class="site-header" aria-label="<?= t('aria_main_nav') ?>">
 
-  <nav class="language-switcher" aria-label="Choix de langue">
-    <a href="?lang=fr" class="lang-item" >FR</a>
-    <a href="?lang=ko" class="lang-item" >KR</a>
-    <a href="#" class="lang-item">EN</a>
+  <nav class="language-switcher" aria-label="<?= t('aria_language_switcher') ?>">
+    <a
+      href="?lang=fr"
+      class="lang-item <?= $lang === 'fr' ? 'is-active' : '' ?>"
+      aria-label="<?= t('lang_fr') ?>"
+    >
+      FR
+    </a>
+
+    <a
+      href="?lang=ko"
+      class="lang-item <?= $lang === 'ko' ? 'is-active' : '' ?>"
+      aria-label="<?= t('lang_ko') ?>"
+    >
+      KR
+    </a>
+
+    <span
+      class="lang-item is-disabled"
+      aria-disabled="true"
+      title="<?= t('lang_soon') ?>"
+    >
+      EN
+    </span>
   </nav>
 
-  <button class="menu-button" type="button" aria-label="Ouvrir le menu">
+  <button class="menu-button" type="button" aria-label="<?= t('aria_open_menu') ?>">
     <span></span>
     <span></span>
     <span></span>
