@@ -50,3 +50,7 @@ function initPageTransition() {
         transitionOverlay.classList.remove("is-active");
     });
 }
+
+const transitionLinks = document.querySelectorAll(
+    "a[href]:not(.js-lang-switch):not([target='_blank']):not([href^='#']):not([href^='mailto:']):not([href^='tel:'])"
+);

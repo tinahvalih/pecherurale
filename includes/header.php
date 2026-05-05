@@ -1,10 +1,9 @@
 <header class="site-header" aria-label="<?= t('aria_main_nav') ?>">
 
-
-
   <nav class="language-switcher" aria-label="<?= t('aria_language_switcher') ?>">
     <a
-      href="?lang=fr"
+      href="#"
+      data-lang="fr"
       class="lang-item js-lang-switch <?= $lang === 'fr' ? 'is-active' : '' ?>"
       aria-label="<?= t('lang_fr') ?>"
     >
@@ -12,7 +11,8 @@
     </a>
 
     <a
-      href="?lang=ko"
+      href="#"
+      data-lang="ko"
       class="lang-item js-lang-switch <?= $lang === 'ko' ? 'is-active' : '' ?>"
       aria-label="<?= t('lang_ko') ?>"
     >
@@ -27,7 +27,6 @@
       EN
     </span>
   </nav>
-
 
   <button class="menu-button" type="button" aria-label="<?= t('aria_open_menu') ?>">
     <span></span>

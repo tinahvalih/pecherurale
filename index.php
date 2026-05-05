@@ -43,8 +43,8 @@ $pageTitle = "Vivre de la mer à Geoje";
       </div>
 
       <nav class="hero-actions" aria-label="Actions principales">
-        <a href="intro.php?lang=<?= $lang ?>" class="hero-link">
-          <?= t('firstcta') ?> ⛵
+        <a href="intro.php?lang=<?= $lang ?>" class="hero-link" data-i18n="firstcta">
+          <?= t('firstcta') ?>
         </a>
 
         <button
@@ -54,14 +54,15 @@ $pageTitle = "Vivre de la mer à Geoje";
           data-video-id="762021629"
           data-video-eyebrow="Documentaire complet"
           data-video-title="Vivre de la mer à Geoje"
+          data-i18n="secondcta"
         >
-          <?= t('secondcta') ?> 🐟
+          <?= t('secondcta') ?>
         </button>
       </nav>
 
       <div class="headphones-note">
         <span class="headphones-icon">🎧</span>        
-        <p><?= t('headphones') ?></p>
+        <p data-i18n="headphones"><?= t('headphones') ?></p>
       </div>
     </section>
 
@@ -81,6 +82,8 @@ $pageTitle = "Vivre de la mer à Geoje";
 <script src="assets/js/menu.js"></script>
 <script src="assets/js/page-transition.js"></script>
 <script src="assets/js/video-modal.js"></script>
+<script src="assets/js/translations.js"></script>
+<script src="assets/js/language-switcher.js"></script>
 <script src="assets/js/main.js"></script>
 
 </body>

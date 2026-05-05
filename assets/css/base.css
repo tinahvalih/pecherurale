@@ -87,7 +87,7 @@ body.page-is-ready {
 
 body.page-is-leaving {
   opacity: 0.72;
-  filter: blur(8px);
+  filter: blur(16px);
   transform: scale(0.985) translateY(-8px);
 }
 
@@ -98,14 +98,7 @@ body.page-is-leaving {
 
   pointer-events: none;
 
-  background:
-    radial-gradient(
-      circle at 50% 45%,
-      rgba(255, 255, 255, 0.08) 0%,
-      rgba(255, 255, 255, 0.02) 24%,
-      rgba(0, 0, 0, 0.92) 72%
-    ),
-    rgba(0, 0, 0, 0.96);
+  background:black;
 
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -122,15 +115,7 @@ body.page-is-leaving {
   position: absolute;
   inset: 0;
 
-  background:
-    linear-gradient(
-      115deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.08) 42%,
-      rgba(255, 255, 255, 0.16) 50%,
-      rgba(255, 255, 255, 0.08) 58%,
-      transparent 100%
-    );
+  background:black;
 
   transform: translateX(-120%);
   opacity: 0.7;

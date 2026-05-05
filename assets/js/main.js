@@ -7,12 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
         initPageTransition();
     }
 
-    if (typeof initIntroPage === "function") {
-        initIntroPage();
+    if (typeof initLanguageSwitcher === "function") {
+        initLanguageSwitcher();
     }
 
-    if (typeof initIntroVideo === "function") {
-        initIntroVideo();
+    if (typeof initIntroPage === "function") {
+        initIntroPage();
     }
 
     if (typeof initVideoModal === "function") {

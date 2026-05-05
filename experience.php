@@ -62,9 +62,9 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
     <!-- PART 1 -->
     <section class="container-block chapitre" id="chapitre-1">
       <div class="content">
-        <span class="label"><?= t('chapter_1_label') ?></span>
-        <h2><?= t('chapter_1_title') ?></h2>
-        <p><?= t('chapter_1_text') ?></p>
+        <span class="label" data-i18n="chapter_1_label"><?= t('chapter_1_label') ?></span>
+        <h2 data-i18n="chapter_1_title"><?= t('chapter_1_title') ?></h2>
+        <p data-i18n="chapter_1_text"><?= t('chapter_1_text') ?></p>
 
         <button
           class="js-video-open"
@@ -73,7 +73,7 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
           data-video-title="<?= t('chapter_1_title') ?>"
           data-video-eyebrow="<?= t('chapter_1_label') ?>"
         >
-          <?= t('chapter_1_cta') ?>🐟
+          <span data-i18n="chapter_1_cta"><?= t('chapter_1_cta') ?></span> 🐟
         </button>
       </div>
     </section>
@@ -81,18 +81,18 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
     <!-- PART 2 -->
     <section class="container-block chapitre" id="chapitre-2">
       <div class="content">
-        <span class="label"><?= t('chapter_2_label') ?></span>
-        <h2><?= t('chapter_2_title') ?></h2>
-        <p><?= t('chapter_2_text') ?></p>
+        <span class="label" data-i18n="chapter_2_label"><?= t('chapter_2_label') ?></span>
+        <h2 data-i18n="chapter_2_title"><?= t('chapter_2_title') ?></h2>
+        <p data-i18n="chapter_2_text"><?= t('chapter_2_text') ?></p>
 
         <button
           class="js-video-open"
           data-video-provider="vimeo"
-          data-video-id="762023173"
+          data-video-id="762023745"
           data-video-title="<?= t('chapter_2_title') ?>"
           data-video-eyebrow="<?= t('chapter_2_label') ?>"
         >
-          <?= t('chapter_2_cta') ?>
+          <span data-i18n="chapter_2_cta"><?= t('chapter_2_cta') ?></span> 🐟
         </button>
       </div>
     </section>
@@ -100,9 +100,9 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
     <!-- PART 3 -->
     <section class="container-block chapitre" id="chapitre-3">
       <div class="content">
-        <span class="label"><?= t('chapter_3_label') ?></span>
-        <h2><?= t('chapter_3_title') ?></h2>
-        <p><?= t('chapter_3_text') ?></p>
+        <span class="label" data-i18n="chapter_3_label"><?= t('chapter_3_label') ?></span>
+        <h2 data-i18n="chapter_3_title"><?= t('chapter_3_title') ?></h2>
+        <p data-i18n="chapter_3_text"><?= t('chapter_3_text') ?></p>
 
         <button
           class="js-video-open"
@@ -111,7 +111,7 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
           data-video-title="<?= t('chapter_3_title') ?>"
           data-video-eyebrow="<?= t('chapter_3_label') ?>"
         >
-          <?= t('chapter_3_cta') ?>
+          <span data-i18n="chapter_3_cta"><?= t('chapter_3_cta') ?></span>
         </button>
       </div>
     </section>
@@ -119,9 +119,9 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
     <!-- CONCLUSION -->
     <section class="container-block">
       <div class="content">
-        <span class="label"><?= t('conclusion_label') ?></span>
-        <h2><?= t('conclusion_title') ?></h2>
-        <p><?= t('conclusion_text') ?></p>
+        <span class="label" data-i18n="conclusion_label"><?= t('conclusion_label') ?></span>
+        <h2 data-i18n="conclusion_title"><?= t('conclusion_title') ?></h2>
+        <p data-i18n="conclusion_text"><?= t('conclusion_text') ?></p>
       </div>
     </section>
 
@@ -137,10 +137,11 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
 
 <script src="assets/js/menu.js"></script>
 <script src="assets/js/page-transition.js"></script>
-<!-- <script src="assets/js/intro-video.js"></script> -->
 <script src="assets/js/video-modal.js"></script>
 <script src="assets/js/experience-scroll.js"></script>
 <script src="assets/js/chapter-nav.js"></script>
+<script src="assets/js/translations.js"></script>
+<script src="assets/js/language-switcher.js"></script>
 <script src="assets/js/main.js"></script>
 
 
