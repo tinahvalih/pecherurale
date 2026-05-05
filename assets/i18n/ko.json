@@ -1,0 +1,35 @@
+{
+  "aria_main_nav": "주요 내비게이션",
+  "aria_language_switcher": "언어 선택",
+  "aria_open_menu": "메뉴 열기",
+  "aria_chapter_nav": "챕터 내비게이션",
+
+  "lang_fr": "프랑스어로 보기",
+  "lang_ko": "한국어로 보기",
+  "lang_soon": "영어 버전은 곧 제공됩니다",
+
+  "firstcta": "항해 시작하기",
+  "secondcta": "다큐멘터리 전체 보기",
+  "headphones": "더 나은 경험을 위해 헤드폰을 착용하세요",
+
+  "skip_intro": "건너뛰기",
+
+  "chapter_1_label": "첫 번째 장",
+  "chapter_1_title": "어부의 삶",
+  "chapter_1_text": "새벽이 되면 어부는 항구를 떠나 그물을 준비합니다.",
+  "chapter_1_cta": "낚시 시작하기",
+
+  "chapter_2_label": "두 번째 장",
+  "chapter_2_title": "생선 가게",
+  "chapter_2_text": "잡힌 생선은 시장에 도착해 분류되고 판매되며, 다시 사람들의 손으로 이어집니다.",
+  "chapter_2_cta": "생선 가게 둘러보기",
+
+  "chapter_3_label": "세 번째 장",
+  "chapter_3_title": "식당",
+  "chapter_3_text": "바다는 식사가 되고, 기억이 되며, 살아 있는 전승이 됩니다.",
+  "chapter_3_cta": "식당 이야기 보기",
+
+  "conclusion_label": "결론",
+  "conclusion_title": "바다는 남아 있다",
+  "conclusion_text": "손길은 변하지만, 기억은 그것을 전하는 사람들에게 달려 있습니다."
+}
