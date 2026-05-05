@@ -1,96 +1,97 @@
 function initLanguageSwitcher() {
-    const langButtons = document.querySelectorAll(".js-lang-switch");
-    const translatableElements = document.querySelectorAll("[data-i18n]");
+  const langButtons = document.querySelectorAll(".js-lang-switch");
+  const translatableElements = document.querySelectorAll("[data-i18n]");
 
-    if (!langButtons.length) return;
-    if (typeof translations === "undefined") return;
+  if (!langButtons.length) return;
 
-    function setCookie(name, value, days) {
-        const maxAge = days * 24 * 60 * 60;
-        document.cookie = `${name}=${value}; path=/; max-age=${maxAge}`;
-    }
+  const translationsCache = {};
 
-    function updateActiveLang(lang) {
-        langButtons.forEach((button) => {
-            const buttonLang = button.dataset.lang;
-            button.classList.toggle("is-active", buttonLang === lang);
-        });
-    }
+  function setCookie(name, value, days) {
+    const maxAge = days * 24 * 60 * 60;
+    document.cookie = `${name}=${value}; path=/; max-age=${maxAge}`;
+  }
 
-    function updateLinksLang(lang) {
-        const internalLinks = document.querySelectorAll("a[href]");
-
-        internalLinks.forEach((link) => {
-            const href = link.getAttribute("href");
-
-            if (!href) return;
-            if (href.startsWith("#")) return;
-            if (href.startsWith("mailto:")) return;
-            if (href.startsWith("tel:")) return;
-            if (link.hasAttribute("target")) return;
-
-            const url = new URL(href, window.location.href);
-
-            if (url.origin !== window.location.origin) return;
-
-            url.searchParams.set("lang", lang);
-
-            link.setAttribute("href", url.pathname + url.search + url.hash);
-        });
-    }
-
-    function updateDynamicVideoData(lang) {
-        document.querySelectorAll("[data-i18n-video-title]").forEach((element) => {
-            const key = element.dataset.i18nVideoTitle;
-
-            if (translations[lang][key]) {
-                element.dataset.videoTitle = translations[lang][key];
-            }
-        });
-
-        document.querySelectorAll("[data-i18n-video-eyebrow]").forEach((element) => {
-            const key = element.dataset.i18nVideoEyebrow;
-
-            if (translations[lang][key]) {
-                element.dataset.videoEyebrow = translations[lang][key];
-            }
-        });
-    }
-
-    function applyLanguage(lang) {
-        if (!translations[lang]) return;
-
-        translatableElements.forEach((element) => {
-            const key = element.dataset.i18n;
-
-            if (translations[lang][key]) {
-                element.textContent = translations[lang][key];
-            }
-        });
-
-        document.documentElement.setAttribute("lang", lang);
-        localStorage.setItem("site_lang", lang);
-        setCookie("lang", lang, 30);
-
-        updateActiveLang(lang);
-        updateLinksLang(lang);
-        updateDynamicVideoData(lang);
-    }
-
+  function updateActiveLang(lang) {
     langButtons.forEach((button) => {
-        button.addEventListener("click", (event) => {
-            event.preventDefault();
+      button.classList.toggle("is-active", button.dataset.lang === lang);
+    });
+  }
 
-            const lang = button.dataset.lang;
-            if (!lang) return;
+  async function loadTranslations(lang) {
+    if (translationsCache[lang]) {
+      return translationsCache[lang];
+    }
 
-            applyLanguage(lang);
-        });
+    const response = await fetch(`assets/i18n/${lang}.json`);
+
+    if (!response.ok) {
+      throw new Error(`Impossible de charger la langue : ${lang}`);
+    }
+
+    const dictionary = await response.json();
+    translationsCache[lang] = dictionary;
+
+    return dictionary;
+  }
+
+  function updateDynamicVideoData(lang, dictionary) {
+    document.querySelectorAll("[data-i18n-video-title]").forEach((element) => {
+      const key = element.dataset.i18nVideoTitle;
+
+      if (dictionary[key]) {
+        element.dataset.videoTitle = dictionary[key];
+      }
     });
 
-    const savedLang = localStorage.getItem("site_lang");
+    document.querySelectorAll("[data-i18n-video-eyebrow]").forEach((element) => {
+      const key = element.dataset.i18nVideoEyebrow;
 
-    if (savedLang && translations[savedLang]) {
-        applyLanguage(savedLang);
-    }
+      if (dictionary[key]) {
+        element.dataset.videoEyebrow = dictionary[key];
+      }
+    });
+  }
+
+  function applyTranslations(lang, dictionary) {
+    translatableElements.forEach((element) => {
+      const key = element.dataset.i18n;
+
+      if (dictionary[key]) {
+        element.textContent = dictionary[key];
+      }
+    });
+
+    document.documentElement.setAttribute("lang", lang);
+    localStorage.setItem("site_lang", lang);
+    setCookie("lang", lang, 30);
+
+    updateActiveLang(lang);
+    updateDynamicVideoData(lang, dictionary);
+  }
+
+  langButtons.forEach((button) => {
+    button.addEventListener("click", async (event) => {
+      event.preventDefault();
+
+      const lang = button.dataset.lang;
+
+      if (!lang) return;
+      if (button.classList.contains("is-active")) return;
+
+      try {
+        const dictionary = await loadTranslations(lang);
+        applyTranslations(lang, dictionary);
+      } catch (error) {
+        console.error(error);
+      }
+    });
+  });
+
+  const savedLang = localStorage.getItem("site_lang");
+
+  if (savedLang) {
+    loadTranslations(savedLang)
+      .then((dictionary) => applyTranslations(savedLang, dictionary))
+      .catch((error) => console.error(error));
+  }
 }
