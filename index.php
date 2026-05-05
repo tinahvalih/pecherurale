@@ -16,7 +16,6 @@ $pageTitle = "Vivre de la mer à Geoje";
 
 </head>
 
-
 <body class="home-page">
 
   <div class="page-transition" aria-hidden="true"></div>
@@ -43,7 +42,7 @@ $pageTitle = "Vivre de la mer à Geoje";
       </div>
 
       <nav class="hero-actions" aria-label="Actions principales">
-        <a href="intro.php?lang=<?= $lang ?>" class="hero-link" data-i18n="firstcta">
+        <a href="intro.php" class="hero-link" data-i18n="firstcta">
           <?= t('firstcta') ?>
         </a>
 
@@ -61,7 +60,7 @@ $pageTitle = "Vivre de la mer à Geoje";
       </nav>
 
       <div class="headphones-note">
-        <span class="headphones-icon">🎧</span>        
+        <span class="headphones-icon">🎧</span>
         <p data-i18n="headphones"><?= t('headphones') ?></p>
       </div>
     </section>
@@ -70,19 +69,16 @@ $pageTitle = "Vivre de la mer à Geoje";
       <img src="assets/img/uge_logo.png" alt="Université Gustave Eiffel">
       <img src="assets/img/dongeui_logo.png" alt="Université Dong-eui">
     </div>
-    
 
   </main>
 
-  
   <?php include 'includes/video-modal.php'; ?>
-  
+
 <script src="https://player.vimeo.com/api/player.js"></script>
 
 <script src="assets/js/menu.js"></script>
 <script src="assets/js/page-transition.js"></script>
 <script src="assets/js/video-modal.js"></script>
-<script src="assets/js/translations.js"></script>
 <script src="assets/js/language-switcher.js"></script>
 <script src="assets/js/main.js"></script>
 
