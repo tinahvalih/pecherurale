@@ -2,7 +2,7 @@
 $pageTitle = "Vivre de la mer à Geoje - Introduction";
 include 'includes/lang.php';
 
-$nextPage = "experience.php?lang=" . $lang;
+$nextPage = "experience.php";
 ?>
 
 <!DOCTYPE html>
