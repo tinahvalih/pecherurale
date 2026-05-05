@@ -1,0 +1,107 @@
+/* INTRO PAGE */
+
+body.intro-page {
+  overflow: hidden;
+  background: var(--color-black);
+}
+
+.intro-page__main {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.intro-page__player {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+
+  width: 100vw;
+  height: 100vh;
+
+  border: 0;
+  transform: scale(1.01);
+}
+
+.intro-page__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.14) 0%,
+      rgba(0, 0, 0, 0.04) 48%,
+      rgba(0, 0, 0, 0.52) 100%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.02) 0%,
+      rgba(0, 0, 0, 0.24) 78%
+    );
+}
+
+.intro-page__skip {
+  position: fixed;
+  right: 42px;
+  bottom: 38px;
+  z-index: 10;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 13px 18px;
+
+  color: rgba(255, 255, 255, 0.86);
+  text-decoration: none;
+
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+
+  backdrop-filter: blur(14px);
+
+  transition:
+    transform 0.45s var(--ease-premium),
+    color 0.45s var(--ease-premium),
+    background 0.45s var(--ease-premium),
+    border-color 0.45s var(--ease-premium);
+}
+
+.intro-page__skip span {
+  width: 34px;
+  height: 1px;
+  background: currentColor;
+
+  transform-origin: left center;
+  transition: transform 0.45s var(--ease-premium);
+}
+
+.intro-page__skip:hover {
+  transform: translateY(-4px);
+  color: black;
+  background: white;
+  border-color: white;
+}
+
+.intro-page__skip:hover span {
+  transform: scaleX(1.35);
+}
+
+@media (max-width: 900px) {
+  .intro-page__skip {
+    right: 24px;
+    bottom: 28px;
+    font-size: 12px;
+  }
+}

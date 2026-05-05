@@ -15,12 +15,13 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
 
 <body>
 
+  <div class="page-transition" aria-hidden="true"></div>
+
   <?php include 'includes/lang.php'; ?>
   <?php include 'includes/header.php'; ?>
 
 <!-- Bullet Nav -->
-
-<nav class="nav-chapitres" aria-label="Navigation des chapitres">
+<nav class="nav-chapitres" aria-label="<?= t('aria_chapter_nav') ?>">
   <ul>
     <li><a href="#chapitre-1" aria-label="Chapitre 1"></a></li>
     <li><a href="#chapitre-2" aria-label="Chapitre 2"></a></li>
@@ -33,7 +34,7 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
 <main id="experience">
 
   <!-- INTRO VIDEO -->
-  <div id="introVideo" class="intro-video">
+<!--   <div id="introVideo" class="intro-video">
     <div id="introPlayerWrapper">
         <iframe
             id="introPlayer"
@@ -44,9 +45,9 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
         ></iframe>
     </div>
 
-  <button id="skipIntro"><?= t('skip_intro') ?></button>
+    <button id="skipIntro"></button>
   
-</div>
+  </div> -->
 
   <!-- SCROLL EXPERIENCE -->
   <section id="container">
@@ -136,7 +137,7 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
 
 <script src="assets/js/menu.js"></script>
 <script src="assets/js/page-transition.js"></script>
-<script src="assets/js/intro-video.js"></script>
+<!-- <script src="assets/js/intro-video.js"></script> -->
 <script src="assets/js/video-modal.js"></script>
 <script src="assets/js/experience-scroll.js"></script>
 <script src="assets/js/chapter-nav.js"></script>

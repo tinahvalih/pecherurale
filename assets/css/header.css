@@ -80,6 +80,21 @@
   pointer-events: none;
 }
 
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+}
+
+.site-logo img {
+  max-width: 20%;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
 /* BURGER */
 
 .menu-button {

@@ -7,6 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
         initPageTransition();
     }
 
+    if (typeof initIntroPage === "function") {
+        initIntroPage();
+    }
+
     if (typeof initIntroVideo === "function") {
         initIntroVideo();
     }

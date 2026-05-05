@@ -1,5 +1,7 @@
 <header class="site-header" aria-label="<?= t('aria_main_nav') ?>">
 
+
+
   <nav class="language-switcher" aria-label="<?= t('aria_language_switcher') ?>">
     <a
       href="?lang=fr"
@@ -25,6 +27,7 @@
       EN
     </span>
   </nav>
+
 
   <button class="menu-button" type="button" aria-label="<?= t('aria_open_menu') ?>">
     <span></span>

@@ -19,6 +19,8 @@ $pageTitle = "Vivre de la mer à Geoje";
 
 <body class="home-page">
 
+  <div class="page-transition" aria-hidden="true"></div>
+
   <?php include 'includes/lang.php'; ?>
   <?php include 'includes/header.php'; ?>
 
@@ -41,7 +43,7 @@ $pageTitle = "Vivre de la mer à Geoje";
       </div>
 
       <nav class="hero-actions" aria-label="Actions principales">
-        <a href="experience.php?lang=<?= $lang ?>" class="hero-link">
+        <a href="intro.php?lang=<?= $lang ?>" class="hero-link">
           <?= t('firstcta') ?> ⛵
         </a>
 
@@ -67,6 +69,7 @@ $pageTitle = "Vivre de la mer à Geoje";
       <img src="assets/img/uge_logo.png" alt="Université Gustave Eiffel">
       <img src="assets/img/dongeui_logo.png" alt="Université Dong-eui">
     </div>
+    
 
   </main>
 

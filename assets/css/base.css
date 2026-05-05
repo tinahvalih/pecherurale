@@ -71,12 +71,14 @@ iframe {
 
 /* Page Transition */
 
+/* Page Transition */
+
 body {
   opacity: 0;
   transition:
-    opacity 0.42s var(--ease-premium),
-    filter 0.42s var(--ease-premium),
-    transform 0.42s var(--ease-premium);
+    opacity 0.7s var(--ease-premium),
+    filter 0.7s var(--ease-premium),
+    transform 0.7s var(--ease-premium);
 }
 
 body.page-is-ready {
@@ -84,7 +86,74 @@ body.page-is-ready {
 }
 
 body.page-is-leaving {
+  opacity: 0.72;
+  filter: blur(8px);
+  transform: scale(0.985) translateY(-8px);
+}
+
+.page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.02) 24%,
+      rgba(0, 0, 0, 0.92) 72%
+    ),
+    rgba(0, 0, 0, 0.96);
+
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  clip-path: inset(0 0 0 0);
+
+  transition:
+    opacity 0.75s var(--ease-premium),
+    transform 0.75s var(--ease-premium),
+    clip-path 0.75s var(--ease-premium);
+}
+
+.page-transition::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      115deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.08) 42%,
+      rgba(255, 255, 255, 0.16) 50%,
+      rgba(255, 255, 255, 0.08) 58%,
+      transparent 100%
+    );
+
+  transform: translateX(-120%);
+  opacity: 0.7;
+}
+
+.page-transition.is-hidden {
   opacity: 0;
-  filter: blur(10px);
-  transform: scale(0.985);
+  transform: translateY(-2.5%) scale(1.04);
+  clip-path: inset(0 0 100% 0);
+}
+
+.page-transition.is-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  clip-path: inset(0 0 0 0);
+}
+
+.page-transition.is-active::before {
+  animation: transitionLightSweep 0.72s var(--ease-premium) forwards;
+}
+
+@keyframes transitionLightSweep {
+  to {
+    transform: translateX(120%);
+  }
 }
