@@ -29,25 +29,7 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
   </ul>
 </nav>
 
-
-
 <main id="experience">
-
-  <!-- INTRO VIDEO -->
-<!--   <div id="introVideo" class="intro-video">
-    <div id="introPlayerWrapper">
-        <iframe
-            id="introPlayer"
-            src="https://player.vimeo.com/video/762021329?autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0"
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen
-        ></iframe>
-    </div>
-
-    <button id="skipIntro"></button>
-  
-  </div> -->
 
   <!-- SCROLL EXPERIENCE -->
   <section id="container">
@@ -72,6 +54,8 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
           data-video-id="762023745"
           data-video-title="<?= t('chapter_1_title') ?>"
           data-video-eyebrow="<?= t('chapter_1_label') ?>"
+          data-i18n-video-title="chapter_1_title"
+          data-i18n-video-eyebrow="chapter_1_label"
         >
           <span data-i18n="chapter_1_cta"><?= t('chapter_1_cta') ?></span> 🐟
         </button>
@@ -88,9 +72,11 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
         <button
           class="js-video-open"
           data-video-provider="vimeo"
-          data-video-id="762023745"
+          data-video-id="762023173"
           data-video-title="<?= t('chapter_2_title') ?>"
           data-video-eyebrow="<?= t('chapter_2_label') ?>"
+          data-i18n-video-title="chapter_2_title"
+          data-i18n-video-eyebrow="chapter_2_label"
         >
           <span data-i18n="chapter_2_cta"><?= t('chapter_2_cta') ?></span> 🐟
         </button>
@@ -110,6 +96,8 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
           data-video-id="762021539"
           data-video-title="<?= t('chapter_3_title') ?>"
           data-video-eyebrow="<?= t('chapter_3_label') ?>"
+          data-i18n-video-title="chapter_3_title"
+          data-i18n-video-eyebrow="chapter_3_label"
         >
           <span data-i18n="chapter_3_cta"><?= t('chapter_3_cta') ?></span>
         </button>
@@ -140,11 +128,8 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
 <script src="assets/js/video-modal.js"></script>
 <script src="assets/js/experience-scroll.js"></script>
 <script src="assets/js/chapter-nav.js"></script>
-<script src="assets/js/translations.js"></script>
 <script src="assets/js/language-switcher.js"></script>
 <script src="assets/js/main.js"></script>
 
-
 </body>
-
 </html>
