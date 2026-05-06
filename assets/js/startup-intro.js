@@ -4,11 +4,11 @@ function initStartupIntro() {
     if (!intro) return;
 
     const slides = intro.querySelectorAll("[data-startup-slide]");
-    const nextButton = intro.querySelector("[data-startup-next]");
     const enterButton = intro.querySelector("[data-startup-enter]");
 
     const storageKey = "geoje_startup_intro_seen";
     const duration = 24 * 60 * 60 * 1000; // 24h
+    const autoSlideDelay = 5000; // 5s
 
     const saved = localStorage.getItem(storageKey);
     const now = Date.now();
@@ -19,6 +19,7 @@ function initStartupIntro() {
     }
 
     let currentSlide = 0;
+    let autoSlideTimer = null;
 
     function goToSlide(index) {
         slides.forEach((slide, slideIndex) => {
@@ -26,6 +27,16 @@ function initStartupIntro() {
         });
 
         currentSlide = index;
+
+        if (autoSlideTimer) {
+            clearTimeout(autoSlideTimer);
+            autoSlideTimer = null;
+        }
+    }
+
+    function goToSecondSlide() {
+        if (currentSlide !== 0) return;
+        goToSlide(1);
     }
 
     function closeIntro() {
@@ -33,13 +44,23 @@ function initStartupIntro() {
         intro.classList.add("is-hidden");
         intro.setAttribute("aria-hidden", "true");
 
+        if (autoSlideTimer) {
+            clearTimeout(autoSlideTimer);
+            autoSlideTimer = null;
+        }
+
         setTimeout(() => {
             intro.remove();
         }, 900);
     }
 
-    nextButton?.addEventListener("click", () => {
-        goToSlide(1);
+    autoSlideTimer = setTimeout(goToSecondSlide, autoSlideDelay);
+
+    intro.addEventListener("click", (event) => {
+        if (currentSlide !== 0) return;
+        if (event.target.closest("[data-startup-enter]")) return;
+
+        goToSecondSlide();
     });
 
     enterButton?.addEventListener("click", closeIntro);
@@ -49,7 +70,7 @@ function initStartupIntro() {
 
         if (event.key === "Enter" || event.key === "ArrowRight") {
             if (currentSlide === 0) {
-                goToSlide(1);
+                goToSecondSlide();
             } else {
                 closeIntro();
             }

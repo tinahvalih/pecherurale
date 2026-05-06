@@ -41,16 +41,11 @@ $pageTitle = "Vivre de la mer à Geoje";
       <p class="startup-slide__caption">
         d’après un poème maritime coréen consacré à Geoje.
       </p>
-
-      <button class="startup-intro__button" type="button" data-startup-next>
-        Appuyer pour continuer
-        <span aria-hidden="true">↗</span>
-      </button>
     </section>
 
     <section class="startup-slide" data-startup-slide="1">
       <div class="startup-slide__sound-icon" aria-hidden="true">
-        ···▌▌▌▌···
+        <img src="assets/img/sound-icon.png" alt="Icône sonore">
       </div>
 
       <h2 class="startup-slide__title">
@@ -59,7 +54,6 @@ $pageTitle = "Vivre de la mer à Geoje";
 
       <button class="startup-intro__button" type="button" data-startup-enter>
         Appuyer pour entrer
-        <span aria-hidden="true">↗</span>
       </button>
     </section>
 
