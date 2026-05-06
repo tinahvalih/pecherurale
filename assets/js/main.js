@@ -7,6 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
         initPageTransition();
     }
 
+    if (typeof initStartupIntro === "function") {
+        initStartupIntro();
+    }
+
     if (typeof initLanguageSwitcher === "function") {
         initLanguageSwitcher();
     }

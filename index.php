@@ -20,6 +20,53 @@ $pageTitle = "Vivre de la mer à Geoje";
 
   <div class="page-transition" aria-hidden="true"></div>
 
+  <!-- Startup Intro -->
+
+  <div class="startup-intro" id="startupIntro" aria-hidden="false">
+  <div class="startup-intro__frame">
+
+    <section class="startup-slide is-active" data-startup-slide="0">
+      <p class="startup-slide__korean">
+        거가 대교로 새 생명 불어넣은 거제도<br>
+        해금강 거제도는 아열대 식물 낙원<br>
+        소철 종려나무 석란 풍란 동백 팔손이
+      </p>
+
+      <p class="startup-slide__translation">
+        L’île de Geoje, insufflée d’une vie nouvelle par le pont de Geoga.<br>
+        Haegeumgang devient un paradis de plantes subtropicales :<br>
+        orchidées du vent, camélias, palmiers, rochers et mer ouverte.
+      </p>
+
+      <p class="startup-slide__caption">
+        d’après un poème maritime coréen consacré à Geoje.
+      </p>
+
+      <button class="startup-intro__button" type="button" data-startup-next>
+        Appuyer pour continuer
+        <span aria-hidden="true">↗</span>
+      </button>
+    </section>
+
+    <section class="startup-slide" data-startup-slide="1">
+      <div class="startup-slide__sound-icon" aria-hidden="true">
+        ···▌▌▌▌···
+      </div>
+
+      <h2 class="startup-slide__title">
+        Pour une meilleure immersion, nous vous conseillons d’utiliser un casque ou des écouteurs.
+      </h2>
+
+      <button class="startup-intro__button" type="button" data-startup-enter>
+        Appuyer pour entrer
+        <span aria-hidden="true">↗</span>
+      </button>
+    </section>
+
+  </div>
+</div>
+
+
   <?php include 'includes/lang.php'; ?>
   <?php include 'includes/header.php'; ?>
 
@@ -42,12 +89,15 @@ $pageTitle = "Vivre de la mer à Geoje";
       </div>
 
       <nav class="hero-actions" aria-label="Actions principales">
-        <a href="intro.php" class="hero-link" data-i18n="firstcta">
-          <?= t('firstcta') ?>
+        <a href="intro.php" class="premium-button premium-button--light" data-i18n="firstcta">
+          <span class="premium-button__text">
+            <span><?= t('firstcta') ?></span>
+            <span aria-hidden="true"><?= t('firstcta') ?></span>
+          </span>
         </a>
 
         <button
-          class="hero-link hero-link-button js-video-open"
+          class="premium-button premium-button--outline js-video-open"
           type="button"
           data-video-provider="vimeo"
           data-video-id="762021629"
@@ -55,7 +105,10 @@ $pageTitle = "Vivre de la mer à Geoje";
           data-video-title="Vivre de la mer à Geoje"
           data-i18n="secondcta"
         >
-          <?= t('secondcta') ?>
+          <span class="premium-button__text">
+            <span><?= t('secondcta') ?></span>
+            <span aria-hidden="true"><?= t('secondcta') ?></span>
+          </span>
         </button>
       </nav>
 
@@ -80,6 +133,7 @@ $pageTitle = "Vivre de la mer à Geoje";
 <script src="assets/js/page-transition.js"></script>
 <script src="assets/js/video-modal.js"></script>
 <script src="assets/js/language-switcher.js"></script>
+<script src="assets/js/startup-intro.js"></script>
 <script src="assets/js/main.js"></script>
 
 </body>

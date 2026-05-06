@@ -3,6 +3,8 @@
 body.intro-page {
   overflow: hidden;
   background: var(--color-black);
+  width: 100vw;
+  height: 100vh;
 }
 
 .intro-page__main {
@@ -15,14 +17,19 @@ body.intro-page {
 
 .intro-page__player {
   position: absolute;
-  inset: 0;
+  top: 50%;
+  left: 50%;
   z-index: -3;
 
   width: 100vw;
-  height: 100vh;
+  height: 56.25vw; /* ratio 16:9 basé sur la largeur */
+
+  min-width: 177.78vh; /* ratio 16:9 basé sur la hauteur */
+  min-height: 100vh;
 
   border: 0;
-  transform: scale(1.01);
+
+  transform: translate(-50%, -50%);
 }
 
 .intro-page__overlay {

@@ -47,7 +47,15 @@ function initLanguageSwitcher() {
       const key = element.dataset.i18nVideoEyebrow;
 
       if (dictionary[key]) {
-        element.dataset.videoEyebrow = dictionary[key];
+        const premiumTextLines = element.querySelectorAll(".premium-button__text span");
+
+        if (premiumTextLines.length) {
+          premiumTextLines.forEach((line) => {
+            line.textContent = dictionary[key];
+          });
+        } else {
+          element.textContent = dictionary[key];
+        }
       }
     });
   }
@@ -57,7 +65,15 @@ function initLanguageSwitcher() {
       const key = element.dataset.i18n;
 
       if (dictionary[key]) {
-        element.textContent = dictionary[key];
+        const premiumTextLines = element.querySelectorAll(".premium-button__text span");
+
+        if (premiumTextLines.length) {
+          premiumTextLines.forEach((line) => {
+            line.textContent = dictionary[key];
+          });
+        } else {
+          element.textContent = dictionary[key];
+        }
       }
     });
 
