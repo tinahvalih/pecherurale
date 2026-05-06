@@ -27,8 +27,13 @@
       EN
     </span>
   </nav>
-
-  <button class="menu-button" type="button" aria-label="<?= t('aria_open_menu') ?>">
+  
+  <button
+    class="menu-button"
+    type="button"
+    aria-label="<?= t('aria_open_menu') ?>"
+    onclick="window.location.href='/pecherurale'"
+  >
     <span></span>
     <span></span>
     <span></span>
