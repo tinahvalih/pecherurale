@@ -51,14 +51,14 @@
     </button>
 
     <nav class="site-menu__nav">
+      <a href="index.php" class="site-menu__link" data-menu-link data-preview="https://i.imgflip.com/k4fek.gif">
+        <span class="site-menu__preview"></span>
+        <span class="site-menu__text">Accueil</span>
+      </a>
+
       <a href="experience.php" class="site-menu__link" data-menu-link data-preview="https://i.pinimg.com/originals/02/79/e6/0279e6b012ba6fe706d26a96b14534c5.gif">
         <span class="site-menu__preview"></span>
         <span class="site-menu__text">Experience</span>
-      </a>
-
-      <a href="#" class="site-menu__link" data-menu-link data-preview="https://i.imgflip.com/k4fek.gif">
-        <span class="site-menu__preview"></span>
-        <span class="site-menu__text">Documentaire</span>
       </a>
 
       <a href="#" class="site-menu__link" data-menu-link data-preview="https://c.tenor.com/mLOHQJCayyAAAAAC/tenor.gif">

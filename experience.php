@@ -51,7 +51,7 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
         <button
           class="js-video-open"
           data-video-provider="vimeo"
-          data-video-id="762023745"
+          data-video-id="1189989735"
           data-video-title="<?= t('chapter_1_title') ?>"
           data-video-eyebrow="<?= t('chapter_1_label') ?>"
           data-i18n-video-title="chapter_1_title"
@@ -72,7 +72,7 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
         <button
           class="js-video-open"
           data-video-provider="vimeo"
-          data-video-id="762023173"
+          data-video-id="1189989735"
           data-video-title="<?= t('chapter_2_title') ?>"
           data-video-eyebrow="<?= t('chapter_2_label') ?>"
           data-i18n-video-title="chapter_2_title"
@@ -93,7 +93,7 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
         <button
           class="js-video-open"
           data-video-provider="vimeo"
-          data-video-id="762021539"
+          data-video-id="1189989735"
           data-video-title="<?= t('chapter_3_title') ?>"
           data-video-eyebrow="<?= t('chapter_3_label') ?>"
           data-i18n-video-title="chapter_3_title"
