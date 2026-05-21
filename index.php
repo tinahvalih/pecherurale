@@ -67,7 +67,7 @@ $pageTitle = "Vivre de la mer à Geoje";
   <main class="hero-home">
 
     <video class="hero-video" autoplay muted loop playsinline preload="metadata">
-      <source src="assets/video/hero.mp4" type="video/mp4">
+      <source src="assets/video/heromain3output.mp4" type="video/mp4">
     </video>
 
     <div class="hero-overlay"></div>

@@ -122,6 +122,8 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
 <script src="https://player.vimeo.com/api/player.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+
 
 <script src="assets/js/menu.js"></script>
 <script src="assets/js/page-transition.js"></script>
@@ -129,6 +131,8 @@ $pageTitle = "Vivre de la mer à Geoje - Experience";
 <script src="assets/js/experience-scroll.js"></script>
 <script src="assets/js/chapter-nav.js"></script>
 <script src="assets/js/language-switcher.js"></script>
+<script src="assets/js/smooth-scroll.js"></script>
+
 <script src="assets/js/main.js"></script>
 
 </body>

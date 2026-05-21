@@ -30,4 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (typeof initChapterNav === "function") {
         initChapterNav();
     }
+
+    if (typeof initSmoothScroll === "function") {
+        initSmoothScroll();
+    }
 });
