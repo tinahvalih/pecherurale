@@ -1,6 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap");
+
 :root {
   --color-white: #ffffff;
   --color-black: #050505;
+  --color-ink: #202846;
+  --color-paper: #f7f3df;
+  --font-title: "Oswald", sans-serif;
+  --font-mono: "Space Mono", monospace;
+  --font-sans: Helvetica, Arial, sans-serif;
   --ease-premium: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
@@ -13,7 +20,7 @@ body {
   margin: 0;
   width: 100%;
   min-height: 100%;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   background: var(--color-black);
   color: var(--color-white);
   scroll-behavior: smooth;

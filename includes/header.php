@@ -1,54 +1,70 @@
 <header class="site-header" aria-label="<?= t('aria_main_nav') ?>">
+  <div class="site-header__inner">
 
-  <nav class="language-switcher" aria-label="<?= t('aria_language_switcher') ?>">
-    <a
-      href="#"
-      data-lang="fr"
-      class="lang-item js-lang-switch <?= $lang === 'fr' ? 'is-active' : '' ?>"
-      aria-label="<?= t('lang_fr') ?>"
-    >
-      FR
+    <a class="site-header__logo" href="index.php" aria-label="Retour à l’accueil">
+      <img src="assets/img/logo.svg" alt="Vivre de la mer à Geoje">
     </a>
 
-    <a
-      href="#"
-      data-lang="ko"
-      class="lang-item js-lang-switch <?= $lang === 'ko' ? 'is-active' : '' ?>"
-      aria-label="<?= t('lang_ko') ?>"
-    >
-      KR
-    </a>
+    <div class="site-header__identity" aria-hidden="true">
+      <strong>Vivre de la mer à Geoje</strong>
+      <span>Journal de bord - Documentaire interactif</span>
+    </div>
 
-    <span
-      class="lang-item is-disabled"
-      aria-disabled="true"
-      title="<?= t('lang_soon') ?>"
+    <button
+      class="menu-button"
+      type="button"
+      aria-label="<?= t('aria_open_menu') ?>"
+      aria-controls="mainMenu"
+      aria-expanded="false"
     >
-      EN
-    </span>
-  </nav>
-  
-<button
-  class="menu-button"
-  type="button"
-  aria-label="<?= t('aria_open_menu') ?>"
-  aria-controls="mainMenu"
-  aria-expanded="false"
->
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
+  </div>
 </header>
 
 <div class="site-menu" id="mainMenu" aria-hidden="true">
   <div class="site-menu__backdrop" data-menu-close></div>
 
   <aside class="site-menu__panel" aria-label="Menu principal">
+
     <button class="site-menu__anchor" type="button" data-menu-close aria-label="Fermer le menu">
       <img src="assets/img/anchor-icon.svg" alt="" aria-hidden="true">
     </button>
+
+    <div class="site-menu__top">
+      <p class="site-menu__label">Journal de bord</p>
+
+      <nav class="language-switcher language-switcher--menu" aria-label="<?= t('aria_language_switcher') ?>">
+        <a
+          href="#"
+          data-lang="fr"
+          class="lang-item js-lang-switch <?= $lang === 'fr' ? 'is-active' : '' ?>"
+          aria-label="<?= t('lang_fr') ?>"
+        >
+          FR
+        </a>
+
+        <a
+          href="#"
+          data-lang="ko"
+          class="lang-item js-lang-switch <?= $lang === 'ko' ? 'is-active' : '' ?>"
+          aria-label="<?= t('lang_ko') ?>"
+        >
+          KR
+        </a>
+
+        <span
+          class="lang-item is-disabled"
+          aria-disabled="true"
+          title="<?= t('lang_soon') ?>"
+        >
+          EN
+        </span>
+      </nav>
+    </div>
 
     <nav class="site-menu__nav">
       <a href="index.php" class="site-menu__link" data-menu-link data-preview="https://i.imgflip.com/k4fek.gif">
@@ -76,7 +92,7 @@
         <span class="site-menu__text">Galerie</span>
       </a>
 
-      <a href="#" class="site-menu__link" data-menu-link data-preview="https://media.tenor.com/f7OR3mAH2xMAAAAM/true-romance-tony-scott.gifss">
+      <a href="#" class="site-menu__link" data-menu-link data-preview="https://media.tenor.com/f7OR3mAH2xMAAAAM/true-romance-tony-scott.gif">
         <span class="site-menu__preview"></span>
         <span class="site-menu__text">Credits</span>
       </a>
@@ -87,5 +103,6 @@
       <a href="#">Équipes</a>
       <a href="#">Mentions légales</a>
     </div>
+
   </aside>
 </div>

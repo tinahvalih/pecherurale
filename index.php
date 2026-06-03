@@ -7,13 +7,12 @@ $pageTitle = "Vivre de la mer à Geoje";
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Vivre de la mer à Geoje est un documentaire sur la survie d’un monde maritime pris entre traditions et mutations environnementales.">
+  <meta name="description" content="Vivre de la mer à Geoje est un documentaire interactif sur la mémoire maritime, les villages de pêcheurs et les mutations de la pêche rurale en Corée du Sud.">
 
   <title><?= $pageTitle; ?></title>
 
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="icon" type="image/x-icon" href="assets/img/favicon-black.svg">
-
 </head>
 
 <body class="home-page">
@@ -21,56 +20,62 @@ $pageTitle = "Vivre de la mer à Geoje";
   <div class="page-transition" aria-hidden="true"></div>
 
   <!-- Startup Intro -->
-
   <div class="startup-intro" id="startupIntro" aria-hidden="false">
-  <div class="startup-intro__frame">
+    <div class="startup-intro__frame">
 
-    <section class="startup-slide is-active" data-startup-slide="0">
-      <p class="startup-slide__korean">
-        거가 대교로 새 생명 불어넣은 거제도<br>
-        해금강 거제도는 아열대 식물 낙원<br>
-        소철 종려나무 석란 풍란 동백 팔손이
-      </p>
+      <section class="startup-slide is-active" data-startup-slide="0">
+        <p class="startup-slide__korean">
+          거가 대교로 새 생명 불어넣은 거제도<br>
+          해금강 거제도는 아열대 식물 낙원<br>
+          소철 종려나무 석란 풍란 동백 팔손이
+        </p>
 
-      <p class="startup-slide__translation">
-        L’île de Geoje, insufflée d’une vie nouvelle par le pont de Geoga.<br>
-        Haegeumgang devient un paradis de plantes subtropicales :<br>
-        orchidées du vent, camélias, palmiers, rochers et mer ouverte.
-      </p>
+        <p class="startup-slide__translation">
+          L’île de Geoje, insufflée d’une vie nouvelle par le pont de Geoga.<br>
+          Haegeumgang devient un paradis de plantes subtropicales :<br>
+          orchidées du vent, camélias, palmiers, rochers et mer ouverte.
+        </p>
 
-      <p class="startup-slide__caption">
-        d’après un poème maritime coréen consacré à Geoje.
-      </p>
-    </section>
+        <p class="startup-slide__caption">
+          d’après un poème maritime coréen consacré à Geoje.
+        </p>
+      </section>
 
-    <section class="startup-slide" data-startup-slide="1">
-      <div class="startup-slide__sound-icon" aria-hidden="true">
-        <img src="assets/img/sound-icon.png" alt="Icône sonore">
-      </div>
+      <section class="startup-slide" data-startup-slide="1">
+        <div class="startup-slide__sound-icon" aria-hidden="true">
+          <img src="assets/img/sound-icon.png" alt="Icône sonore">
+        </div>
 
-      <h2 class="startup-slide__title">
-        Pour une meilleure immersion, nous vous conseillons d’utiliser un casque ou des écouteurs.
-      </h2>
+        <h2 class="startup-slide__title">
+          Pour une meilleure immersion, nous vous conseillons d’utiliser un casque ou des écouteurs.
+        </h2>
 
-      <button class="startup-intro__button" type="button" data-startup-enter>
-        Appuyer pour entrer
-      </button>
-    </section>
+        <button class="startup-intro__button" type="button" data-startup-enter>
+          Appuyer pour entrer
+        </button>
+      </section>
 
+    </div>
   </div>
-</div>
-
 
   <?php include 'includes/lang.php'; ?>
-  <?php include 'includes/header.php'; ?>
+  <<!-- ?php include 'includes/header.php'; ? -->>
 
   <main class="hero-home">
 
     <video class="hero-video" autoplay muted loop playsinline preload="metadata">
-      <source src="assets/video/heromain3output.mp4" type="video/mp4">
+      <source src="assets/video/hero_video_loop.mp4" type="video/mp4">
     </video>
 
     <div class="hero-overlay"></div>
+
+    <!-- Ripped paper frame -->
+    <div class="paper-frame" aria-hidden="true">
+      <img class="paper-frame__piece paper-frame__piece--top" src="assets/img/border-top.png" alt="">
+      <img class="paper-frame__piece paper-frame__piece--right" src="assets/img/border-right.png" alt="">
+      <img class="paper-frame__piece paper-frame__piece--bottom" src="assets/img/border-bottom.png" alt="">
+      <img class="paper-frame__piece paper-frame__piece--left" src="assets/img/border-left.png" alt="">
+    </div>
 
     <section class="hero-content" aria-label="Introduction du documentaire">
       <p class="hero-korean">
@@ -83,52 +88,35 @@ $pageTitle = "Vivre de la mer à Geoje";
       </div>
 
       <nav class="hero-actions" aria-label="Actions principales">
-        <a href="intro.php" class="premium-button premium-button--light" data-i18n="firstcta">
-          <span class="premium-button__text">
-            <span><?= t('firstcta') ?></span>
-            <span aria-hidden="true"><?= t('firstcta') ?></span>
-          </span>
+        <a href="intro.php" class="paper-button paper-button--primary" data-i18n="firstcta">
+          <span><?= t('firstcta') ?></span>
         </a>
 
         <button
-          class="premium-button premium-button--outline js-video-open"
+          class="paper-button paper-button--secondary js-video-open"
           type="button"
-          data-video-provider="vimeo" 
-          data-video-id="1189989735" 
+          data-video-provider="vimeo"
+          data-video-id="1189989735"
           data-video-eyebrow="Documentaire complet"
           data-video-title="Vivre de la mer à Geoje"
           data-i18n="secondcta"
         >
-          <span class="premium-button__text">
-            <span><?= t('secondcta') ?></span>
-            <span aria-hidden="true"><?= t('secondcta') ?></span>
-          </span>
+          <span><?= t('secondcta') ?></span>
         </button>
       </nav>
-
-      <div class="headphones-note">
-        <span class="headphones-icon">🎧</span>
-        <p data-i18n="headphones"><?= t('headphones') ?></p>
-      </div>
     </section>
-
-    <div class="hero-logos">
-      <img src="assets/img/uge_logo.png" alt="Université Gustave Eiffel">
-      <img src="assets/img/dongeui_logo.png" alt="Université Dong-eui">
-    </div>
 
   </main>
 
   <?php include 'includes/video-modal.php'; ?>
 
-<script src="https://player.vimeo.com/api/player.js"></script>
-
-<script src="assets/js/menu.js"></script>
-<script src="assets/js/page-transition.js"></script>
-<script src="assets/js/video-modal.js"></script>
-<script src="assets/js/language-switcher.js"></script>
-<script src="assets/js/startup-intro.js"></script>
-<script src="assets/js/main.js"></script>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="assets/js/menu.js"></script>
+  <script src="assets/js/page-transition.js"></script>
+  <script src="assets/js/video-modal.js"></script>
+  <script src="assets/js/language-switcher.js"></script>
+  <script src="assets/js/startup-intro.js"></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 </html>
