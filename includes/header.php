@@ -1,28 +1,15 @@
 <header class="site-header" aria-label="<?= t('aria_main_nav') ?>">
-  <div class="site-header__inner">
-
-    <a class="site-header__logo" href="index.php" aria-label="Retour à l’accueil">
-      <img src="assets/img/logo.svg" alt="Vivre de la mer à Geoje">
-    </a>
-
-    <div class="site-header__identity" aria-hidden="true">
-      <strong>Vivre de la mer à Geoje</strong>
-      <span>Journal de bord - Documentaire interactif</span>
-    </div>
-
-    <button
-      class="menu-button"
-      type="button"
-      aria-label="<?= t('aria_open_menu') ?>"
-      aria-controls="mainMenu"
-      aria-expanded="false"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-  </div>
+  <button
+    class="menu-button"
+    type="button"
+    aria-label="<?= t('aria_open_menu') ?>"
+    aria-controls="mainMenu"
+    aria-expanded="false"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </header>
 
 <div class="site-menu" id="mainMenu" aria-hidden="true">
@@ -35,7 +22,6 @@
     </button>
 
     <div class="site-menu__top">
-      <p class="site-menu__label">Journal de bord</p>
 
       <nav class="language-switcher language-switcher--menu" aria-label="<?= t('aria_language_switcher') ?>">
         <a
@@ -47,6 +33,14 @@
           FR
         </a>
 
+        <span
+          class="lang-item is-disabled"
+          aria-disabled="true"
+          title="<?= t('lang_soon') ?>"
+        >
+          EN
+        </span>
+
         <a
           href="#"
           data-lang="ko"
@@ -55,14 +49,6 @@
         >
           KR
         </a>
-
-        <span
-          class="lang-item is-disabled"
-          aria-disabled="true"
-          title="<?= t('lang_soon') ?>"
-        >
-          EN
-        </span>
       </nav>
     </div>
 

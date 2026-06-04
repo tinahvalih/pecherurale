@@ -59,7 +59,7 @@ $pageTitle = "Vivre de la mer à Geoje";
   </div>
 
   <?php include 'includes/lang.php'; ?>
-  <<!-- ?php include 'includes/header.php'; ? -->>
+  <?php include 'includes/header.php'; ?>
 
   <main class="hero-home">
 
@@ -105,6 +105,11 @@ $pageTitle = "Vivre de la mer à Geoje";
         </button>
       </nav>
     </section>
+
+    <div class="hero-logos" aria-label="Partenaires universitaires">
+      <img src="assets/img/uge_logo.png" alt="Université Gustave Eiffel">
+      <img src="assets/img/dongeui_logo.png" alt="Université Dong-eui">
+    </div>
 
   </main>
 
