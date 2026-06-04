@@ -63,7 +63,7 @@ body.menu-open .site-header {
   inset: -13px -15px;
   z-index: -1;
 
-  background-image: url("../images/piece-icon.png");
+  background-image: url("assets/img/piece-icon.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -159,7 +159,7 @@ body.menu-open .site-header {
   inset: -20px -26px;
   z-index: -1;
 
-  background-image: url("../images/piece-icon.png");
+  background-image: url("assets/img/piece-icon.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
