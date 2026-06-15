@@ -1,4 +1,5 @@
 function initPageTransition() {
+    const transitionDuration = 820;
     const transitionLinks = document.querySelectorAll(
         "a[href]:not(.js-lang-switch):not([target='_blank']):not([href^='#']):not([href^='mailto:']):not([href^='tel:'])"
     );
@@ -17,6 +18,10 @@ function initPageTransition() {
 
     transitionLinks.forEach((link) => {
         link.addEventListener("click", (event) => {
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) {
+                return;
+            }
+
             const targetUrl = link.getAttribute("href");
 
             if (!targetUrl) return;
@@ -39,7 +44,7 @@ function initPageTransition() {
 
             setTimeout(() => {
                 window.location.href = targetUrl;
-            }, 720);
+            }, transitionDuration);
         });
     });
 

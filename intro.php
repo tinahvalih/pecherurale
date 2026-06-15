@@ -23,21 +23,32 @@ $nextPage = "experience.php";
 
   <main class="intro-page__main" data-next-page="<?= $nextPage ?>">
 
-    <iframe
-      id="introPagePlayer"
-      class="intro-page__player"
-      src="https://player.vimeo.com/video/1189989735?autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0"
-      frameborder="0"
-      allow="autoplay; fullscreen; picture-in-picture"
-      allowfullscreen
-    ></iframe>
+    <!-- Ripped paper frame -->
+    <div class="paper-frame intro-paper-frame" aria-hidden="true">
+      <img class="paper-frame__piece paper-frame__piece--top" src="assets/img/border-top.png" alt="">
+      <img class="paper-frame__piece paper-frame__piece--right" src="assets/img/border-right.png" alt="">
+      <img class="paper-frame__piece paper-frame__piece--bottom" src="assets/img/border-bottom.png" alt="">
+      <img class="paper-frame__piece paper-frame__piece--left" src="assets/img/border-left.png" alt="">
+    </div>
 
-    <div class="intro-page__overlay"></div>
+    <section class="intro-page__scene" aria-label="Vidéo d’introduction">
+      <div class="intro-page__video-card">
+        <img class="intro-page__scotch" src="assets/img/scotch.png" alt="" aria-hidden="true">
 
-    <a href="<?= $nextPage ?>" class="intro-page__skip">
-      <?= t('skip_intro') ?>
-      <span></span>
-    </a>
+        <iframe
+          id="introPagePlayer"
+          class="intro-page__player"
+          src="https://player.vimeo.com/video/1189989735?autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+
+        <a href="<?= $nextPage ?>" class="intro-page__skip paper-button paper-button--secondary">
+          <span><?= t('skip_intro') ?> →</span>
+        </a>
+      </div>
+    </section>
 
   </main>
 
