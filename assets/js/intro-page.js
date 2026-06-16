@@ -5,7 +5,7 @@ function initIntroPage() {
     if (!introMain || !introIframe) return;
     if (typeof Vimeo === "undefined") return;
 
-    const nextPage = introMain.dataset.nextPage || "experience.php";
+    const nextPage = introMain.dataset.nextPage || "chapitres.php";
     const introPlayer = new Vimeo.Player(introIframe);
 
     function goToExperience() {
@@ -20,7 +20,7 @@ function initIntroPage() {
 
         setTimeout(() => {
             window.location.href = nextPage;
-        }, 720);
+        }, 820);
     }
 
     introPlayer.on("ended", goToExperience);

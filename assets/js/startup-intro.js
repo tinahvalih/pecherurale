@@ -6,17 +6,7 @@ function initStartupIntro() {
     const slides = intro.querySelectorAll("[data-startup-slide]");
     const enterButton = intro.querySelector("[data-startup-enter]");
 
-    const storageKey = "geoje_startup_intro_seen";
-    const duration = 24 * 60 * 60 * 1000; // 24h
     const autoSlideDelay = 5000; // 5s
-
-    const saved = localStorage.getItem(storageKey);
-    const now = Date.now();
-
-    if (saved && now - Number(saved) < duration) {
-        intro.remove();
-        return;
-    }
 
     let currentSlide = 0;
     let autoSlideTimer = null;
@@ -40,7 +30,6 @@ function initStartupIntro() {
     }
 
     function closeIntro() {
-        localStorage.setItem(storageKey, String(Date.now()));
         intro.classList.add("is-hidden");
         intro.setAttribute("aria-hidden", "true");
 

@@ -1,16 +1,61 @@
-<header class="site-header" aria-label="<?= t('aria_main_nav') ?>">
-  <button
-    class="menu-button"
-    type="button"
-    aria-label="<?= t('aria_open_menu') ?>"
-    aria-controls="mainMenu"
-    aria-expanded="false"
-  >
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-</header>
+<?php $siteHeaderVariant = $siteHeaderVariant ?? 'default'; ?>
+
+<?php if ($siteHeaderVariant === 'journal') : ?>
+  <header class="journal-header" aria-label="<?= t('aria_main_nav') ?>">
+    <a class="journal-header__brand" href="index.php" aria-label="Retour a l'accueil">
+      <img src="assets/img/logo.svg" alt="" aria-hidden="true">
+    </a>
+
+    <div class="journal-header__title">
+      <p>Vivre de la mer &agrave; Geoje</p>
+      <span>Journal de bord - Documentaire interactif</span>
+    </div>
+
+    <button
+      class="menu-button journal-header__menu-button"
+      type="button"
+      aria-label="<?= t('aria_open_menu') ?>"
+      aria-controls="mainMenu"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+<?php elseif ($siteHeaderVariant === 'chapter-video') : ?>
+  <header class="chapter-video-header" aria-label="<?= t('aria_main_nav') ?>">
+    <a class="chapter-video-header__back" href="chapitres.php" aria-label="Retour aux chapitres">
+      <span aria-hidden="true"></span>
+    </a>
+
+    <button
+      class="menu-button chapter-video-header__menu-button"
+      type="button"
+      aria-label="<?= t('aria_open_menu') ?>"
+      aria-controls="mainMenu"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+<?php else : ?>
+  <header class="site-header" aria-label="<?= t('aria_main_nav') ?>">
+    <button
+      class="menu-button"
+      type="button"
+      aria-label="<?= t('aria_open_menu') ?>"
+      aria-controls="mainMenu"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+<?php endif; ?>
 
 <div class="site-menu" id="mainMenu" aria-hidden="true">
   <div class="site-menu__backdrop" data-menu-close></div>
@@ -58,7 +103,7 @@
         <span class="site-menu__text">Accueil</span>
       </a>
 
-      <a href="experience.php" class="site-menu__link" data-menu-link data-preview="https://i.pinimg.com/originals/02/79/e6/0279e6b012ba6fe706d26a96b14534c5.gif">
+      <a href="chapitres.php" class="site-menu__link" data-menu-link data-preview="https://i.pinimg.com/originals/02/79/e6/0279e6b012ba6fe706d26a96b14534c5.gif">
         <span class="site-menu__preview"></span>
         <span class="site-menu__text">Chapitres</span>
       </a>
