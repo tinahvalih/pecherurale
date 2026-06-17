@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "Vivre de la mer à Geoje";
+$pageTitle = "Vivre de la mer a Geoje";
 ?>
 
 <!DOCTYPE html>
@@ -7,7 +7,7 @@ $pageTitle = "Vivre de la mer à Geoje";
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Vivre de la mer à Geoje est un documentaire interactif sur la mémoire maritime, les villages de pêcheurs et les mutations de la pêche rurale en Corée du Sud.">
+  <meta name="description" content="Vivre de la mer a Geoje est un documentaire interactif sur la memoire maritime, les villages de pecheurs et les mutations de la peche rurale en Coree du Sud.">
 
   <title><?= $pageTitle; ?></title>
 
@@ -31,28 +31,34 @@ $pageTitle = "Vivre de la mer à Geoje";
         </p>
 
         <p class="startup-slide__translation">
-          L’île de Geoje, insufflée d’une vie nouvelle par le pont de Geoga.<br>
+          L'ile de Geoje, insufflee d'une vie nouvelle par le pont de Geoga.<br>
           Haegeumgang devient un paradis de plantes subtropicales :<br>
-          orchidées du vent, camélias, palmiers, rochers et mer ouverte.
+          orchidees du vent, camelias, palmiers, rochers et mer ouverte.
         </p>
 
         <p class="startup-slide__caption">
-          d’après un poème maritime coréen consacré à Geoje.
+          ~ d'apres un poeme maritime coreen consacre a Geoje.
         </p>
       </section>
 
       <section class="startup-slide" data-startup-slide="1">
         <div class="startup-slide__sound-icon" aria-hidden="true">
-          <img src="assets/img/sound-icon.png" alt="Icône sonore">
+          <img src="assets/img/headphone.png" alt="Icone sonore">
         </div>
 
         <h2 class="startup-slide__title">
-          Pour une meilleure immersion, nous vous conseillons d’utiliser un casque ou des écouteurs.
+          Pour une meilleure immersion, nous vous conseillons d'utiliser 
+          un casque ou des ecouteurs.
         </h2>
 
         <button class="startup-intro__button" type="button" data-startup-enter>
-          Appuyer pour entrer
+          Commencer
         </button>
+
+        <p class="startup-slide__notice">
+          En appuyant sur Commencer, vous acceptez qu'une ambiance sonore accompagne
+          l'experience sur la page d'accueil.
+        </p>
       </section>
 
     </div>
@@ -83,7 +89,7 @@ $pageTitle = "Vivre de la mer à Geoje";
       </p>
 
       <div class="hero-title">
-        <span class="hero-title-small">Vivre de la mer à</span>
+        <span class="hero-title-small">Vivre de la mer a</span>
         <img src="assets/img/geoje_logo.png" alt="Geoje" class="geoje-svg">
       </div>
 
@@ -98,7 +104,7 @@ $pageTitle = "Vivre de la mer à Geoje";
           data-video-provider="vimeo"
           data-video-id="1189989735"
           data-video-eyebrow="Documentaire complet"
-          data-video-title="Vivre de la mer à Geoje"
+          data-video-title="Vivre de la mer a Geoje"
           data-i18n="secondcta"
         >
           <span><?= t('secondcta') ?></span>
@@ -107,8 +113,8 @@ $pageTitle = "Vivre de la mer à Geoje";
     </section>
 
     <div class="hero-logos" aria-label="Partenaires universitaires">
-      <img src="assets/img/uge_logo.png" alt="Université Gustave Eiffel">
-      <img src="assets/img/dongeui_logo.png" alt="Université Dong-eui">
+      <img src="assets/img/uge_logo.png" alt="Universite Gustave Eiffel">
+      <img src="assets/img/dongeui_logo.png" alt="Universite Dong-eui">
     </div>
 
   </main>

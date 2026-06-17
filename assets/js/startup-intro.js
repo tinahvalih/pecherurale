@@ -6,7 +6,13 @@ function initStartupIntro() {
     const slides = intro.querySelectorAll("[data-startup-slide]");
     const enterButton = intro.querySelector("[data-startup-enter]");
 
+    const storageKey = "geoje_startup_intro_seen_session";
     const autoSlideDelay = 5000; // 5s
+
+    if (sessionStorage.getItem(storageKey) === "true") {
+        intro.remove();
+        return;
+    }
 
     let currentSlide = 0;
     let autoSlideTimer = null;
@@ -30,6 +36,7 @@ function initStartupIntro() {
     }
 
     function closeIntro() {
+        sessionStorage.setItem(storageKey, "true");
         intro.classList.add("is-hidden");
         intro.setAttribute("aria-hidden", "true");
 
@@ -40,7 +47,7 @@ function initStartupIntro() {
 
         setTimeout(() => {
             intro.remove();
-        }, 900);
+        }, 1050);
     }
 
     autoSlideTimer = setTimeout(goToSecondSlide, autoSlideDelay);
