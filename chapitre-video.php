@@ -1,5 +1,6 @@
 <?php
 include 'includes/lang.php';
+include_once 'includes/assets.php';
 $siteHeaderVariant = 'chapter-video';
 
 $chapters = [
@@ -31,8 +32,9 @@ $pageTitle = 'Vivre de la mer a Geoje - ' . $chapter['title'];
 
   <title><?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?></title>
 
-  <link rel="stylesheet" href="assets/css/main.css">
+<?php render_css_links(); ?>
   <link rel="icon" type="image/x-icon" href="assets/img/favicon-black.svg">
+  <script>window.siteAssetVersion = "<?= asset_version(); ?>";</script>
 </head>
 
 <body class="chapter-video-page">
@@ -74,10 +76,10 @@ $pageTitle = 'Vivre de la mer a Geoje - ' . $chapter['title'];
     </section>
   </main>
 
-  <script src="assets/js/page-transition.js"></script>
-  <script src="assets/js/menu.js"></script>
-  <script src="assets/js/language-switcher.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="<?= asset('assets/js/page-transition.js') ?>"></script>
+  <script src="<?= asset('assets/js/menu.js') ?>"></script>
+  <script src="<?= asset('assets/js/language-switcher.js') ?>"></script>
+  <script src="<?= asset('assets/js/main.js') ?>"></script>
 
 </body>
 </html>

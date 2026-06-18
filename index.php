@@ -1,5 +1,6 @@
 <?php
 $pageTitle = "Vivre de la mer a Geoje";
+include_once 'includes/assets.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,8 +12,9 @@ $pageTitle = "Vivre de la mer a Geoje";
 
   <title><?= $pageTitle; ?></title>
 
-  <link rel="stylesheet" href="assets/css/main.css">
+<?php render_css_links(); ?>
   <link rel="icon" type="image/x-icon" href="assets/img/favicon-black.svg">
+  <script>window.siteAssetVersion = "<?= asset_version(); ?>";</script>
 </head>
 
 <body class="home-page">
@@ -122,12 +124,12 @@ $pageTitle = "Vivre de la mer a Geoje";
   <?php include 'includes/video-modal.php'; ?>
 
   <script src="https://player.vimeo.com/api/player.js"></script>
-  <script src="assets/js/menu.js"></script>
-  <script src="assets/js/page-transition.js"></script>
-  <script src="assets/js/video-modal.js"></script>
-  <script src="assets/js/language-switcher.js"></script>
-  <script src="assets/js/startup-intro.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="<?= asset('assets/js/menu.js') ?>"></script>
+  <script src="<?= asset('assets/js/page-transition.js') ?>"></script>
+  <script src="<?= asset('assets/js/video-modal.js') ?>"></script>
+  <script src="<?= asset('assets/js/language-switcher.js') ?>"></script>
+  <script src="<?= asset('assets/js/startup-intro.js') ?>"></script>
+  <script src="<?= asset('assets/js/main.js') ?>"></script>
 
 </body>
 </html>

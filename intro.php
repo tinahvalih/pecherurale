@@ -1,5 +1,6 @@
 <?php
-$pageTitle = "Vivre de la mer à Geoje - Introduction";
+$pageTitle = "Vivre de la mer a Geoje - Introduction";
+include_once 'includes/assets.php';
 include 'includes/lang.php';
 
 $nextPage = "chapitres.php";
@@ -13,8 +14,9 @@ $nextPage = "chapitres.php";
 
   <title><?= $pageTitle; ?></title>
 
-  <link rel="stylesheet" href="assets/css/main.css">
+<?php render_css_links(); ?>
   <link rel="icon" type="image/x-icon" href="assets/img/favicon-black.svg">
+  <script>window.siteAssetVersion = "<?= asset_version(); ?>";</script>
 </head>
 
 <body class="intro-page">
@@ -23,7 +25,6 @@ $nextPage = "chapitres.php";
 
   <main class="intro-page__main" data-next-page="<?= $nextPage ?>">
 
-    <!-- Ripped paper frame -->
     <div class="paper-frame intro-paper-frame" aria-hidden="true">
       <img class="paper-frame__piece paper-frame__piece--top" src="assets/img/border-top.png" alt="">
       <img class="paper-frame__piece paper-frame__piece--right" src="assets/img/border-right.png" alt="">
@@ -31,7 +32,7 @@ $nextPage = "chapitres.php";
       <img class="paper-frame__piece paper-frame__piece--left" src="assets/img/border-left.png" alt="">
     </div>
 
-    <section class="intro-page__scene" aria-label="Vidéo d’introduction">
+    <section class="intro-page__scene" aria-label="Video d'introduction">
       <div class="intro-page__video-card">
         <img class="intro-page__scotch" src="assets/img/scotch.png" alt="" aria-hidden="true">
 
@@ -45,7 +46,7 @@ $nextPage = "chapitres.php";
         ></iframe>
 
         <a href="<?= $nextPage ?>" class="intro-page__skip paper-button paper-button--secondary">
-          <span><?= t('skip_intro') ?> →</span>
+          <span><?= t('skip_intro') ?> &rarr;</span>
         </a>
       </div>
     </section>
@@ -54,9 +55,9 @@ $nextPage = "chapitres.php";
 
   <script src="https://player.vimeo.com/api/player.js"></script>
 
-  <script src="assets/js/page-transition.js"></script>
-  <script src="assets/js/intro-page.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="<?= asset('assets/js/page-transition.js') ?>"></script>
+  <script src="<?= asset('assets/js/intro-page.js') ?>"></script>
+  <script src="<?= asset('assets/js/main.js') ?>"></script>
 
 </body>
 </html>

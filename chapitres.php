@@ -1,6 +1,7 @@
 <?php
 $pageTitle = "Vivre de la mer a Geoje - Chapitres";
 $siteHeaderVariant = "journal";
+include_once 'includes/assets.php';
 include 'includes/lang.php';
 ?>
 
@@ -12,8 +13,9 @@ include 'includes/lang.php';
 
   <title><?= $pageTitle; ?></title>
 
-  <link rel="stylesheet" href="assets/css/main.css">
+<?php render_css_links(); ?>
   <link rel="icon" type="image/x-icon" href="assets/img/favicon-black.svg">
+  <script>window.siteAssetVersion = "<?= asset_version(); ?>";</script>
 </head>
 
 <body class="chapitres-page">
@@ -87,15 +89,57 @@ include 'includes/lang.php';
           </p>
         </article>
       </section>
+
+      <section class="chapitres-next" aria-label="Prolonger le parcours">
+        <div class="chapitres-next__rule" aria-hidden="true"></div>
+
+        <div class="chapitres-next__body">
+          <article class="chapitres-next__portraits">
+            <h2>Portraits / Personnages</h2>
+            <p>
+              Rencontrez les voix, les gestes et les presences qui traversent le
+              journal de bord.
+            </p>
+            <a href="#" class="chapitres-next__portrait-button">
+              Decouvrir les portraits
+            </a>
+          </article>
+
+          <article class="chapitres-next__immersion">
+            <div class="chapitres-next__copy">
+              <span class="chapitres-next__tag">#Immersion</span>
+              <h2>Experience sonore</h2>
+              <a href="immersion.php" class="chapitres-next__button">
+                Explorer les immersions
+              </a>
+            </div>
+
+            <img
+              class="chapitres-next__tape"
+              src="assets/img/tape.png"
+              alt="Cassette sound of Geoje"
+            >
+          </article>
+        </div>
+
+        <div class="chapitres-next__rule" aria-hidden="true"></div>
+
+        <div class="chapitres-next__documentary">
+          <p>Regarder le documentaire en entier</p>
+          <a href="intro.php" class="chapitres-next__documentary-button">
+            Voir le documentaire →
+          </a>
+        </div>
+      </section>
     </main>
   </div>
 
   <div class="chapitres-bottom-paper" aria-hidden="true"></div>
 
-  <script src="assets/js/menu.js"></script>
-  <script src="assets/js/page-transition.js"></script>
-  <script src="assets/js/language-switcher.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="<?= asset('assets/js/menu.js') ?>"></script>
+  <script src="<?= asset('assets/js/page-transition.js') ?>"></script>
+  <script src="<?= asset('assets/js/language-switcher.js') ?>"></script>
+  <script src="<?= asset('assets/js/main.js') ?>"></script>
 
 </body>
 </html>

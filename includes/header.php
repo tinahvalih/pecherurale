@@ -108,7 +108,7 @@
         <span class="site-menu__text">Chapitres</span>
       </a>
 
-      <a href="#" class="site-menu__link" data-menu-link data-preview="https://c.tenor.com/mLOHQJCayyAAAAAC/tenor.gif">
+      <a href="immersion.php" class="site-menu__link" data-menu-link data-preview="https://c.tenor.com/mLOHQJCayyAAAAAC/tenor.gif">
         <span class="site-menu__preview"></span>
         <span class="site-menu__text">Immersions</span>
       </a>

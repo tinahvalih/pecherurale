@@ -1,5 +1,66 @@
 # Changelog
 
+## 2026-06-18
+
+### 15:16 - Ajustement mini lecteur audio
+
+- Repositionnement du mini-lecteur audio global en bas a gauche.
+- Reduction importante de la taille du bloc et des textes.
+- Ajout du label "Lecture en cours" au-dessus du titre de la bande son.
+
+### 15:11 - Mini lecteur audio papier
+
+- Refonte visuelle du mini-lecteur audio global en bas a droite.
+- Remplacement du bloc encadre par un bouton papier `piece-icon.png` et une bande titre `button-paper-2.png`.
+- Conservation du comportement play/pause existant avec hover instantane sans transition.
+
+### 14:53 - Refonte page immersion audio
+
+- Refonte de `immersion.php` autour d'une cassette cliquable et d'un bloc description pointille.
+- Ajout d'un panneau audio offcanvas depuis la gauche avec bord papier `border-left.png`.
+- Branchement de `sea-expressing.mp3` sur la cassette avec lecture directe au clic.
+- Ajout d'un mini-lecteur global en bas a gauche pour pauser ou relancer l'ambiance sonore.
+- Sauvegarde de l'audio en cours pour retrouver le mini-lecteur apres navigation entre pages.
+- Note technique : avec des pages PHP rechargees, la lecture peut etre restauree apres changement de page, mais pas rester parfaitement continue sans architecture de navigation persistante.
+
+### 14:18 - CTA portraits page chapitres
+
+- Ajout d'un bouton papier "Decouvrir les portraits" dans le bloc `Portraits / Personnages`.
+- Conservation d'un hover instantane sur les nouveaux CTA, sans transition CSS.
+- Note de coherence : les prochains boutons ajoutes garderont un hover sans transition.
+
+### 13:58 - Suite de parcours page chapitres
+
+- Ajout d'un bloc sous les chapitres pour prolonger le parcours vers les portraits, l'experience sonore et le documentaire complet.
+- Ajout d'une carte "Experience sonore" avec `tape.png`, tag immersion et CTA "Explorer les immersions".
+- Ajout d'une bande CTA finale sur fond bleu avec motif poisson pour revenir vers le documentaire.
+- Adaptation responsive du nouveau bloc pour mobile et tablette.
+
+## 2026-06-17
+
+### 17:30 - Cache busting des assets
+
+- Ajout de `includes/assets.php` avec une fonction `asset()` basee sur `filemtime`.
+- Remplacement des chargements CSS/JS locaux par des URLs versionnees avec `?v=...`.
+- Chargement direct des fichiers CSS dans les pages pour eviter le cache des `@import`.
+- Ajout d'une version aux fichiers de traduction JSON charges par `language-switcher.js`.
+
+### 16:40 - Ajustements page immersions
+
+- Recalage du bloc categories / casque / description pour mieux suivre la reference.
+- Ajout d'animations hover sur les categories Geoje Island et Jagalchi.
+- Ajout d'animations hover sur les boutons papier des lecteurs et du CTA final.
+- Suppression du carre gris dans les blocs description des sections bande son.
+
+### 16:19 - Page immersions sonores
+
+- Creation de `immersion.php` avec header journal, titre "Explorer par l'ecoute" et description.
+- Ajout du bloc categories Geoje Island / Jagalchi avec description generale et image `headphone.png`.
+- Ajout des titres de categories avec `anchor-icon2.svg` et fond `illustration-sectionbackground.png`.
+- Ajout de sections bande son alternees : video hover muette sans controles, lecteur papier, bouton agrandir et bloc description.
+- Ajout des separateurs pointilles entre les bandes sonores et du CTA final vers les chapitres.
+- Branchement de `assets/js/immersion.js` pour lancer les videos au survol et les remettre au debut en sortie.
+- Mise a jour du menu offcanvas pour faire pointer `Immersions` vers `immersion.php`.
 
 ## 2026-06-16
 

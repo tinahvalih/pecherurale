@@ -22,7 +22,8 @@ function initLanguageSwitcher() {
       return translationsCache[lang];
     }
 
-    const response = await fetch(`assets/i18n/${lang}.json`);
+    const version = window.siteAssetVersion ? `?v=${window.siteAssetVersion}` : "";
+    const response = await fetch(`assets/i18n/${lang}.json${version}`);
 
     if (!response.ok) {
       throw new Error(`Impossible de charger la langue : ${lang}`);
