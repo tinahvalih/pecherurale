@@ -9,12 +9,14 @@ function initImmersion() {
     const drawerTitle = drawer.querySelector("[data-audio-drawer-title]");
     const drawerCategory = drawer.querySelector("[data-audio-drawer-category]");
     const drawerDescription = drawer.querySelector("[data-audio-drawer-description]");
+    const drawerImage = drawer.querySelector("[data-audio-drawer-image]");
     const drawerTags = drawer.querySelector("[data-audio-drawer-tags]");
     const drawerAction = drawer.querySelector("[data-audio-drawer-action]");
 
     function getTrackFromCard(card) {
         return {
             src: card.dataset.audioSrc || "",
+            image: card.dataset.audioImage || "assets/img/tape.png",
             title: card.dataset.audioTitle || "Bande sonore",
             category: card.dataset.audioCategory || "Experience sonore",
             description: card.dataset.audioDescription || "",
@@ -29,6 +31,7 @@ function initImmersion() {
         if (drawerTitle) drawerTitle.textContent = track.title;
         if (drawerCategory) drawerCategory.textContent = track.category;
         if (drawerDescription) drawerDescription.textContent = track.description;
+        if (drawerImage) drawerImage.src = track.image;
 
         if (drawerTags) {
             drawerTags.innerHTML = "";
@@ -47,7 +50,12 @@ function initImmersion() {
 
     function updateDrawerAction(detail) {
         if (!drawerAction) return;
-        drawerAction.textContent = detail && detail.isPlaying ? "Pause" : "Lecture";
+        const isPlaying = Boolean(detail && detail.isPlaying);
+        drawerAction.textContent = isPlaying ? "Pause" : "Lecture";
+
+        if (toggleButton) {
+            toggleButton.classList.toggle("is-playing", isPlaying);
+        }
     }
 
     audioCards.forEach((card) => {

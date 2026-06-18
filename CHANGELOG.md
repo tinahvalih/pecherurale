@@ -2,6 +2,43 @@
 
 ## 2026-06-18
 
+### 18:08 - Audios et couleurs des cassettes immersion
+
+- Association de chaque cassette immersion a son fichier audio dedie : mer, restaurant, pluie et marche asiatique.
+- Remplacement des filtres de couleur CSS par les vraies images `tape.png`, `tape-yellow.png`, `tape-green.png` et `tape-blue.png`.
+- Mise a jour du tiroir audio pour afficher la cassette correspondant a la piste selectionnee.
+
+### 17:46 - Sections supplementaires immersion
+
+- Ajout d'une deuxieme section d'ecoute en disposition inversee : description a gauche, cassette a droite.
+- Ajout du bandeau `Jagalchi Market & Busan` avec indication de lecture.
+- Ajout d'une grille de deux cassettes cliquables pour les sons Jagalchi / Busan.
+- Ajout d'un CTA final bleu vers `chapitres.php`.
+- Branchement temporaire des nouvelles cassettes sur l'audio exemple `sea-expressing.mp3`.
+
+### 16:41 - Corrections tiroir audio
+
+- Correction du z-index entre le bord papier gauche et la cassette du tiroir audio.
+- La cassette passe maintenant devant le bord dechire comme dans la reference.
+- Refonte du bouton lecture du tiroir sur la meme base visuelle que le bouton hamburger, avec icone lecture/pause.
+
+### 16:22 - Ajustements tiroir audio
+
+- Ajout d'une fermeture animee du tiroir audio lors du clic outside.
+- Decalage de la cassette pour qu'elle depasse davantage du panneau comme sur la reference.
+- Reduction des tailles de texte et des espacements du tiroir pour faire tenir le contenu.
+
+
+## 16:15 - Ajustement de la Video Landing Page
+- Rectification de la video de landing page pour que ca soit en boucle sans cut
+
+### 16:14 - Offcanvas audio
+
+- Refonte visuelle du panneau audio ouvert depuis la gauche selon la nouvelle reference.
+- Ajout de la cassette scotchee en haut du panneau avec `tape.png` et `scotch.png`.
+- Recalage du titre, de la description, de la note casque et du bouton lecture papier.
+- Synchronisation de l'icone lecture/pause du panneau avec l'etat de l'audio en cours.
+
 ### 15:16 - Ajustement mini lecteur audio
 
 - Repositionnement du mini-lecteur audio global en bas a gauche.
