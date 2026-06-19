@@ -107,6 +107,7 @@ body.immersion-page {
   grid-template-columns: minmax(420px, 43%) minmax(0, 57%);
   min-height: clamp(500px, 43vw, 620px);
   border-bottom: 2px solid #3f3b57;
+  border-top: 2px solid #3f3b57;
 }
 
 .immersion-listening--reverse {
@@ -176,7 +177,7 @@ body.immersion-page {
 
 .immersion-cassette__scotch--right {
   top: -6%;
-  right: 0;
+  right: -16%;
   transform: rotate(24deg);
 }
 
@@ -188,8 +189,8 @@ body.immersion-page {
 }
 
 .immersion-cassette__scotch--left {
-  top: -14%;
-  left: -2%;
+  top: -5%;
+  left: -12%;
   right: auto;
   transform: rotate(-31deg);
 }

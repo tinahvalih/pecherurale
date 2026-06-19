@@ -2,7 +2,7 @@
 
 <?php if ($siteHeaderVariant === 'journal') : ?>
   <header class="journal-header" aria-label="<?= t('aria_main_nav') ?>">
-    <a class="journal-header__brand" href="index.php" aria-label="Retour a l'accueil">
+    <a class="journal-header__brand" href="./" aria-label="Retour a l'accueil">
       <img src="assets/img/logo.svg" alt="" aria-hidden="true">
     </a>
 
@@ -98,7 +98,7 @@
     </div>
 
     <nav class="site-menu__nav">
-      <a href="index.php" class="site-menu__link" data-menu-link data-preview="https://i.imgflip.com/k4fek.gif">
+      <a href="./" class="site-menu__link" data-menu-link data-preview="https://i.imgflip.com/k4fek.gif">
         <span class="site-menu__preview"></span>
         <span class="site-menu__text">Accueil</span>
       </a>

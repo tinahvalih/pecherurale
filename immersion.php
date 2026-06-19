@@ -209,7 +209,7 @@ $track = $tracks[0];
       </p>
 
       <p class="audio-drawer__notice">
-        Pour avoir une meilleure experience, veuillez mettre un casque
+        Pour avoir une meilleure experience, veuillez mettre un casque ou des écouteurs.
       </p>
 
       <button class="audio-drawer__play" type="button" data-audio-drawer-toggle aria-label="Mettre en pause ou relancer l'audio">

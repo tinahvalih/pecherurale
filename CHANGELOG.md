@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-06-19
+
+### 13:21 - Lien accueil menu
+
+- Correction du lien `Accueil` du menu offcanvas pour pointer vers `./` au lieu de `index.php`.
+- Correction identique du logo du header journal pour revenir vers la racine `/pecherurale/`.
+
 ## 2026-06-18
 
 ### 18:08 - Audios et couleurs des cassettes immersion

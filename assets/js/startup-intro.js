@@ -7,7 +7,7 @@ function initStartupIntro() {
     const enterButton = intro.querySelector("[data-startup-enter]");
 
     const storageKey = "geoje_startup_intro_seen_session";
-    const autoSlideDelay = 5000; // 5s
+    const autoSlideDelay = 9000; // 9s
 
     if (sessionStorage.getItem(storageKey) === "true") {
         intro.remove();
