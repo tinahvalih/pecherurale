@@ -203,7 +203,8 @@ body.menu-open .journal-header {
   pointer-events: none;
 }
 
-.chapitre-card__media video {
+.chapitre-card__media video,
+.chapitre-card__thumbnail {
   display: block;
   width: 100%;
   height: 100%;

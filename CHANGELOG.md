@@ -1,6 +1,42 @@
 # Changelog
 
+## 2026-06-22
+
+### 01:05 - Plein ecran introduction
+
+- Ajout d'un bouton plein ecran sur la video de la page `intro.php`.
+- Conservation des controles Vimeo masques avec un controle plein ecran personnalise.
+- Branchement via l'API Vimeo avec fallback sur le plein ecran navigateur du cadre video.
+
+### 00:41 - Videos finales chapitres
+
+- Remplacement de la video Vimeo du chapitre 1 par `1203265070`.
+- Remplacement de la video Vimeo du chapitre 2 par `1203251886`.
+- Mise a jour de l'introduction pour utiliser le debut du chapitre 1 et passer a la suite apres 41 secondes.
+
+### 00:31 - Liens details chapitres
+
+- Mise a jour des boutons `Explorer ce Chapitre` dans `chapitres.php`.
+- Le chapitre 1 pointe vers `chapitre-info.php?chapitre=1`.
+- Le chapitre 2 pointe vers `chapitre-info.php?chapitre=2`.
+
+## 2026-06-21
+
+### 20:12 - Miniatures chapitres
+
+- Remplacement des anciennes videos utilisees comme miniatures dans `chapitres.php` par `chapter1_thumbnail.png` et `chapter2_thumbnail.png`.
+- Mise a jour du poster de la video de `chapitre-info.php` pour utiliser la miniature du chapitre 1.
+- Ajout des deux miniatures au versionnement des assets.
+
 ## 2026-06-19
+
+### 13:45 - Page detail chapitre 1
+
+- Ajout de `chapitre-info.php` comme modele de page "En savoir plus" pour le chapitre 1.
+- Ajout de la section video + description, du slider personnages, des informations supplementaires, de la galerie polaroid et du CTA vers le chapitre 2.
+- Ajout du slider automatique des personnages avec pause au survol.
+- Branchement du bouton "En savoir plus" de `chapitre-video.php` vers la page detail du chapitre 1.
+- Ajout d'un overlay noir de fin de video Vimeo pour masquer les suggestions et afficher les boutons seulement quand le chapitre est termine.
 
 ### 13:21 - Lien accueil menu
 

@@ -6,16 +6,16 @@ include 'includes/lang.php';
 
 $tracks = [
   [
-    'category' => 'Geoje Island Experience',
-    'title' => 'Geoje Bridge - Chilcheongyo',
+    'category' => 'Jagalchi Market & Busan',
+    'title' => 'Jagalchi Market , Le marché vivant',
     'instruction' => 'Appuyer sur la cassette pour lire',
-    'audio' => 'assets/audio/sea-expressing.mp3',
+    'audio' => 'assets/audio/jagalchi.wav',
     'image' => 'assets/img/tape.png',
-    'description' => "Avant d'etre un territoire que l'on regarde, Geoje est un lieu que l'on entend. Cette page rassemble des fragments sonores enregistres entre Geoje et Busan : la mer, les voix, les marches, les restaurants et les mouvements du quotidien. Choisissez une ambiance, laissez-la tourner en boucle, et entrez dans le documentaire par l'ecoute.",
-    'tags' => ['#NATURE', '#BIRDS', '#CHOUETTE', '#BISFF'],
+    'description' => "Au cœur de Busan, Jagalchi Market réunit les voix, les gestes, l’eau, les pas et l’agitation d’un marché tourné vers la mer. Cette ambiance sonore plonge dans un lieu dense et vibrant, où les produits de la pêche circulent entre les étals, les vendeurs et les visiteurs. Ici, la mer n’est plus seulement un paysage : elle devient commerce, mouvement, matière sonore et mémoire collective.",
+    'tags' => ['#Jagalchi', '#Marché', '#Voix', '#Commerce'],
   ],
   [
-    'category' => 'Geoje Island Experience',
+    'category' => 'Jagalchi Market & Busan',
     'title' => 'Geoje Bridge - Chilcheongyo',
     'instruction' => 'Appuyer sur la cassette pour lire',
     'audio' => 'assets/audio/restaurant-working.mp3',
@@ -203,10 +203,6 @@ $track = $tracks[0];
       </div>
 
       <h2 data-audio-drawer-title><?= htmlspecialchars($track['title'], ENT_QUOTES, 'UTF-8') ?></h2>
-
-      <p class="audio-drawer__description" data-audio-drawer-description>
-        <?= htmlspecialchars($track['description'], ENT_QUOTES, 'UTF-8') ?>
-      </p>
 
       <p class="audio-drawer__notice">
         Pour avoir une meilleure experience, veuillez mettre un casque ou des écouteurs.

@@ -6,13 +6,13 @@ $siteHeaderVariant = 'chapter-video';
 $chapters = [
   '1' => [
     'title' => 'Chapitre I : Geoje Island',
-    'videoId' => '1189989735',
+    'videoId' => '1203265070',
     'next' => '2',
-    'infoUrl' => '#',
+    'infoUrl' => 'chapitre-info.php?chapitre=1',
   ],
   '2' => [
     'title' => 'Chapitre II : Jagalchi Market',
-    'videoId' => '1189989735',
+    'videoId' => '1203251886',
     'next' => '1',
     'infoUrl' => '#',
   ],
@@ -58,27 +58,32 @@ $pageTitle = 'Vivre de la mer a Geoje - ' . $chapter['title'];
         <img class="chapter-video__scotch" src="assets/img/scotch.png" alt="" aria-hidden="true">
 
         <iframe
+          id="chapterVideoPlayer"
           class="chapter-video__player"
-          src="https://player.vimeo.com/video/<?= htmlspecialchars($chapter['videoId'], ENT_QUOTES, 'UTF-8'); ?>?autoplay=1&controls=1&title=0&byline=0&portrait=0"
+          src="https://player.vimeo.com/video/<?= htmlspecialchars($chapter['videoId'], ENT_QUOTES, 'UTF-8'); ?>?autoplay=1&controls=1&title=0&byline=0&portrait=0&dnt=1"
           frameborder="0"
           allow="autoplay; fullscreen; picture-in-picture"
           allowfullscreen
         ></iframe>
 
-        <a class="chapter-video__button chapter-video__button--info" href="<?= htmlspecialchars($chapter['infoUrl'], ENT_QUOTES, 'UTF-8'); ?>">
-          En savoir plus sur ce chapitre &rarr;
-        </a>
+        <div class="chapter-video__end-screen" data-chapter-end-screen aria-hidden="true">
+          <a class="chapter-video__button chapter-video__button--info" href="<?= htmlspecialchars($chapter['infoUrl'], ENT_QUOTES, 'UTF-8'); ?>">
+            En savoir plus sur ce chapitre &rarr;
+          </a>
 
-        <a class="chapter-video__button chapter-video__button--next" href="chapitre-video.php?chapitre=<?= htmlspecialchars($chapter['next'], ENT_QUOTES, 'UTF-8'); ?>">
-          Chapitre suivant &rarr;
-        </a>
+          <a class="chapter-video__button chapter-video__button--next" href="chapitre-video.php?chapitre=<?= htmlspecialchars($chapter['next'], ENT_QUOTES, 'UTF-8'); ?>">
+            Chapitre suivant &rarr;
+          </a>
+        </div>
       </div>
     </section>
   </main>
 
+  <script src="https://player.vimeo.com/api/player.js"></script>
   <script src="<?= asset('assets/js/page-transition.js') ?>"></script>
   <script src="<?= asset('assets/js/menu.js') ?>"></script>
   <script src="<?= asset('assets/js/language-switcher.js') ?>"></script>
+  <script src="<?= asset('assets/js/chapter-video.js') ?>"></script>
   <script src="<?= asset('assets/js/main.js') ?>"></script>
 
 </body>

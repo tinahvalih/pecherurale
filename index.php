@@ -32,6 +32,7 @@ include_once 'includes/assets.php';
           소철 종려나무 석란 풍란 동백 팔손이
         </p>
 
+
         <p class="startup-slide__translation">
           L'ile de Geoje, insufflee d'une vie nouvelle par le pont de Geoga.<br>
           Haegeumgang devient un paradis de plantes subtropicales :<br>
@@ -39,7 +40,7 @@ include_once 'includes/assets.php';
         </p>
 
         <p class="startup-slide__caption">
-          ~ d'apres un poeme maritime coreen consacre a Geoje.
+          ~ d'apres un poeme maritime coreen consacre à Geoje.
         </p>
       </section>
 
@@ -47,6 +48,10 @@ include_once 'includes/assets.php';
         <div class="startup-slide__sound-icon" aria-hidden="true">
           <img src="assets/img/headphone.png" alt="Icone sonore">
         </div>
+
+        <h2 class="startup-slide__title" style="margin-top: 12px;">
+          더욱 몰입감 있는 경험을 위해 헤드폰이나 이어폰 사용을 권장합니다.
+        </h2>
 
         <h2 class="startup-slide__title">
           Pour une meilleure immersion, nous vous conseillons d'utiliser 
@@ -57,10 +62,6 @@ include_once 'includes/assets.php';
           Commencer
         </button>
 
-        <p class="startup-slide__notice">
-          En appuyant sur Commencer, vous acceptez qu'une ambiance sonore accompagne
-          l'experience sur la page d'accueil.
-        </p>
       </section>
 
     </div>
@@ -91,7 +92,7 @@ include_once 'includes/assets.php';
       </p>
 
       <div class="hero-title">
-        <span class="hero-title-small">Vivre de la mer a</span>
+        <span class="hero-title-small">Vivre de la mer à</span>
         <img src="assets/img/geoje_logo.png" alt="Geoje" class="geoje-svg">
       </div>
 

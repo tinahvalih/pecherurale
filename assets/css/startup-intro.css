@@ -111,7 +111,6 @@
 
   font-family: var(--font-mono);
   font-size: 16px;
-  line-height: 18px;
   font-weight: 400;
   letter-spacing: -0.04em;
 
@@ -189,17 +188,6 @@
   filter: drop-shadow(0 10px 16px rgba(90, 74, 52, 0.14));
 }
 
-.startup-slide__notice {
-  width: min(520px, 78%);
-  margin: 18px 0 0;
-
-  font-family: var(--font-mono);
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.04em;
-
-  color: rgba(120, 104, 79, 0.62);
-}
 
 .startup-slide[data-startup-slide="0"].is-active {
   cursor: pointer;

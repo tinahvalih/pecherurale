@@ -195,7 +195,7 @@ body.menu-open .chapter-video-header {
 
 .chapter-video__button {
   position: absolute;
-  z-index: 5;
+  z-index: 6;
   bottom: clamp(-36px, -2.3vw, -22px);
 
   min-height: clamp(56px, 4.4vw, 72px);
@@ -218,9 +218,6 @@ body.menu-open .chapter-video-header {
   background-size: 100% 100%;
   filter: drop-shadow(0 10px 14px rgba(63, 59, 87, 0.14));
 
-  transition:
-    transform 0.28s var(--ease-premium),
-    filter 0.28s var(--ease-premium);
 }
 
 .chapter-video__button:hover {
@@ -236,6 +233,18 @@ body.menu-open .chapter-video-header {
 .chapter-video__button--next {
   right: clamp(-70px, -4.4vw, -42px);
   min-width: clamp(250px, 18vw, 330px);
+}
+
+.chapter-video__end-screen {
+  position: absolute;
+  inset: clamp(10px, 0.9vw, 14px);
+  z-index: 5;
+  display: none;
+  background: #000000;
+}
+
+.chapter-video__end-screen.is-visible {
+  display: block;
 }
 
 @media (max-width: 1180px) {

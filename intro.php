@@ -23,7 +23,7 @@ $nextPage = "chapitres.php";
 
   <div class="page-transition" aria-hidden="true"></div>
 
-  <main class="intro-page__main" data-next-page="<?= $nextPage ?>">
+  <main class="intro-page__main" data-next-page="<?= $nextPage ?>" data-intro-end="41">
 
     <div class="paper-frame intro-paper-frame" aria-hidden="true">
       <img class="paper-frame__piece paper-frame__piece--top" src="assets/img/border-top.png" alt="">
@@ -39,11 +39,15 @@ $nextPage = "chapitres.php";
         <iframe
           id="introPagePlayer"
           class="intro-page__player"
-          src="https://player.vimeo.com/video/1189989735?autoplay=1&controls=0&title=0&byline=0&portrait=0"
+          src="https://player.vimeo.com/video/1203265070?autoplay=1&controls=0&title=0&byline=0&portrait=0&dnt=1"
           frameborder="0"
           allow="autoplay; fullscreen; picture-in-picture"
           allowfullscreen
         ></iframe>
+
+        <button class="intro-page__fullscreen" type="button" data-intro-fullscreen aria-label="Mettre l'introduction en plein ecran">
+          <img src="assets/img/ArrowsOut.svg" alt="" aria-hidden="true">
+        </button>
 
         <a href="<?= $nextPage ?>" class="intro-page__skip paper-button paper-button--secondary">
           <span><?= t('skip_intro') ?> &rarr;</span>

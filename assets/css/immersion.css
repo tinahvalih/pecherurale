@@ -430,7 +430,7 @@ body.audio-drawer-open .audio-drawer__panel {
 
 .audio-drawer__cassette-scotch {
   position: absolute;
-  top: -17%;
+  top: 0%;
   left: -7%;
   width: clamp(150px, 12vw, 220px);
   transform: rotate(-34deg);
@@ -443,7 +443,8 @@ body.audio-drawer-open .audio-drawer__panel {
   z-index: 2;
   margin: 0;
   font-family: var(--font-mono);
-  font-size: clamp(22px, 1.85vw, 34px);
+  /*Lower the font-size*/
+  font-size: clamp(18px, 1.5vw, 28px);
   font-weight: 400;
   line-height: 1.18;
   letter-spacing: 0.04em;

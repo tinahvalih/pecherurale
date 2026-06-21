@@ -15,6 +15,7 @@ function render_css_links($files = null) {
         'assets/css/home.css',
         'assets/css/chapitres.css',
         'assets/css/chapitre-video.css',
+        'assets/css/chapter-info.css',
         'assets/css/immersion.css',
         'assets/css/video-modal.css',
         'assets/css/intro-page.css',
@@ -45,9 +46,13 @@ function asset_version() {
         'assets/js/language-switcher.js',
         'assets/js/startup-intro.js',
         'assets/js/intro-page.js',
+        'assets/js/chapter-video.js',
+        'assets/js/chapter-info.js',
         'assets/js/immersion.js',
         'assets/i18n/fr.json',
         'assets/i18n/ko.json',
+        'assets/img/chapter1_thumbnail.png',
+        'assets/img/chapter2_thumbnail.png',
     ];
 
     $version = 0;

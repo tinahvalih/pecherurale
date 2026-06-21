@@ -33,6 +33,14 @@ document.addEventListener("DOMContentLoaded", () => {
         initChapterNav();
     }
 
+    if (typeof initChapterVideo === "function") {
+        initChapterVideo();
+    }
+
+    if (typeof initChapterInfo === "function") {
+        initChapterInfo();
+    }
+
     if (typeof initSmoothScroll === "function") {
         initSmoothScroll();
     }

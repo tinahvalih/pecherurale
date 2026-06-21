@@ -41,9 +41,7 @@ include 'includes/lang.php';
           <div class="chapitre-card__media">
             <img class="chapitre-card__tape chapitre-card__tape--left" src="assets/img/scotch.png" alt="" aria-hidden="true">
 
-            <video muted playsinline preload="metadata">
-              <source src="assets/video/hero_video_loop.mp4" type="video/mp4">
-            </video>
+            <img class="chapitre-card__thumbnail" src="assets/img/chapter1_thumbnail.png" alt="Miniature du chapitre Geoje Island">
 
             <a
               class="chapitre-card__play"
@@ -51,7 +49,7 @@ include 'includes/lang.php';
               aria-label="Lire le chapitre Geoje Island"
             ></a>
 
-            <a href="intro.php" class="chapitre-card__cta">
+            <a href="chapitre-info.php?chapitre=1" class="chapitre-card__cta">
               Explorer ce Chapitre
             </a>
           </div>
@@ -68,9 +66,7 @@ include 'includes/lang.php';
           <div class="chapitre-card__media">
             <img class="chapitre-card__tape chapitre-card__tape--right" src="assets/img/scotch.png" alt="" aria-hidden="true">
 
-            <video muted playsinline preload="metadata">
-              <source src="assets/video/video-scroll.mp4" type="video/mp4">
-            </video>
+            <img class="chapitre-card__thumbnail" src="assets/img/chapter2_thumbnail.png" alt="Miniature du chapitre Jagalchi Market">
 
             <a
               class="chapitre-card__play"
@@ -78,7 +74,7 @@ include 'includes/lang.php';
               aria-label="Lire le chapitre Jagalchi Market"
             ></a>
 
-            <a href="#" class="chapitre-card__cta">
+            <a href="chapitre-info.php?chapitre=2" class="chapitre-card__cta">
               Explorer ce Chapitre
             </a>
           </div>
