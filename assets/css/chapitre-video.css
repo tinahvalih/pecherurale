@@ -247,6 +247,51 @@ body.menu-open .chapter-video-header {
   display: block;
 }
 
+/* DOCUMENTARY VIDEO PAGE */
+
+.documentary-video__close {
+  position: fixed;
+  top: calc(clamp(14px, 2vh, 24px) + 22px);
+  right: max(78px, calc((100vw - 1750px) / 2 + 54px));
+  z-index: 32;
+
+  width: clamp(60px, 4.4vw, 84px);
+  height: clamp(60px, 4.4vw, 84px);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #3f3b57;
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: clamp(34px, 3vw, 52px);
+  line-height: 1;
+  pointer-events: auto;
+  isolation: isolate;
+}
+
+.documentary-video__close::before {
+  content: "";
+  position: absolute;
+  inset: -13px;
+  z-index: -1;
+
+  background-image: url("../img/piece-icon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  filter: drop-shadow(0 10px 12px rgba(63, 59, 87, 0.18));
+}
+
+.documentary-video__close:hover {
+  transform: translateY(-3px) rotate(2deg);
+}
+
+.documentary-video__scene h1 {
+  text-align: center;
+}
+
 @media (max-width: 1180px) {
   .chapter-video-header {
     --chapter-header-page-gutter: 36px;
@@ -290,6 +335,13 @@ body.menu-open .chapter-video-header {
   .chapter-video-header__menu-button span {
     width: 28px;
     height: 3px;
+  }
+
+  .documentary-video__close {
+    top: 30px;
+    right: 34px;
+    width: 52px;
+    height: 52px;
   }
 
   .chapter-video__scene {

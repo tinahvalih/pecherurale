@@ -1,4 +1,5 @@
 function initLanguageSwitcher() {
+  const availableLangs = ["fr", "ko"];
   const langButtons = document.querySelectorAll(".js-lang-switch");
   const translatableElements = document.querySelectorAll("[data-i18n]");
 
@@ -78,12 +79,97 @@ function initLanguageSwitcher() {
       }
     });
 
+    document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+      const key = element.dataset.i18nAlt;
+
+      if (dictionary[key]) {
+        element.setAttribute("alt", dictionary[key]);
+      }
+    });
+
+    document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+      const key = element.dataset.i18nAriaLabel;
+
+      if (dictionary[key]) {
+        element.setAttribute("aria-label", dictionary[key]);
+      }
+    });
+
+    document.querySelectorAll("[data-i18n-aria-label-prefix][data-i18n-aria-label-subject]").forEach((element) => {
+      const prefixKey = element.dataset.i18nAriaLabelPrefix;
+      const subjectKey = element.dataset.i18nAriaLabelSubject;
+
+      if (dictionary[prefixKey] && dictionary[subjectKey]) {
+        element.setAttribute("aria-label", `${dictionary[prefixKey]} ${dictionary[subjectKey]}`);
+      }
+    });
+
+    document.querySelectorAll("[data-i18n-audio-title]").forEach((element) => {
+      const titleKey = element.dataset.i18nAudioTitle;
+      const categoryKey = element.dataset.i18nAudioCategory;
+      const descriptionKey = element.dataset.i18nAudioDescription;
+      const tagsKey = element.dataset.i18nAudioTags;
+
+      if (dictionary[titleKey]) {
+        element.dataset.audioTitle = dictionary[titleKey];
+      }
+
+      if (dictionary[categoryKey]) {
+        element.dataset.audioCategory = dictionary[categoryKey];
+      }
+
+      if (dictionary[descriptionKey]) {
+        element.dataset.audioDescription = dictionary[descriptionKey];
+      }
+
+      if (dictionary[tagsKey]) {
+        element.dataset.audioTags = dictionary[tagsKey];
+      }
+
+      if (dictionary.immersion_play_aria && dictionary[titleKey]) {
+        element.setAttribute("aria-label", `${dictionary.immersion_play_aria} ${dictionary[titleKey]}`);
+      }
+    });
+
+    document.querySelectorAll("[data-i18n-tags]").forEach((element) => {
+      const key = element.dataset.i18nTags;
+
+      if (dictionary[key]) {
+        element.innerHTML = "";
+        dictionary[key]
+          .split(",")
+          .map((tag) => tag.trim())
+          .filter(Boolean)
+          .forEach((tag) => {
+            const item = document.createElement("span");
+            item.textContent = tag;
+            element.appendChild(item);
+          });
+      }
+    });
+
+    document.querySelectorAll("[data-i18n-paragraphs]").forEach((element) => {
+      const key = element.dataset.i18nParagraphs;
+
+      if (dictionary[key]) {
+        element.innerHTML = "";
+        dictionary[key].split("\n\n").forEach((paragraph) => {
+          const item = document.createElement("p");
+          item.textContent = paragraph;
+          element.appendChild(item);
+        });
+      }
+    });
+
     document.documentElement.setAttribute("lang", lang);
     localStorage.setItem("site_lang", lang);
     setCookie("lang", lang, 30);
 
     updateActiveLang(lang);
     updateDynamicVideoData(lang, dictionary);
+    document.dispatchEvent(new CustomEvent("geoje-language-change", {
+      detail: { lang, dictionary },
+    }));
   }
 
   langButtons.forEach((button) => {
@@ -93,6 +179,7 @@ function initLanguageSwitcher() {
       const lang = button.dataset.lang;
 
       if (!lang) return;
+      if (!availableLangs.includes(lang)) return;
       if (button.classList.contains("is-active")) return;
 
       try {
@@ -106,9 +193,11 @@ function initLanguageSwitcher() {
 
   const savedLang = localStorage.getItem("site_lang");
 
-  if (savedLang) {
+  if (savedLang && availableLangs.includes(savedLang)) {
     loadTranslations(savedLang)
       .then((dictionary) => applyTranslations(savedLang, dictionary))
       .catch((error) => console.error(error));
+  } else if (savedLang) {
+    localStorage.removeItem("site_lang");
   }
 }

@@ -12,13 +12,25 @@ function initImmersion() {
     const drawerImage = drawer.querySelector("[data-audio-drawer-image]");
     const drawerTags = drawer.querySelector("[data-audio-drawer-tags]");
     const drawerAction = drawer.querySelector("[data-audio-drawer-action]");
+    let labels = getLabels();
+
+    function getLabels() {
+        const lang = document.documentElement.lang === "ko" ? "ko" : "fr";
+
+        return {
+            fallbackTitle: lang === "ko" ? "사운드 트랙" : "Bande sonore",
+            fallbackCategory: lang === "ko" ? "사운드 체험" : "Experience sonore",
+            pause: lang === "ko" ? "일시정지" : "Pause",
+            play: lang === "ko" ? "재생" : "Lecture",
+        };
+    }
 
     function getTrackFromCard(card) {
         return {
             src: card.dataset.audioSrc || "",
             image: card.dataset.audioImage || "assets/img/tape.png",
-            title: card.dataset.audioTitle || "Bande sonore",
-            category: card.dataset.audioCategory || "Experience sonore",
+            title: card.dataset.audioTitle || labels.fallbackTitle,
+            category: card.dataset.audioCategory || labels.fallbackCategory,
             description: card.dataset.audioDescription || "",
             tags: (card.dataset.audioTags || "")
                 .split(",")
@@ -51,7 +63,7 @@ function initImmersion() {
     function updateDrawerAction(detail) {
         if (!drawerAction) return;
         const isPlaying = Boolean(detail && detail.isPlaying);
-        drawerAction.textContent = isPlaying ? "Pause" : "Lecture";
+        drawerAction.textContent = isPlaying ? labels.pause : labels.play;
 
         if (toggleButton) {
             toggleButton.classList.toggle("is-playing", isPlaying);
@@ -82,5 +94,17 @@ function initImmersion() {
 
     document.addEventListener("geoje-audio-state", (event) => {
         updateDrawerAction(event.detail);
+    });
+
+    document.addEventListener("geoje-language-change", () => {
+        labels = getLabels();
+        const currentTrack = window.GeojeAudioPlayer.getState();
+        const activeCard = Array.from(audioCards).find((card) => card.dataset.audioSrc === currentTrack.src);
+
+        if (activeCard && typeof window.GeojeAudioPlayer.updateTrackMeta === "function") {
+            window.GeojeAudioPlayer.updateTrackMeta(getTrackFromCard(activeCard));
+        }
+
+        updateDrawerAction(window.GeojeAudioPlayer.getState());
     });
 }

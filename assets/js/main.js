@@ -54,6 +54,7 @@ function initGlobalAudioPlayer() {
     const storageKey = "geojeAudioState";
     const savedState = readState();
     const audio = document.createElement("audio");
+    let labels = getAudioLabels();
     const miniPlayer = createMiniPlayer();
     let state = {
         src: "",
@@ -72,6 +73,7 @@ function initGlobalAudioPlayer() {
 
     window.GeojeAudioPlayer = {
         playTrack,
+        updateTrackMeta,
         toggle,
         pause,
         getState: () => ({ ...state }),
@@ -93,6 +95,11 @@ function initGlobalAudioPlayer() {
     }
 
     miniPlayer.button.addEventListener("click", toggle);
+
+    document.addEventListener("geoje-language-change", () => {
+        labels = getAudioLabels();
+        updateMiniPlayer();
+    });
 
     audio.addEventListener("play", () => {
         state.isPlaying = true;
@@ -141,6 +148,19 @@ function initGlobalAudioPlayer() {
         });
     }
 
+    function updateTrackMeta(track) {
+        if (!state.src || !track || state.src !== track.src) return;
+
+        state = {
+            ...state,
+            ...track,
+            currentTime: audio.currentTime || state.currentTime,
+        };
+
+        saveState();
+        updateMiniPlayer();
+    }
+
     function pause() {
         audio.pause();
     }
@@ -167,14 +187,14 @@ function initGlobalAudioPlayer() {
         const button = document.createElement("button");
         button.className = "global-audio-player__button";
         button.type = "button";
-        button.setAttribute("aria-label", "Lecture ou pause de l'ambiance sonore");
+        button.setAttribute("aria-label", labels.toggle);
 
         const text = document.createElement("div");
         text.className = "global-audio-player__text";
 
         const label = document.createElement("span");
         label.className = "global-audio-player__label";
-        label.textContent = "Lecture en cours";
+        label.textContent = labels.nowPlaying;
 
         const title = document.createElement("span");
         title.className = "global-audio-player__title";
@@ -182,16 +202,17 @@ function initGlobalAudioPlayer() {
         text.append(label, title);
         root.append(button, text);
 
-        return { root, button, title };
+        return { root, button, label, title };
     }
 
     function updateMiniPlayer() {
+        miniPlayer.label.textContent = labels.nowPlaying;
         miniPlayer.root.classList.toggle("is-visible", Boolean(state.src));
         miniPlayer.root.classList.toggle("is-playing", Boolean(state.isPlaying));
-        miniPlayer.title.textContent = state.title || "Bande sonore";
+        miniPlayer.title.textContent = state.title || labels.fallbackTitle;
         miniPlayer.button.setAttribute(
             "aria-label",
-            state.isPlaying ? "Mettre l'ambiance sonore en pause" : "Relancer l'ambiance sonore"
+            state.isPlaying ? labels.pause : labels.play
         );
 
         document.dispatchEvent(new CustomEvent("geoje-audio-state", {
@@ -205,6 +226,28 @@ function initGlobalAudioPlayer() {
         } catch (error) {
             return null;
         }
+    }
+
+    function getAudioLabels() {
+        const lang = document.documentElement.lang === "ko" ? "ko" : "fr";
+
+        if (lang === "ko") {
+            return {
+                toggle: "사운드 재생 또는 일시정지",
+                nowPlaying: "현재 재생 중",
+                fallbackTitle: "사운드 트랙",
+                pause: "사운드를 일시정지",
+                play: "사운드 다시 재생",
+            };
+        }
+
+        return {
+            toggle: "Lecture ou pause de l'ambiance sonore",
+            nowPlaying: "Lecture en cours",
+            fallbackTitle: "Bande sonore",
+            pause: "Mettre l'ambiance sonore en pause",
+            play: "Relancer l'ambiance sonore",
+        };
     }
 
     function saveState() {

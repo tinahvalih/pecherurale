@@ -2,6 +2,87 @@
 
 ## 2026-06-22
 
+### 08:20 - Documentaire complet plein ecran
+
+- Remplacement de l'ouverture en pop-up du documentaire complet par une page dediee `documentaire.php`.
+- Branchement du bouton d'accueil `Regarder le documentaire en entier` vers cette page plein ecran.
+- Branchement de l'entree `Docu. complet` du menu vers `documentaire.php`.
+- Ajout d'un lecteur Vimeo plein ecran dans la DA papier avec bordures, scotch et bouton `X` de retour a l'accueil.
+
+### 08:06 - Pop-up documentaire complet
+
+- Refonte du pop-up du bouton `Regarder le documentaire en entier` sur la page d'accueil.
+- Ajout d'un cadre papier avec `border-top`, `border-right`, `border-bottom` et `border-left`.
+- Ajout d'un scotch en haut a gauche du lecteur video.
+- Remplacement du bouton de fermeture par un bouton `X` sur fond papier.
+
+### 07:57 - Traduction archive circuit court
+
+- Remplacement de la traduction coreenne automatique du premier article archive par la version validee.
+- Mise a jour des sections `민락` et `자갈치` avec le texte fourni pour l'article `Le circuit court de la peche`.
+
+### 07:47 - Detail archive circuit court
+
+- Ajout de `archive-detail.php` pour le premier article `Le circuit court de la peche`.
+- Branchement du bouton `Consulter` du premier carnet vers `archive-detail.php?article=1`.
+- Ajout de quatre sections alternees texte/image avec les visuels `archive1_image1.png` a `archive1_image4.png`.
+- Ajout du style detail archive avec grille 50/50, bordures et alternance image/texte.
+- Ajout des traductions FR/KR du contenu de l'article et des textes alternatifs.
+
+### 07:26 - Page Ancrage / Archives
+
+- Creation de `archive.php` avec quatre carnets/articles : circuit court de la peche, ile de Geoje, traditions et peche.
+- Ajout des titres directement superposes sur les couvertures des carnets.
+- Ajout de descriptions courtes sous chaque carnet et d'un bouton `Consulter`.
+- Ajout des traductions FR/KR pour la page, les titres, les descriptions, les boutons et les textes alternatifs.
+- Branchement du menu `Ancrage` vers `archive.php` et chargement de `assets/css/archive.css`.
+
+### 03:52 - Contenu detail chapitre 2
+
+- Mise a jour des titres courts des chapitres : `Geoje` et `Busan`.
+- Mise a jour des descriptions des cartes chapitres et de la page detail du chapitre 1.
+- Ajout du contenu detail pour le chapitre 2 avec personnages, galerie `assets/img/chapter2/` et lien `En savoir plus`.
+- Ajout de la section supplementaire Busan avec bloc difficultes et schema `distribution.png`.
+- Mise a jour des traductions FR/KR liees aux nouveaux contenus des chapitres.
+
+### 03:20 - Animation slider personnages
+
+- Ajout d'une animation de slide sur la section personnages de `chapitre-info.php`.
+- Direction de transition adaptee selon le passage au portrait suivant ou precedent.
+- Animation separee sur le portrait, la carte texte et les points de navigation.
+- Respect de `prefers-reduced-motion` pour desactiver l'animation si l'utilisateur le demande.
+
+### 03:11 - Traduction et lightbox page chapitre detail
+
+- Branchement de `chapitre-info.php` sur les cles i18n pour le chapitre 1, les portraits, les informations supplementaires, la galerie et le CTA final.
+- Ajout des traductions coreennes pour la page detail du chapitre 1.
+- Reduction des proportions de la page detail : titres, paddings, video, slider personnages, blocs d'informations, galerie et footer.
+- Ajout d'une lightbox de galerie avec fond noir 60%, image sans polaroid, scotch en haut a gauche et navigation precedent/suivant.
+- Extension du switcher aux paragraphes multi-lignes et aux labels composes comme les boutons de galerie.
+
+### 02:24 - Traduction page immersion
+
+- Branchement de `immersion.php` sur les cles i18n pour les titres, descriptions, instructions, CTA et labels accessibles.
+- Ajout des traductions coreennes pour la page immersion sonore et ses quatre cassettes.
+- Traduction des donnees audio envoyees au tiroir et au mini lecteur global.
+- Extension du switcher de langue aux donnees audio des cassettes et aux listes de tags.
+- Mise a jour du mini lecteur audio global pour adapter ses labels FR/KR sans relancer l'audio.
+
+### 01:57 - Traduction page chapitres
+
+- Branchement de `chapitres.php` sur les cles i18n pour les titres, descriptions, CTA et labels accessibles.
+- Ajout des traductions coreennes fournies dans `trad2.pdf` pour la page chapitres.
+- Conservation des textes francais deja en place pour ne pas modifier le contenu visible existant.
+- Extension du switcher de langue aux attributs `alt` et `aria-label` pour garder les miniatures et boutons accessibles traduits.
+
+### 01:39 - Traduction menu FR/KR
+
+- Suppression de l'option `EN` du selecteur de langue dans le menu offcanvas.
+- Branchement des libelles du menu et du footer sur les cles de traduction existantes.
+- Ajout des traductions francaises et coreennes pour Accueil, Chapitres, Ancrage, Immersion, A propos et Docu. complet.
+- Ajout des traductions pour Mentions legales et Credits.
+- Nettoyage automatique d'une ancienne langue `en` stockee localement pour eviter un affichage incoherent.
+
 ### 01:05 - Plein ecran introduction
 
 - Ajout d'un bouton plein ecran sur la video de la page `intro.php`.

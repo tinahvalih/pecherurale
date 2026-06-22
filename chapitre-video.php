@@ -5,16 +5,16 @@ $siteHeaderVariant = 'chapter-video';
 
 $chapters = [
   '1' => [
-    'title' => 'Chapitre I : Geoje Island',
+    'title' => 'Chapitre I : Geoje',
     'videoId' => '1203265070',
     'next' => '2',
     'infoUrl' => 'chapitre-info.php?chapitre=1',
   ],
   '2' => [
-    'title' => 'Chapitre II : Jagalchi Market',
+    'title' => 'Chapitre II : Busan',
     'videoId' => '1203251886',
     'next' => '1',
-    'infoUrl' => '#',
+    'infoUrl' => 'chapitre-info.php?chapitre=2',
   ],
 ];
 

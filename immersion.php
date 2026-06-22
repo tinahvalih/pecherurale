@@ -1,47 +1,82 @@
 <?php
-$pageTitle = "Vivre de la mer a Geoje - Immersions sonores";
-$siteHeaderVariant = "journal";
 include_once 'includes/assets.php';
 include 'includes/lang.php';
 
+$pageTitle = t('immersion_page_title');
+$siteHeaderVariant = "journal";
+
 $tracks = [
   [
-    'category' => 'Jagalchi Market & Busan',
-    'title' => 'Jagalchi Market , Le marché vivant',
-    'instruction' => 'Appuyer sur la cassette pour lire',
+    'category_key' => 'immersion_category_geoje',
+    'title_key' => 'immersion_track_1_title',
+    'description_key' => 'immersion_track_1_description',
+    'tags_key' => 'immersion_track_1_tags',
     'audio' => 'assets/audio/jagalchi.wav',
     'image' => 'assets/img/tape.png',
-    'description' => "Au cœur de Busan, Jagalchi Market réunit les voix, les gestes, l’eau, les pas et l’agitation d’un marché tourné vers la mer. Cette ambiance sonore plonge dans un lieu dense et vibrant, où les produits de la pêche circulent entre les étals, les vendeurs et les visiteurs. Ici, la mer n’est plus seulement un paysage : elle devient commerce, mouvement, matière sonore et mémoire collective.",
-    'tags' => ['#Jagalchi', '#Marché', '#Voix', '#Commerce'],
   ],
   [
-    'category' => 'Jagalchi Market & Busan',
-    'title' => 'Geoje Bridge - Chilcheongyo',
-    'instruction' => 'Appuyer sur la cassette pour lire',
+    'category_key' => 'immersion_category_geoje',
+    'title_key' => 'immersion_track_2_title',
+    'description_key' => 'immersion_track_2_description',
+    'tags_key' => 'immersion_track_2_tags',
     'audio' => 'assets/audio/restaurant-working.mp3',
     'image' => 'assets/img/tape-yellow.png',
-    'description' => "Une autre ecoute de Geoje : les frottements du port, les respirations de la ville et les sons de passage qui prolongent le trajet.",
-    'tags' => ['#MER', '#PORT', '#VOIX', '#GEOJE'],
   ],
   [
-    'category' => 'Jagalchi Market & Busan',
-    'title' => 'Geoje Bridge - Chilcheongyo',
-    'instruction' => 'Appuyer sur la cassette pour lire',
+    'category_key' => 'immersion_category_jagalchi',
+    'title_key' => 'immersion_track_3_title',
+    'description_key' => 'immersion_track_3_description',
+    'tags_key' => 'immersion_track_3_tags',
     'audio' => 'assets/audio/raining-calm.mp3',
     'image' => 'assets/img/tape-green.png',
-    'description' => "Fragments de marche, de circulation et de conversations : Busan prolonge la mer dans les rues, entre les etals et les restaurants.",
-    'tags' => ['#MARCHE', '#BUSAN', '#VOIX', '#VILLE'],
   ],
   [
-    'category' => 'Jagalchi Market & Busan',
-    'title' => 'Geoje Bridge - Chilcheongyo',
-    'instruction' => 'Appuyer sur la cassette pour lire',
+    'category_key' => 'immersion_category_jagalchi',
+    'title_key' => 'immersion_track_4_title',
+    'description_key' => 'immersion_track_4_description',
+    'tags_key' => 'immersion_track_4_tags',
     'audio' => 'assets/audio/asian-market.mp3',
     'image' => 'assets/img/tape-blue.png',
-    'description' => "Une ambiance plus proche des gestes quotidiens : pas, appels, objets et mouvements qui composent la rumeur du marche.",
-    'tags' => ['#MARCHE', '#GESTES', '#BUSAN', '#SON'],
   ],
 ];
+
+function track_value($track, $field) {
+    return t($track[$field]);
+}
+
+function track_tags($track) {
+    $tags = array_map('trim', explode(',', t($track['tags_key'])));
+    return array_values(array_filter($tags));
+}
+
+function render_audio_button($track, $scotchClass = '') {
+    $title = track_value($track, 'title_key');
+    $category = track_value($track, 'category_key');
+    $description = track_value($track, 'description_key');
+    $tags = track_tags($track);
+    ?>
+    <button
+      class="immersion-cassette__button"
+      type="button"
+      data-audio-card
+      data-audio-src="<?= htmlspecialchars($track['audio'], ENT_QUOTES, 'UTF-8') ?>"
+      data-audio-title="<?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?>"
+      data-audio-image="<?= htmlspecialchars($track['image'], ENT_QUOTES, 'UTF-8') ?>"
+      data-audio-category="<?= htmlspecialchars($category, ENT_QUOTES, 'UTF-8') ?>"
+      data-audio-description="<?= htmlspecialchars($description, ENT_QUOTES, 'UTF-8') ?>"
+      data-audio-tags="<?= htmlspecialchars(implode(',', $tags), ENT_QUOTES, 'UTF-8') ?>"
+      data-i18n-audio-title="<?= htmlspecialchars($track['title_key'], ENT_QUOTES, 'UTF-8') ?>"
+      data-i18n-audio-category="<?= htmlspecialchars($track['category_key'], ENT_QUOTES, 'UTF-8') ?>"
+      data-i18n-audio-description="<?= htmlspecialchars($track['description_key'], ENT_QUOTES, 'UTF-8') ?>"
+      data-i18n-audio-tags="<?= htmlspecialchars($track['tags_key'], ENT_QUOTES, 'UTF-8') ?>"
+      aria-label="<?= htmlspecialchars(t('immersion_play_aria') . ' ' . $title, ENT_QUOTES, 'UTF-8') ?>"
+      data-i18n-aria-label-prefix="immersion_play_aria"
+    >
+      <img class="immersion-cassette__image" src="<?= htmlspecialchars($track['image'], ENT_QUOTES, 'UTF-8') ?>" alt="">
+      <img class="immersion-cassette__scotch <?= htmlspecialchars($scotchClass, ENT_QUOTES, 'UTF-8') ?>" src="assets/img/scotch.png" alt="" aria-hidden="true">
+    </button>
+    <?php
+}
 
 $track = $tracks[0];
 ?>
@@ -68,44 +103,30 @@ $track = $tracks[0];
 
     <main class="immersion-main">
       <section class="immersion-hero" aria-labelledby="immersion-title">
-        <h1 id="immersion-title">Explorer par l'ecoute</h1>
-        <p>Des sons de mer, de ville et de repas pour prolonger l'experience documentaire.</p>
+        <h1 id="immersion-title" data-i18n="immersion_hero_title"><?= t('immersion_hero_title') ?></h1>
+        <p data-i18n="immersion_hero_description"><?= t('immersion_hero_description') ?></p>
       </section>
 
-      <section class="immersion-category-strip" aria-label="<?= htmlspecialchars($track['category'], ENT_QUOTES, 'UTF-8') ?>">
-        <h2><?= htmlspecialchars($track['category'], ENT_QUOTES, 'UTF-8') ?></h2>
+      <section class="immersion-category-strip" aria-label="<?= htmlspecialchars(track_value($track, 'category_key'), ENT_QUOTES, 'UTF-8') ?>" data-i18n-aria-label="immersion_category_geoje">
+        <h2 data-i18n="immersion_category_geoje"><?= t('immersion_category_geoje') ?></h2>
         <img src="assets/img/anchor-icon2.svg" alt="" aria-hidden="true">
       </section>
 
-      <section class="immersion-listening" aria-label="Cassette sonore">
+      <section class="immersion-listening" aria-label="<?= t('immersion_audio_section_aria') ?>" data-i18n-aria-label="immersion_audio_section_aria">
         <article class="immersion-cassette">
-          <p><?= htmlspecialchars($track['instruction'], ENT_QUOTES, 'UTF-8') ?></p>
+          <p data-i18n="immersion_press_cassette"><?= t('immersion_press_cassette') ?></p>
 
-          <button
-            class="immersion-cassette__button"
-            type="button"
-            data-audio-card
-            data-audio-src="<?= htmlspecialchars($track['audio'], ENT_QUOTES, 'UTF-8') ?>"
-            data-audio-title="<?= htmlspecialchars($track['title'], ENT_QUOTES, 'UTF-8') ?>"
-            data-audio-image="<?= htmlspecialchars($track['image'], ENT_QUOTES, 'UTF-8') ?>"
-            data-audio-category="<?= htmlspecialchars($track['category'], ENT_QUOTES, 'UTF-8') ?>"
-            data-audio-description="<?= htmlspecialchars($track['description'], ENT_QUOTES, 'UTF-8') ?>"
-            data-audio-tags="<?= htmlspecialchars(implode(',', $track['tags']), ENT_QUOTES, 'UTF-8') ?>"
-            aria-label="Lire <?= htmlspecialchars($track['title'], ENT_QUOTES, 'UTF-8') ?>"
-          >
-            <img class="immersion-cassette__image" src="<?= htmlspecialchars($track['image'], ENT_QUOTES, 'UTF-8') ?>" alt="">
-            <img class="immersion-cassette__scotch" src="assets/img/scotch.png" alt="" aria-hidden="true">
-          </button>
+          <?php render_audio_button($track, ''); ?>
 
-          <h2><?= htmlspecialchars($track['title'], ENT_QUOTES, 'UTF-8') ?></h2>
+          <h2 data-i18n="<?= htmlspecialchars($track['title_key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars(track_value($track, 'title_key'), ENT_QUOTES, 'UTF-8') ?></h2>
         </article>
 
         <aside class="immersion-description">
           <div class="immersion-description__inner">
-            <p><?= htmlspecialchars($track['description'], ENT_QUOTES, 'UTF-8') ?></p>
+            <p data-i18n="<?= htmlspecialchars($track['description_key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars(track_value($track, 'description_key'), ENT_QUOTES, 'UTF-8') ?></p>
 
-            <div class="immersion-tags" aria-label="Themes">
-              <?php foreach ($track['tags'] as $tag) : ?>
+            <div class="immersion-tags" aria-label="<?= t('immersion_tags_aria') ?>" data-i18n-aria-label="immersion_tags_aria" data-i18n-tags="<?= htmlspecialchars($track['tags_key'], ENT_QUOTES, 'UTF-8') ?>">
+              <?php foreach (track_tags($track) as $tag) : ?>
                 <span><?= htmlspecialchars($tag, ENT_QUOTES, 'UTF-8') ?></span>
               <?php endforeach; ?>
             </div>
@@ -113,17 +134,15 @@ $track = $tracks[0];
         </aside>
       </section>
 
-
-
       <div class="immersion-separator" aria-hidden="true"></div>
 
-      <section class="immersion-listening immersion-listening--reverse" aria-label="Cassette sonore secondaire">
+      <section class="immersion-listening immersion-listening--reverse" aria-label="<?= t('immersion_secondary_audio_section_aria') ?>" data-i18n-aria-label="immersion_secondary_audio_section_aria">
         <aside class="immersion-description">
           <div class="immersion-description__inner">
-            <p><?= htmlspecialchars($tracks[1]['description'], ENT_QUOTES, 'UTF-8') ?></p>
+            <p data-i18n="<?= htmlspecialchars($tracks[1]['description_key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars(track_value($tracks[1], 'description_key'), ENT_QUOTES, 'UTF-8') ?></p>
 
-            <div class="immersion-tags" aria-label="Themes">
-              <?php foreach ($tracks[1]['tags'] as $tag) : ?>
+            <div class="immersion-tags" aria-label="<?= t('immersion_tags_aria') ?>" data-i18n-aria-label="immersion_tags_aria" data-i18n-tags="<?= htmlspecialchars($tracks[1]['tags_key'], ENT_QUOTES, 'UTF-8') ?>">
+              <?php foreach (track_tags($tracks[1]) as $tag) : ?>
                 <span><?= htmlspecialchars($tag, ENT_QUOTES, 'UTF-8') ?></span>
               <?php endforeach; ?>
             </div>
@@ -131,54 +150,26 @@ $track = $tracks[0];
         </aside>
 
         <article class="immersion-cassette immersion-cassette--right">
-          <button
-            class="immersion-cassette__button"
-            type="button"
-            data-audio-card
-            data-audio-src="<?= htmlspecialchars($tracks[1]['audio'], ENT_QUOTES, 'UTF-8') ?>"
-            data-audio-title="<?= htmlspecialchars($tracks[1]['title'], ENT_QUOTES, 'UTF-8') ?>"
-            data-audio-image="<?= htmlspecialchars($tracks[1]['image'], ENT_QUOTES, 'UTF-8') ?>"
-            data-audio-category="<?= htmlspecialchars($tracks[1]['category'], ENT_QUOTES, 'UTF-8') ?>"
-            data-audio-description="<?= htmlspecialchars($tracks[1]['description'], ENT_QUOTES, 'UTF-8') ?>"
-            data-audio-tags="<?= htmlspecialchars(implode(',', $tracks[1]['tags']), ENT_QUOTES, 'UTF-8') ?>"
-            aria-label="Lire <?= htmlspecialchars($tracks[1]['title'], ENT_QUOTES, 'UTF-8') ?>"
-          >
-            <img class="immersion-cassette__image" src="<?= htmlspecialchars($tracks[1]['image'], ENT_QUOTES, 'UTF-8') ?>" alt="">
-            <img class="immersion-cassette__scotch immersion-cassette__scotch--right" src="assets/img/scotch.png" alt="" aria-hidden="true">
-          </button>
+          <?php render_audio_button($tracks[1], 'immersion-cassette__scotch--right'); ?>
 
-          <h2><?= htmlspecialchars($tracks[1]['title'], ENT_QUOTES, 'UTF-8') ?></h2>
+          <h2 data-i18n="<?= htmlspecialchars($tracks[1]['title_key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars(track_value($tracks[1], 'title_key'), ENT_QUOTES, 'UTF-8') ?></h2>
         </article>
       </section>
 
-      <section class="immersion-category-strip immersion-category-strip--split" aria-label="Jagalchi Market & Busan">
+      <section class="immersion-category-strip immersion-category-strip--split" aria-label="<?= t('immersion_category_jagalchi') ?>" data-i18n-aria-label="immersion_category_jagalchi">
         <div>
-          <h2>Jagalchi Market &amp; Busan</h2>
+          <h2 data-i18n="immersion_category_jagalchi"><?= t('immersion_category_jagalchi') ?></h2>
           <img src="assets/img/anchor-icon2.svg" alt="" aria-hidden="true">
         </div>
-        <p>Appuyer sur la cassette pour lire</p>
+        <p data-i18n="immersion_press_cassette"><?= t('immersion_press_cassette') ?></p>
       </section>
 
-      <section class="immersion-cassette-grid" aria-label="Jagalchi Market et Busan">
+      <section class="immersion-cassette-grid" aria-label="<?= t('immersion_jagalchi_grid_aria') ?>" data-i18n-aria-label="immersion_jagalchi_grid_aria">
         <?php foreach (array_slice($tracks, 2) as $index => $item) : ?>
           <article class="immersion-cassette immersion-cassette--grid">
-            <button
-              class="immersion-cassette__button"
-              type="button"
-              data-audio-card
-              data-audio-src="<?= htmlspecialchars($item['audio'], ENT_QUOTES, 'UTF-8') ?>"
-              data-audio-title="<?= htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8') ?>"
-              data-audio-image="<?= htmlspecialchars($item['image'], ENT_QUOTES, 'UTF-8') ?>"
-              data-audio-category="<?= htmlspecialchars($item['category'], ENT_QUOTES, 'UTF-8') ?>"
-              data-audio-description="<?= htmlspecialchars($item['description'], ENT_QUOTES, 'UTF-8') ?>"
-              data-audio-tags="<?= htmlspecialchars(implode(',', $item['tags']), ENT_QUOTES, 'UTF-8') ?>"
-              aria-label="Lire <?= htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8') ?>"
-            >
-              <img class="immersion-cassette__image" src="<?= htmlspecialchars($item['image'], ENT_QUOTES, 'UTF-8') ?>" alt="">
-              <img class="immersion-cassette__scotch <?= $index === 0 ? 'immersion-cassette__scotch--top' : 'immersion-cassette__scotch--left' ?>" src="assets/img/scotch.png" alt="" aria-hidden="true">
-            </button>
+            <?php render_audio_button($item, $index === 0 ? 'immersion-cassette__scotch--top' : 'immersion-cassette__scotch--left'); ?>
 
-            <h2><?= htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8') ?></h2>
+            <h2 data-i18n="<?= htmlspecialchars($item['title_key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars(track_value($item, 'title_key'), ENT_QUOTES, 'UTF-8') ?></h2>
           </article>
         <?php endforeach; ?>
       </section>
@@ -186,30 +177,36 @@ $track = $tracks[0];
       <div class="immersion-separator" aria-hidden="true"></div>
 
       <section class="immersion-footer-cta">
-        <span>Retourner voir les chapitres</span>
-        <a href="chapitres.php">Explorer les chapitres &rarr;</a>
+        <span data-i18n="immersion_back_to_chapters"><?= t('immersion_back_to_chapters') ?></span>
+        <a href="chapitres.php"><span data-i18n="immersion_chapters_cta"><?= t('immersion_chapters_cta') ?></span> &rarr;</a>
       </section>
 
     </main>
   </div>
 
   <section class="audio-drawer" data-audio-drawer aria-hidden="true">
-    <button class="audio-drawer__backdrop" type="button" data-audio-drawer-close aria-label="Fermer le panneau audio"></button>
+    <button class="audio-drawer__backdrop" type="button" data-audio-drawer-close aria-label="<?= t('immersion_close_drawer_aria') ?>" data-i18n-aria-label="immersion_close_drawer_aria"></button>
 
-    <aside class="audio-drawer__panel" aria-label="Lecteur audio">
+    <aside class="audio-drawer__panel" aria-label="<?= t('immersion_audio_player_aria') ?>" data-i18n-aria-label="immersion_audio_player_aria">
       <div class="audio-drawer__cassette" aria-hidden="true">
         <img class="audio-drawer__cassette-image" data-audio-drawer-image src="<?= htmlspecialchars($track['image'], ENT_QUOTES, 'UTF-8') ?>" alt="">
         <img class="audio-drawer__cassette-scotch" src="assets/img/scotch.png" alt="">
       </div>
 
-      <h2 data-audio-drawer-title><?= htmlspecialchars($track['title'], ENT_QUOTES, 'UTF-8') ?></h2>
+      <h2 data-audio-drawer-title><?= htmlspecialchars(track_value($track, 'title_key'), ENT_QUOTES, 'UTF-8') ?></h2>
 
-      <p class="audio-drawer__notice">
-        Pour avoir une meilleure experience, veuillez mettre un casque ou des écouteurs.
+      <p class="audio-drawer__notice" data-i18n="immersion_drawer_notice">
+        <?= t('immersion_drawer_notice') ?>
       </p>
 
-      <button class="audio-drawer__play" type="button" data-audio-drawer-toggle aria-label="Mettre en pause ou relancer l'audio">
-        <span data-audio-drawer-action>Pause</span>
+      <button
+        class="audio-drawer__play"
+        type="button"
+        data-audio-drawer-toggle
+        aria-label="<?= t('immersion_toggle_audio_aria') ?>"
+        data-i18n-aria-label="immersion_toggle_audio_aria"
+      >
+        <span data-audio-drawer-action data-i18n="immersion_pause_label"><?= t('immersion_pause_label') ?></span>
       </button>
     </aside>
   </section>

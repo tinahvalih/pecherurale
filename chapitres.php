@@ -1,8 +1,9 @@
 <?php
-$pageTitle = "Vivre de la mer a Geoje - Chapitres";
-$siteHeaderVariant = "journal";
 include_once 'includes/assets.php';
 include 'includes/lang.php';
+
+$pageTitle = t('chapters_page_title');
+$siteHeaderVariant = "journal";
 ?>
 
 <!DOCTYPE html>
@@ -27,93 +28,92 @@ include 'includes/lang.php';
 
     <main class="chapitres-main">
       <section class="chapitres-hero" aria-labelledby="chapitres-title">
-        <h1 id="chapitres-title">Explorer le journal de bord</h1>
-        <p>
-          Choisissez un fragment du parcours, ouvrez une fenetre sur Geoje et laissez-vous
-          guider par les voix
+        <h1 id="chapitres-title" data-i18n="chapters_hero_title"><?= t('chapters_hero_title') ?></h1>
+        <p data-i18n="chapters_hero_description">
+          <?= t('chapters_hero_description') ?>
         </p>
       </section>
 
-      <section class="chapitres-grid" aria-label="Liste des chapitres">
+      <section class="chapitres-grid" aria-label="<?= t('chapters_list_aria') ?>" data-i18n-aria-label="chapters_list_aria">
         <article class="chapitre-card chapitre-card--tilted-left">
-          <h2>Chapitre I : Geoje Island</h2>
+          <h2 data-i18n="chapters_chapter1_title"><?= t('chapters_chapter1_title') ?></h2>
 
           <div class="chapitre-card__media">
             <img class="chapitre-card__tape chapitre-card__tape--left" src="assets/img/scotch.png" alt="" aria-hidden="true">
 
-            <img class="chapitre-card__thumbnail" src="assets/img/chapter1_thumbnail.png" alt="Miniature du chapitre Geoje Island">
+            <img class="chapitre-card__thumbnail" src="assets/img/chapter1_thumbnail.png" alt="<?= t('chapters_chapter1_thumbnail_alt') ?>" data-i18n-alt="chapters_chapter1_thumbnail_alt">
 
             <a
               class="chapitre-card__play"
               href="chapitre-video.php?chapitre=1"
-              aria-label="Lire le chapitre Geoje Island"
+              aria-label="<?= t('chapters_chapter1_play_aria') ?>"
+              data-i18n-aria-label="chapters_chapter1_play_aria"
             ></a>
 
-            <a href="chapitre-info.php?chapitre=1" class="chapitre-card__cta">
-              Explorer ce Chapitre
+            <a href="chapitre-info.php?chapitre=1" class="chapitre-card__cta" data-i18n="chapters_explore_cta">
+              <?= t('chapters_explore_cta') ?>
             </a>
           </div>
 
-          <p>
-            Premier arret du journal de bord : une traversee des paysages, des ports et des
-            gestes maritimes qui racontent Geoje.
+          <p data-i18n="chapters_chapter1_description">
+            <?= t('chapters_chapter1_description') ?>
           </p>
         </article>
 
         <article class="chapitre-card chapitre-card--tilted-right">
-          <h2>Chapitre II : Jagalchi Market</h2>
+          <h2 data-i18n="chapters_chapter2_title"><?= t('chapters_chapter2_title') ?></h2>
 
           <div class="chapitre-card__media">
             <img class="chapitre-card__tape chapitre-card__tape--right" src="assets/img/scotch.png" alt="" aria-hidden="true">
 
-            <img class="chapitre-card__thumbnail" src="assets/img/chapter2_thumbnail.png" alt="Miniature du chapitre Jagalchi Market">
+            <img class="chapitre-card__thumbnail" src="assets/img/chapter2_thumbnail.png" alt="<?= t('chapters_chapter2_thumbnail_alt') ?>" data-i18n-alt="chapters_chapter2_thumbnail_alt">
 
             <a
               class="chapitre-card__play"
               href="chapitre-video.php?chapitre=2"
-              aria-label="Lire le chapitre Jagalchi Market"
+              aria-label="<?= t('chapters_chapter2_play_aria') ?>"
+              data-i18n-aria-label="chapters_chapter2_play_aria"
             ></a>
 
-            <a href="chapitre-info.php?chapitre=2" class="chapitre-card__cta">
-              Explorer ce Chapitre
+            <a href="chapitre-info.php?chapitre=2" class="chapitre-card__cta" data-i18n="chapters_explore_cta">
+              <?= t('chapters_explore_cta') ?>
             </a>
           </div>
 
-          <p>
-            Deuxieme fragment : le marche, les voix et les circulations qui prolongent la
-            memoire de la mer jusque dans la ville.
+          <p data-i18n="chapters_chapter2_description">
+            <?= t('chapters_chapter2_description') ?>
           </p>
         </article>
       </section>
 
-      <section class="chapitres-next" aria-label="Prolonger le parcours">
+      <section class="chapitres-next" aria-label="<?= t('chapters_next_aria') ?>" data-i18n-aria-label="chapters_next_aria">
         <div class="chapitres-next__rule" aria-hidden="true"></div>
 
         <div class="chapitres-next__body">
           <article class="chapitres-next__portraits">
-            <h2>Portraits / Personnages</h2>
-            <p>
-              Rencontrez les voix, les gestes et les presences qui traversent le
-              journal de bord.
+            <h2 data-i18n="chapters_portraits_title"><?= t('chapters_portraits_title') ?></h2>
+            <p data-i18n="chapters_portraits_description">
+              <?= t('chapters_portraits_description') ?>
             </p>
-            <a href="#" class="chapitres-next__portrait-button">
-              Decouvrir les portraits
+            <a href="#" class="chapitres-next__portrait-button" data-i18n="chapters_portraits_cta">
+              <?= t('chapters_portraits_cta') ?>
             </a>
           </article>
 
           <article class="chapitres-next__immersion">
             <div class="chapitres-next__copy">
-              <span class="chapitres-next__tag">#Immersion</span>
-              <h2>Experience sonore</h2>
-              <a href="immersion.php" class="chapitres-next__button">
-                Explorer les immersions
+              <span class="chapitres-next__tag" data-i18n="chapters_immersion_tag"><?= t('chapters_immersion_tag') ?></span>
+              <h2 data-i18n="chapters_sound_title"><?= t('chapters_sound_title') ?></h2>
+              <a href="immersion.php" class="chapitres-next__button" data-i18n="chapters_immersion_cta">
+                <?= t('chapters_immersion_cta') ?>
               </a>
             </div>
 
             <img
               class="chapitres-next__tape"
               src="assets/img/tape.png"
-              alt="Cassette sound of Geoje"
+              alt="<?= t('chapters_sound_tape_alt') ?>"
+              data-i18n-alt="chapters_sound_tape_alt"
             >
           </article>
         </div>
@@ -121,9 +121,9 @@ include 'includes/lang.php';
         <div class="chapitres-next__rule" aria-hidden="true"></div>
 
         <div class="chapitres-next__documentary">
-          <p>Regarder le documentaire en entier</p>
+          <p data-i18n="chapters_full_doc_label"><?= t('chapters_full_doc_label') ?></p>
           <a href="intro.php" class="chapitres-next__documentary-button">
-            Voir le documentaire →
+            <span data-i18n="chapters_full_doc_cta"><?= t('chapters_full_doc_cta') ?></span> &rarr;
           </a>
         </div>
       </section>

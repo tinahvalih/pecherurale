@@ -78,14 +78,6 @@
           FR
         </a>
 
-        <span
-          class="lang-item is-disabled"
-          aria-disabled="true"
-          title="<?= t('lang_soon') ?>"
-        >
-          EN
-        </span>
-
         <a
           href="#"
           data-lang="ko"
@@ -100,38 +92,38 @@
     <nav class="site-menu__nav">
       <a href="./" class="site-menu__link" data-menu-link data-preview="https://i.imgflip.com/k4fek.gif">
         <span class="site-menu__preview"></span>
-        <span class="site-menu__text">Accueil</span>
+        <span class="site-menu__text" data-i18n="menu_home"><?= t('menu_home') ?></span>
       </a>
 
       <a href="chapitres.php" class="site-menu__link" data-menu-link data-preview="https://i.pinimg.com/originals/02/79/e6/0279e6b012ba6fe706d26a96b14534c5.gif">
         <span class="site-menu__preview"></span>
-        <span class="site-menu__text">Chapitres</span>
+        <span class="site-menu__text" data-i18n="menu_chapters"><?= t('menu_chapters') ?></span>
       </a>
 
-      <a href="immersion.php" class="site-menu__link" data-menu-link data-preview="https://c.tenor.com/mLOHQJCayyAAAAAC/tenor.gif">
+      <a href="archive.php" class="site-menu__link" data-menu-link data-preview="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHp4eGRrMW8wdTdub3hwcjFmbjhtMm9oenh3ZDA3MGhubTZ2cjhucyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uDj0Fa3q8ipBS/giphy.gif">
         <span class="site-menu__preview"></span>
-        <span class="site-menu__text">Immersions</span>
+        <span class="site-menu__text" data-i18n="menu_archive"><?= t('menu_archive') ?></span>
       </a>
 
-      <a href="#" class="site-menu__link" data-menu-link data-preview="https://i.giphy.com/d8o0mo9jiM2hyA6o4T.webp">
+      <a href="immersion.php" class="site-menu__link" data-menu-link data-preview="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnFxbjJjZWJkaXdja2xua2lzOW9zdmF4Z3YyaGZka2x5ZTFkc25ieSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xTdAjl8en9LvBXBEKk/giphy.gif">
         <span class="site-menu__preview"></span>
-        <span class="site-menu__text">Archives</span>
+        <span class="site-menu__text" data-i18n="menu_immersion"><?= t('menu_immersion') ?></span>
       </a>
 
       <a href="#" class="site-menu__link" data-menu-link data-preview="https://i.pinimg.com/originals/95/6b/42/956b42ff1e70e4a535d4bc888f9cbb6a.gif">
         <span class="site-menu__preview"></span>
-        <span class="site-menu__text">A propos</span>
+        <span class="site-menu__text" data-i18n="menu_about"><?= t('menu_about') ?></span>
       </a>
 
-      <a href="#" class="site-menu__link" data-menu-link data-preview="https://media.tenor.com/f7OR3mAH2xMAAAAM/true-romance-tony-scott.gif">
+      <a href="documentaire.php" class="site-menu__link" data-menu-link data-preview="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExamJzYmx0dXNkMTBjaGowc21oYnRqNG51Zjc4eTcxcjhyZ2Y2aWRpNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/10h8d7DM6tOTK/giphy.gif">
         <span class="site-menu__preview"></span>
-        <span class="site-menu__text">Docu. complet</span>
+        <span class="site-menu__text" data-i18n="menu_full_doc"><?= t('menu_full_doc') ?></span>
       </a>
     </nav>
 
     <div class="site-menu__footer">
-      <a href="#">Mentions l&eacute;gales</a>
-      <a href="#">Credits</a>
+      <a href="#" data-i18n="menu_legal"><?= t('menu_legal') ?></a>
+      <a href="#" data-i18n="menu_credits"><?= t('menu_credits') ?></a>
     </div>
 
   </aside>

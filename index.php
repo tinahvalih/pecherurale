@@ -101,17 +101,9 @@ include_once 'includes/assets.php';
           <span><?= t('firstcta') ?></span>
         </a>
 
-        <button
-          class="paper-button paper-button--secondary js-video-open"
-          type="button"
-          data-video-provider="vimeo"
-          data-video-id="1189989735"
-          data-video-eyebrow="Documentaire complet"
-          data-video-title="Vivre de la mer a Geoje"
-          data-i18n="secondcta"
-        >
+        <a href="documentaire.php" class="paper-button paper-button--secondary" data-i18n="secondcta">
           <span><?= t('secondcta') ?></span>
-        </button>
+        </a>
       </nav>
     </section>
 
@@ -122,12 +114,8 @@ include_once 'includes/assets.php';
 
   </main>
 
-  <?php include 'includes/video-modal.php'; ?>
-
-  <script src="https://player.vimeo.com/api/player.js"></script>
   <script src="<?= asset('assets/js/menu.js') ?>"></script>
   <script src="<?= asset('assets/js/page-transition.js') ?>"></script>
-  <script src="<?= asset('assets/js/video-modal.js') ?>"></script>
   <script src="<?= asset('assets/js/language-switcher.js') ?>"></script>
   <script src="<?= asset('assets/js/startup-intro.js') ?>"></script>
   <script src="<?= asset('assets/js/main.js') ?>"></script>
