@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function initGlobalAudioPlayer() {
     const storageKey = "geojeAudioState";
     const savedState = readState();
+    const shouldPauseOnThisPage = shouldPauseImmersionAudioOnThisPage();
     const audio = document.createElement("audio");
     let labels = getAudioLabels();
     const miniPlayer = createMiniPlayer();
@@ -79,7 +80,14 @@ function initGlobalAudioPlayer() {
         getState: () => ({ ...state }),
     };
 
-    if (savedState && savedState.src) {
+    if (shouldPauseOnThisPage && savedState && savedState.src) {
+        persistState({
+            ...savedState,
+            isPlaying: false,
+        });
+    }
+
+    if (!shouldPauseOnThisPage && savedState && savedState.src) {
         state = { ...state, ...savedState };
         audio.src = state.src;
         audio.currentTime = Number(state.currentTime) || 0;
@@ -228,6 +236,12 @@ function initGlobalAudioPlayer() {
         }
     }
 
+    function shouldPauseImmersionAudioOnThisPage() {
+        return document.body.classList.contains("intro-page")
+            || document.body.classList.contains("chapter-video-page")
+            || document.body.classList.contains("documentary-video-page");
+    }
+
     function getAudioLabels() {
         const lang = document.documentElement.lang === "ko" ? "ko" : "fr";
 
@@ -253,11 +267,15 @@ function initGlobalAudioPlayer() {
     function saveState() {
         if (!state.src) return;
 
+        persistState({
+            ...state,
+            currentTime: audio.currentTime || state.currentTime || 0,
+        });
+    }
+
+    function persistState(nextState) {
         try {
-            localStorage.setItem(storageKey, JSON.stringify({
-                ...state,
-                currentTime: audio.currentTime || state.currentTime || 0,
-            }));
+            localStorage.setItem(storageKey, JSON.stringify(nextState));
         } catch (error) {
             // Storage can be unavailable in strict privacy modes.
         }

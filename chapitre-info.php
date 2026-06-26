@@ -8,14 +8,13 @@ $chapters = [
     'title_key' => 'chapter_info_1_title',
     'subtitle_key' => 'chapter_info_1_subtitle',
     'video' => 'assets/video/hero_video_loop.mp4',
-    'videoUrl' => 'chapitre-video.php?chapitre=1',
     'poster' => 'assets/img/chapter1_thumbnail.png',
+    'videoUrl' => 'chapitre-video.php?chapitre=1',
     'description_key' => 'chapter_info_1_description',
-    'portraits_description_key' => 'chapter_info_portraits_description',
-    'extra_layout' => 'geoje',
-    'footer_url' => 'chapitre-video.php?chapitre=2',
-    'footer_cta_key' => 'chapter_info_footer_cta',
+    'extra_type' => 'geoje',
     'gallery_aria_key' => 'chapter_info_gallery_aria',
+    'footer_href' => 'chapitre-video.php?chapitre=2',
+    'footer_cta_key' => 'chapter_info_footer_cta',
     'characters' => [
       [
         'name_key' => 'chapter_info_char_1_name',
@@ -45,18 +44,18 @@ $chapters = [
       ['file' => 'assets/img/chapter1/9.jpg', 'title_key' => 'chapter_info_gallery_9'],
     ],
   ],
+
   '2' => [
     'title_key' => 'chapter_info_2_title',
     'subtitle_key' => 'chapter_info_2_subtitle',
     'video' => 'assets/video/hero_video_loop.mp4',
-    'videoUrl' => 'chapitre-video.php?chapitre=2',
     'poster' => 'assets/img/chapter2_thumbnail.png',
+    'videoUrl' => 'chapitre-video.php?chapitre=2',
     'description_key' => 'chapter_info_2_description',
-    'portraits_description_key' => 'chapter_info_2_portraits_description',
-    'extra_layout' => 'distribution',
-    'footer_url' => 'intro.php',
-    'footer_cta_key' => 'chapter_info_footer_doc_cta',
+    'extra_type' => 'busan',
     'gallery_aria_key' => 'chapter_info_2_gallery_aria',
+    'footer_href' => 'documentaire.php',
+    'footer_cta_key' => 'chapter_info_footer_doc_cta',
     'characters' => [
       [
         'name_key' => 'chapter_info_2_char_1_name',
@@ -136,9 +135,9 @@ $pageTitle = t('chapter_info_page_title') . ' - ' . t($chapter['title_key']);
         <div class="chapter-character-slider" data-character-slider>
           <?php foreach ($chapter['characters'] as $index => $character) : ?>
             <article class="chapter-character-slide <?= $index === 0 ? 'is-active' : '' ?>" data-character-slide>
-              <img src="<?= htmlspecialchars($character['image'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?= htmlspecialchars(t($character['name_key']), ENT_QUOTES, 'UTF-8'); ?>" data-i18n-alt="<?= htmlspecialchars($character['name_key'], ENT_QUOTES, 'UTF-8') ?>">
+              <img src="<?= htmlspecialchars($character['image'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?= htmlspecialchars(t($character['name_key']), ENT_QUOTES, 'UTF-8'); ?>" data-i18n-alt="<?= htmlspecialchars($character['name_key'], ENT_QUOTES, 'UTF-8') ?>" loading="lazy" decoding="async">
               <div class="chapter-character-card">
-                <img src="assets/img/scotch.png" alt="" aria-hidden="true">
+                <img src="assets/img/scotch.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
                 <h3 data-i18n="<?= htmlspecialchars($character['name_key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars(t($character['name_key']), ENT_QUOTES, 'UTF-8'); ?></h3>
                 <div data-i18n-paragraphs="<?= htmlspecialchars($character['description_key'], ENT_QUOTES, 'UTF-8') ?>">
                   <?php foreach (explode("\n\n", t($character['description_key'])) as $paragraph) : ?>
@@ -165,7 +164,6 @@ $pageTitle = t('chapter_info_page_title') . ' - ' . t($chapter['title_key']);
 
         <aside class="chapter-characters-heading">
           <h2 data-i18n="chapter_info_portraits_title"><?= t('chapter_info_portraits_title') ?></h2>
-          <p data-i18n="<?= htmlspecialchars($chapter['portraits_description_key'], ENT_QUOTES, 'UTF-8') ?>"><?= t($chapter['portraits_description_key']) ?></p>
         </aside>
       </section>
 
@@ -173,18 +171,15 @@ $pageTitle = t('chapter_info_page_title') . ' - ' . t($chapter['title_key']);
         <h2 data-i18n="chapter_info_extra_title"><?= t('chapter_info_extra_title') ?></h2>
       </section>
 
-      <section class="chapter-extra-info chapter-extra-info--<?= htmlspecialchars($chapter['extra_layout'], ENT_QUOTES, 'UTF-8') ?>" aria-label="<?= t('chapter_info_extra_aria') ?>" data-i18n-aria-label="chapter_info_extra_aria">
-        <?php if ($chapter['extra_layout'] === 'distribution') : ?>
+      <?php if ($chapter['extra_type'] === 'busan') : ?>
+        <section class="chapter-extra-info chapter-extra-info--busan" aria-label="<?= t('chapter_info_extra_aria') ?>" data-i18n-aria-label="chapter_info_extra_aria">
           <article class="chapter-extra-card chapter-extra-card--difficulties">
             <div class="chapter-extra-dashed">
               <h3 data-i18n="chapter_info_2_difficulties_title"><?= t('chapter_info_2_difficulties_title') ?></h3>
               <ul class="chapter-extra-bullets">
-                <li data-i18n="chapter_info_2_difficulty_1"><?= t('chapter_info_2_difficulty_1') ?></li>
-                <li data-i18n="chapter_info_2_difficulty_2"><?= t('chapter_info_2_difficulty_2') ?></li>
-                <li data-i18n="chapter_info_2_difficulty_3"><?= t('chapter_info_2_difficulty_3') ?></li>
-                <li data-i18n="chapter_info_2_difficulty_4"><?= t('chapter_info_2_difficulty_4') ?></li>
-                <li data-i18n="chapter_info_2_difficulty_5"><?= t('chapter_info_2_difficulty_5') ?></li>
-                <li data-i18n="chapter_info_2_difficulty_6"><?= t('chapter_info_2_difficulty_6') ?></li>
+                <?php for ($index = 1; $index <= 6; $index++) : ?>
+                  <li data-i18n="chapter_info_2_difficulty_<?= $index ?>"><?= t('chapter_info_2_difficulty_' . $index) ?></li>
+                <?php endfor; ?>
               </ul>
             </div>
           </article>
@@ -192,19 +187,23 @@ $pageTitle = t('chapter_info_page_title') . ' - ' . t($chapter['title_key']);
           <article class="chapter-extra-card chapter-extra-card--distribution">
             <div class="chapter-extra-dashed">
               <h3 data-i18n="chapter_info_2_distribution_title"><?= t('chapter_info_2_distribution_title') ?></h3>
-              <img src="assets/img/distribution.png" alt="<?= t('chapter_info_2_distribution_alt') ?>" data-i18n-alt="chapter_info_2_distribution_alt">
+              <img src="assets/img/distribution.png" alt="<?= t('chapter_info_2_distribution_alt') ?>" data-i18n-alt="chapter_info_2_distribution_alt" loading="lazy" decoding="async">
             </div>
           </article>
-        <?php else : ?>
+        </section>
+      <?php else : ?>
+        <section class="chapter-extra-info" aria-label="<?= t('chapter_info_extra_aria') ?>" data-i18n-aria-label="chapter_info_extra_aria">
           <article class="chapter-extra-card chapter-extra-card--map">
             <h3 data-i18n="chapter_info_geoje_title"><?= t('chapter_info_geoje_title') ?></h3>
             <p data-i18n="chapter_info_geoje_description"><?= t('chapter_info_geoje_description') ?></p>
-            <img src="assets/img/geoje-map.png" alt="<?= t('chapter_info_geoje_map_alt') ?>" data-i18n-alt="chapter_info_geoje_map_alt">
+            <img src="assets/img/geoje-map.png" alt="<?= t('chapter_info_geoje_map_alt') ?>" data-i18n-alt="chapter_info_geoje_map_alt" loading="lazy" decoding="async">
           </article>
 
-          <article class="chapter-extra-card chapter-extra-card--routine" style="margin-top: 20px;">
+          <article class="chapter-extra-card chapter-extra-card--routine">
+            <h3 data-i18n="chapter_info_fisher_routine_title"><?= t('chapter_info_fisher_routine_title') ?></h3>
+            <p data-i18n="chapter_info_fisher_routine_source"><?= t('chapter_info_fisher_routine_source') ?></p>
             <div class="chapter-extra-dashed">
-              <img src="assets/img/fisher-routine.png" alt="<?= t('chapter_info_fisher_alt') ?>" data-i18n-alt="chapter_info_fisher_alt">
+              <img src="assets/img/fisher-routine.png" alt="<?= t('chapter_info_fisher_alt') ?>" data-i18n-alt="chapter_info_fisher_alt" loading="lazy" decoding="async">
               <ul>
                 <li><span>6h-7h</span><span data-i18n="chapter_info_fisher_routine_1"><?= t('chapter_info_fisher_routine_1') ?></span></li>
                 <li><span>7h-8h</span><span data-i18n="chapter_info_fisher_routine_2"><?= t('chapter_info_fisher_routine_2') ?></span></li>
@@ -215,15 +214,13 @@ $pageTitle = t('chapter_info_page_title') . ' - ' . t($chapter['title_key']);
                 <li><span>16h</span><span data-i18n="chapter_info_fisher_routine_7"><?= t('chapter_info_fisher_routine_7') ?></span></li>
               </ul>
             </div>
-            <h3 data-i18n="chapter_info_fisher_routine_title"><?= t('chapter_info_fisher_routine_title') ?></h3>
-            <p data-i18n="chapter_info_fisher_routine_source"><?= t('chapter_info_fisher_routine_source') ?></p>
           </article>
 
           <article class="chapter-extra-card chapter-extra-card--routine">
             <h3 data-i18n="chapter_info_restaurant_routine_title"><?= t('chapter_info_restaurant_routine_title') ?></h3>
             <p data-i18n="chapter_info_restaurant_routine_source"><?= t('chapter_info_restaurant_routine_source') ?></p>
             <div class="chapter-extra-dashed">
-              <img src="assets/img/characters/geoje-grandpa.png" alt="<?= t('chapter_info_restaurant_alt') ?>" data-i18n-alt="chapter_info_restaurant_alt">
+              <img src="assets/img/characters/geoje-grandpa.png" alt="<?= t('chapter_info_restaurant_alt') ?>" data-i18n-alt="chapter_info_restaurant_alt" loading="lazy" decoding="async">
               <ul>
                 <li><span>6h-8h</span><span data-i18n="chapter_info_restaurant_routine_1"><?= t('chapter_info_restaurant_routine_1') ?></span></li>
                 <li><span>8h-8h30</span><span data-i18n="chapter_info_restaurant_routine_2"><?= t('chapter_info_restaurant_routine_2') ?></span></li>
@@ -236,8 +233,8 @@ $pageTitle = t('chapter_info_page_title') . ' - ' . t($chapter['title_key']);
               </ul>
             </div>
           </article>
-        <?php endif; ?>
-      </section>
+        </section>
+      <?php endif; ?>
 
       <section class="chapter-section-title">
         <h2 data-i18n="chapter_info_gallery_title"><?= t('chapter_info_gallery_title') ?></h2>
@@ -255,16 +252,16 @@ $pageTitle = t('chapter_info_page_title') . ' - ' . t($chapter['title_key']);
               data-i18n-aria-label-prefix="chapter_info_open_image_aria"
               data-i18n-aria-label-subject="<?= htmlspecialchars($photo['title_key'], ENT_QUOTES, 'UTF-8') ?>"
             >
-              <img src="<?= htmlspecialchars($photo['file'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?= htmlspecialchars(t($photo['title_key']), ENT_QUOTES, 'UTF-8'); ?>" data-i18n-alt="<?= htmlspecialchars($photo['title_key'], ENT_QUOTES, 'UTF-8') ?>">
+              <img src="<?= htmlspecialchars($photo['file'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?= htmlspecialchars(t($photo['title_key']), ENT_QUOTES, 'UTF-8'); ?>" data-i18n-alt="<?= htmlspecialchars($photo['title_key'], ENT_QUOTES, 'UTF-8') ?>" loading="lazy" decoding="async">
             </button>
-            <figcaption data-i18n="<?= htmlspecialchars($photo['title_key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars(t($photo['title_key']), ENT_QUOTES, 'UTF-8'); ?></figcaption>
+            <figcaption aria-hidden="true"></figcaption>
           </figure>
         <?php endforeach; ?>
       </section>
 
       <section class="chapter-info-footer-cta">
         <span data-i18n="chapter_info_footer_label"><?= t('chapter_info_footer_label') ?></span>
-        <a href="<?= htmlspecialchars($chapter['footer_url'], ENT_QUOTES, 'UTF-8') ?>"><span data-i18n="<?= htmlspecialchars($chapter['footer_cta_key'], ENT_QUOTES, 'UTF-8') ?>"><?= t($chapter['footer_cta_key']) ?></span> &rarr;</a>
+        <a href="<?= htmlspecialchars($chapter['footer_href'], ENT_QUOTES, 'UTF-8') ?>"><span data-i18n="<?= htmlspecialchars($chapter['footer_cta_key'], ENT_QUOTES, 'UTF-8') ?>"><?= t($chapter['footer_cta_key']) ?></span> &rarr;</a>
       </section>
     </main>
   </div>
@@ -272,7 +269,7 @@ $pageTitle = t('chapter_info_page_title') . ' - ' . t($chapter['title_key']);
   <div class="chapter-lightbox" data-chapter-lightbox aria-hidden="true">
     <button class="chapter-lightbox__backdrop" type="button" data-gallery-close aria-label="<?= t('chapter_info_close_gallery_aria') ?>" data-i18n-aria-label="chapter_info_close_gallery_aria"></button>
     <div class="chapter-lightbox__content" role="dialog" aria-modal="true" aria-label="<?= t('chapter_info_lightbox_aria') ?>" data-i18n-aria-label="chapter_info_lightbox_aria">
-      <img class="chapter-lightbox__tape" src="assets/img/scotch.png" alt="" aria-hidden="true">
+      <img class="chapter-lightbox__tape" src="assets/img/scotch.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
       <button class="chapter-lightbox__close" type="button" data-gallery-close aria-label="<?= t('chapter_info_close_gallery_aria') ?>" data-i18n-aria-label="chapter_info_close_gallery_aria">&times;</button>
       <button class="chapter-lightbox__nav chapter-lightbox__nav--prev" type="button" data-gallery-prev aria-label="<?= t('chapter_info_prev_image_aria') ?>" data-i18n-aria-label="chapter_info_prev_image_aria"></button>
       <img class="chapter-lightbox__image" data-gallery-image src="" alt="">

@@ -6,21 +6,23 @@ body.chapter-info-page {
   overflow-x: hidden;
   background:
     linear-gradient(rgba(247, 244, 225, 0.5), rgba(247, 244, 225, 0.5)),
-    url("../img/paper-texture.png");
-  background-size: cover;
-  background-position: center;
+    url("../img/ricepaper_texture.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top left;
   color: #3f3b57;
 }
 
 .chapter-info-shell {
   width: min(1600px, calc(100vw - 160px));
-  margin: 0 auto 34px;
+  margin: 0 auto;
   border: 2px solid #3f3b57;
   background:
     linear-gradient(rgba(247, 244, 225, 0.72), rgba(247, 244, 225, 0.72)),
-    url("../img/paper-texture.png");
-  background-size: cover;
-  background-position: center;
+    url("../img/ricepaper_texture.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top left;
 }
 
 .chapter-info-hero {
@@ -370,14 +372,19 @@ body.chapter-info-page {
   display: grid;
   grid-template-columns: 37% 31.5% 31.5%;
   border-bottom: 2px solid #3f3b57;
+  height: auto;
 }
 
 .chapter-extra-info--distribution {
   grid-template-columns: 40% 60%;
 }
 
+.chapter-extra-info--busan {
+  grid-template-columns: 38% 62%;
+}
+
 .chapter-extra-card {
-  min-height: clamp(520px, 43vw, 700px);
+  height: auto;
   padding: clamp(24px, 2.2vw, 42px);
   text-align: center;
 }
@@ -435,6 +442,15 @@ body.chapter-info-page {
   text-align: left;
 }
 
+/*Make the second span right-aligned */
+.chapter-extra-card li span:last-child {
+  text-align: right;
+}
+
+/*Fill the space between the tww span by dots like page numbers in a book or restaurant menu with price on left */
+
+
+
 .chapter-extra-card--difficulties,
 .chapter-extra-card--distribution {
   min-height: clamp(430px, 34vw, 620px);
@@ -465,6 +481,7 @@ body.chapter-info-page {
 
 .chapter-extra-bullets li {
   display: list-item;
+  grid-template-columns: none;
   margin: 0 0 clamp(14px, 1.5vw, 26px);
   font-family: var(--font-mono);
   font-size: clamp(12px, 0.95vw, 17px);

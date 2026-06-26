@@ -5,13 +5,13 @@ $siteHeaderVariant = 'chapter-video';
 
 $chapters = [
   '1' => [
-    'title' => 'Chapitre I : Geoje',
+    'title' => 'Chapitre 1 : Un tour en mer',
     'videoId' => '1203265070',
     'next' => '2',
     'infoUrl' => 'chapitre-info.php?chapitre=1',
   ],
   '2' => [
-    'title' => 'Chapitre II : Busan',
+    'title' => 'Chapitre 2 : Retour sur la terre ferme',
     'videoId' => '1203251886',
     'next' => '1',
     'infoUrl' => 'chapitre-info.php?chapitre=2',

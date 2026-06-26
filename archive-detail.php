@@ -38,6 +38,132 @@ $articles = [
       ],
     ],
   ],
+  '2' => [
+    'title_key' => 'archive_detail_2_title',
+    'intro_key' => 'archive_detail_2_intro',
+    'sections' => [
+      [
+        'layout' => 'text-image',
+        'title_key' => 'archive_detail_2_section_1_title',
+        'body_key' => 'archive_detail_2_section_1_body',
+        'image' => 'assets/img/archive2_image1.png',
+        'alt_key' => 'archive_detail_2_image_1_alt',
+        'caption_key' => 'archive_detail_2_image_1_caption',
+      ],
+      [
+        'layout' => 'image-text',
+        'body_key' => 'archive_detail_2_section_2_body',
+        'image' => 'assets/img/archive2_image2.png',
+        'alt_key' => 'archive_detail_2_image_2_alt',
+      ],
+      [
+        'layout' => 'text-image',
+        'title_key' => 'archive_detail_2_section_3_title',
+        'body_key' => 'archive_detail_2_section_3_body',
+        'image' => 'assets/img/archive2_image3.png',
+        'alt_key' => 'archive_detail_2_image_3_alt',
+      ],
+      [
+        'layout' => 'image-text',
+        'body_key' => 'archive_detail_2_section_4_body',
+        'image' => 'assets/img/archive2_image4.png',
+        'alt_key' => 'archive_detail_2_image_4_alt',
+      ],
+      [
+        'layout' => 'text-image',
+        'title_key' => 'archive_detail_2_section_5_title',
+        'body_key' => 'archive_detail_2_section_5_body',
+        'image' => 'assets/img/archive2_image5.png',
+        'alt_key' => 'archive_detail_2_image_5_alt',
+      ],
+      [
+        'layout' => 'image-text',
+        'title_key' => 'archive_detail_2_section_6_title',
+        'body_key' => 'archive_detail_2_section_6_body',
+        'image' => 'assets/img/archive2_image6.png',
+        'alt_key' => 'archive_detail_2_image_6_alt',
+      ],
+    ],
+  ],
+  '3' => [
+    'title_key' => 'archive_detail_3_title',
+    'intro_key' => 'archive_detail_3_intro',
+    'sections' => [
+      [
+        'layout' => 'text-image',
+        'title_key' => 'archive_detail_3_section_1_title',
+        'body_key' => 'archive_detail_3_section_1_body',
+        'image' => 'assets/img/archive3_image1.png',
+        'alt_key' => 'archive_detail_3_image_1_alt',
+      ],
+      [
+        'layout' => 'image-text',
+        'body_key' => 'archive_detail_3_section_2_body',
+        'image' => 'assets/img/archive3_image2.png',
+        'alt_key' => 'archive_detail_3_image_2_alt',
+      ],
+      [
+        'layout' => 'text-image',
+        'title_key' => 'archive_detail_3_section_3_title',
+        'body_key' => 'archive_detail_3_section_3_body',
+        'image' => 'assets/img/archive3_image3.png',
+        'alt_key' => 'archive_detail_3_image_3_alt',
+      ],
+      [
+        'layout' => 'image-text',
+        'body_key' => 'archive_detail_3_section_4_body',
+        'image' => 'assets/img/archive3_image4.png',
+        'alt_key' => 'archive_detail_3_image_4_alt',
+      ],
+      [
+        'layout' => 'text-image',
+        'body_key' => 'archive_detail_3_section_5_body',
+        'image' => 'assets/img/archive3_image5.png',
+        'alt_key' => 'archive_detail_3_image_5_alt',
+      ],
+    ],
+  ],
+  '4' => [
+    'title_key' => 'archive_detail_4_title',
+    'intro_key' => 'archive_detail_4_intro',
+    'sections' => [
+      [
+        'layout' => 'text-image',
+        'title_key' => 'archive_detail_4_section_1_title',
+        'body_key' => 'archive_detail_4_section_1_body',
+        'image' => 'assets/img/archive4_image1.png',
+        'alt_key' => 'archive_detail_4_image_1_alt',
+      ],
+      [
+        'layout' => 'image-text',
+        'title_key' => 'archive_detail_4_section_2_title',
+        'body_key' => 'archive_detail_4_section_2_body',
+        'image' => 'assets/img/archive4_image2.png',
+        'alt_key' => 'archive_detail_4_image_2_alt',
+      ],
+      [
+        'layout' => 'text-image',
+        'title_key' => 'archive_detail_4_section_3_title',
+        'body_key' => 'archive_detail_4_section_3_body',
+        'image' => 'assets/img/archive4_image3.png',
+        'alt_key' => 'archive_detail_4_image_3_alt',
+      ],
+      [
+        'layout' => 'image-text',
+        'title_key' => 'archive_detail_4_section_4_title',
+        'body_key' => 'archive_detail_4_section_4_body',
+        'image' => 'assets/img/archive4_image4.png',
+        'alt_key' => 'archive_detail_4_image_4_alt',
+      ],
+      [
+        'layout' => 'text-image',
+        'title_key' => 'archive_detail_4_section_5_title',
+        'body_key' => 'archive_detail_4_section_5_body',
+        'image' => 'assets/img/archive4_image5.png',
+        'alt_key' => 'archive_detail_4_image_5_alt',
+      ],
+    ],
+  ],
 ];
 
 $article = $articles[$articleId] ?? $articles['1'];
@@ -87,11 +213,20 @@ $pageTitle = t('archive_page_title') . ' - ' . t($article['title_key']);
             </div>
 
             <figure class="archive-detail-section__image">
+              <img class="archive-detail-section__scotch" src="assets/img/scotch.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
               <img
+                class="archive-detail-section__visual"
                 src="<?= htmlspecialchars($section['image'], ENT_QUOTES, 'UTF-8') ?>"
                 alt="<?= t($section['alt_key']) ?>"
                 data-i18n-alt="<?= htmlspecialchars($section['alt_key'], ENT_QUOTES, 'UTF-8') ?>"
+                loading="lazy"
+                decoding="async"
               >
+              <?php if (!empty($section['caption_key'])) : ?>
+                <figcaption data-i18n="<?= htmlspecialchars($section['caption_key'], ENT_QUOTES, 'UTF-8') ?>">
+                  <?= t($section['caption_key']) ?>
+                </figcaption>
+              <?php endif; ?>
             </figure>
           </article>
         <?php endforeach; ?>

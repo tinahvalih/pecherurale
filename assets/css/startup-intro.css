@@ -200,7 +200,6 @@
 
   .startup-slide__korean {
     font-size: clamp(36px, 4.4vw, 52px);
-    line-height: 0.72;
   }
 
   .startup-slide__translation {
@@ -221,7 +220,6 @@
 
   .startup-slide__korean {
     font-size: clamp(28px, 8vw, 38px);
-    line-height: 0.8;
     margin-bottom: 24px;
   }
 

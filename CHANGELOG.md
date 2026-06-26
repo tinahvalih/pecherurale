@@ -1,5 +1,118 @@
 # Changelog
 
+## 2026-06-27
+
+### 00:30 - Pause audio sur pages video
+
+- Ajout d'une pause automatique de l'audio immersion quand l'utilisateur arrive sur `intro.php`, `chapitre-video.php` ou `documentaire.php`.
+- Desactivation de la reprise automatique du mini-lecteur sur les pages de visionnage video pour eviter le chevauchement sonore.
+
+### 00:25 - Titres chapitres en deux lignes
+
+- Separation des titres des cartes chapitre sur `chapitres.php` : ligne `Chapitre X`, puis ligne du nom du chapitre.
+- Ajout des cles FR/KR dediees pour conserver le changement de langue.
+- Centrage et calage CSS des deux lignes de titre.
+
+### 00:17 - Portraits chapitre 2
+
+- Remplacement des textes placeholder des personnages du chapitre 2.
+- Ajout des descriptions FR/KR validees pour Choi Jung-hoon et Han So-hui dans `chapitre-info.php`.
+
+### 00:03 - Chapitre 2 et correction des accents
+
+- Correction de `chapitre-info.php?chapitre=2` : ajout de la configuration dediee au chapitre 2 avec personnages, galerie et bloc d'informations Busan.
+- Remplacement de la description de `immersion.php` par la nouvelle phrase fournie.
+- Suppression du texte descriptif sous le titre `Portraits / Personnages` dans les pages detail de chapitre.
+- Restauration des accents manquants dans les textes francais principaux et dans les longs contenus i18n des archives.
+
+## 2026-06-26
+
+### 23:13 - Traduction note d'intention
+
+- Remplacement de la traduction coreenne de la note d'intention de `a-propos.php` par la version validee fournie.
+
+### 23:00 - Traductions immersion, a propos et chapitre info
+
+- Traduction coreenne naturelle de `immersion.php` : titres, descriptions des cassettes, labels et CTA.
+- Traduction coreenne de `a-propos.php` : note d'intention et roles de l'equipe selon la langue active.
+- Relecture et remplacement des textes coreens de `chapitre-info.php` pour les descriptions, personnages, informations supplementaires, galeries et controles.
+
+### 22:37 - Page a propos
+
+- Creation de `a-propos.php` avec note d'intention et equipe complete.
+- Ajout du style dedie `assets/css/about.css` dans la DA papier du site.
+- Branchement du menu `A propos` et du CTA `A propos` de `chapitres.php` vers la nouvelle page.
+
+### 22:12 - Titres chapitres
+
+- Renommage du chapitre 1 en `Un tour en mer` / `바다 여행`.
+- Renommage du chapitre 2 en `Retour sur la terre ferme` / `땅으로 돌아오다`.
+- Mise a jour des titres sur `chapitres.php`, `chapitre-info.php` et `chapitre-video.php`.
+
+### 22:08 - Video documentaire complet
+
+- Mise a jour de l'ID Vimeo du documentaire complet vers `1204874341`.
+
+### 20:20 - Lazy-loading images
+
+- Ajout de `loading="lazy"` et `decoding="async"` sur les images de contenu non critiques : archives, galerie chapitre, blocs secondaires, cassettes immersion et logos partenaires.
+- Conservation du chargement direct pour les images structurelles visibles au premier ecran : logo, bordures papier, icones de header et images principales.
+
+### 14:38 - Fond papier et footer
+
+- Remplacement du fond papier principal par `assets/img/ricepaper_texture.jpg` en motif repete.
+- Suppression des marges basses des conteneurs de pages qui laissaient apparaitre une bande noire sous certains footers.
+- Harmonisation du CTA de footer de `immersion.php` avec les autres CTA de fin de page.
+
+### 02:33 - Menu offcanvas
+
+- Suppression provisoire des liens `Mentions legales` et `Credits` en bas du menu.
+
+### 01:10 - Sons et contenus immersion
+
+- Branchement des quatre cassettes de `immersion.php` sur les nouveaux MP3 ajoutes dans `assets/audio`.
+- Correction de l'association couleur/audio : rouge pour Eochon, bleu pour la livraison a Geoje, vert pour Yeongdo, jaune pour Jagalchi.
+- Ajout des descriptions visibles sous les cassettes de la grille qui n'avaient pas encore de bloc descriptif.
+- Remplacement provisoire des textes coreens de la page immersion par les contenus francais valides.
+
+## 2026-06-25
+
+### 19:46 - Galerie chapitre info
+
+- Suppression des titres visibles en bas des polaroids dans `chapitre-info.php`.
+- Conservation de l'espace blanc du polaroid et des textes alternatifs pour l'accessibilite.
+
+### 15:13 - Images articles archives
+
+- Suppression de l'ombre portee sur les images des articles archive.
+
+## 2026-06-24
+
+### 23:42 - Traductions chapitres et articles archives
+
+- Verification des traductions coreennes de la page `chapitres.php` avec les notes fournies.
+- Correction des libelles valides : introduction chapitres, titres, descriptions, CTA, documentaire complet et cassette `Sound of Geoje`.
+- Branchement des carnets archive 2, 3 et 4 vers `archive-detail.php`.
+- Ajout des articles detail `L'ile de Geoje`, `La peche` et `Les traditions` avec sections alternees texte/image.
+- Ajout des images `archive2_imageX.png`, `archive3_imageX.png` et `archive4_imageX.png`, avec scotch et legende quand necessaire.
+- Ajout des contenus et traductions FR/KR pour les nouveaux articles.
+
+### 00:05 - Carnet PNG dans la section chapitres
+
+- Remplacement du carnet compose en CSS dans le bloc `Consulter les articles et les archives`.
+- Utilisation du PNG `assets/img/carnet_trad.png` pour reprendre un visuel carnet existant dans les assets.
+- Nettoyage des styles CSS associes a l'ancien carnet dessine et ajout d'un texte alternatif FR/KR.
+
+## 2026-06-23
+
+### 23:47 - Section articles et a propos dans chapitres
+
+- Ajout d'une section sous les chapitres avec un bloc `Consulter les articles et les archives`.
+- Ajout d'un carnet `L'histoire` compose en CSS pour reprendre la maquette fournie.
+- Ajout d'un bloc `En savoir plus` avec bouton `A propos`.
+- Branchement du CTA archives vers `archive.php` et du CTA documentaire final vers `documentaire.php`.
+- Ajout des traductions FR/KR pour les nouveaux textes de la section.
+
 ## 2026-06-22
 
 ### 08:20 - Documentaire complet plein ecran

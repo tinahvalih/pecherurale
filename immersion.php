@@ -11,7 +11,7 @@ $tracks = [
     'title_key' => 'immersion_track_1_title',
     'description_key' => 'immersion_track_1_description',
     'tags_key' => 'immersion_track_1_tags',
-    'audio' => 'assets/audio/jagalchi.wav',
+    'audio' => 'assets/audio/Aux alentours du restaurant Eochon à Geoje.mp3',
     'image' => 'assets/img/tape.png',
   ],
   [
@@ -19,15 +19,15 @@ $tracks = [
     'title_key' => 'immersion_track_2_title',
     'description_key' => 'immersion_track_2_description',
     'tags_key' => 'immersion_track_2_tags',
-    'audio' => 'assets/audio/restaurant-working.mp3',
-    'image' => 'assets/img/tape-yellow.png',
+    'audio' => 'assets/audio/Dernière livraison de poisson du jour à Geoje.mp3',
+    'image' => 'assets/img/tape-blue.png',
   ],
   [
     'category_key' => 'immersion_category_jagalchi',
     'title_key' => 'immersion_track_3_title',
     'description_key' => 'immersion_track_3_description',
     'tags_key' => 'immersion_track_3_tags',
-    'audio' => 'assets/audio/raining-calm.mp3',
+    'audio' => 'assets/audio/Balade pluvieuse en bord de mer à Yeongdo.mp3',
     'image' => 'assets/img/tape-green.png',
   ],
   [
@@ -35,8 +35,8 @@ $tracks = [
     'title_key' => 'immersion_track_4_title',
     'description_key' => 'immersion_track_4_description',
     'tags_key' => 'immersion_track_4_tags',
-    'audio' => 'assets/audio/asian-market.mp3',
-    'image' => 'assets/img/tape-blue.png',
+    'audio' => 'assets/audio/Au cœur du marché au poisson de Jagalchi.mp3',
+    'image' => 'assets/img/tape-yellow.png',
   ],
 ];
 
@@ -72,8 +72,8 @@ function render_audio_button($track, $scotchClass = '') {
       aria-label="<?= htmlspecialchars(t('immersion_play_aria') . ' ' . $title, ENT_QUOTES, 'UTF-8') ?>"
       data-i18n-aria-label-prefix="immersion_play_aria"
     >
-      <img class="immersion-cassette__image" src="<?= htmlspecialchars($track['image'], ENT_QUOTES, 'UTF-8') ?>" alt="">
-      <img class="immersion-cassette__scotch <?= htmlspecialchars($scotchClass, ENT_QUOTES, 'UTF-8') ?>" src="assets/img/scotch.png" alt="" aria-hidden="true">
+      <img class="immersion-cassette__image" src="<?= htmlspecialchars($track['image'], ENT_QUOTES, 'UTF-8') ?>" alt="" loading="lazy" decoding="async">
+      <img class="immersion-cassette__scotch <?= htmlspecialchars($scotchClass, ENT_QUOTES, 'UTF-8') ?>" src="assets/img/scotch.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
     </button>
     <?php
 }
@@ -170,6 +170,7 @@ $track = $tracks[0];
             <?php render_audio_button($item, $index === 0 ? 'immersion-cassette__scotch--top' : 'immersion-cassette__scotch--left'); ?>
 
             <h2 data-i18n="<?= htmlspecialchars($item['title_key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars(track_value($item, 'title_key'), ENT_QUOTES, 'UTF-8') ?></h2>
+            <p class="immersion-cassette__description" data-i18n="<?= htmlspecialchars($item['description_key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars(track_value($item, 'description_key'), ENT_QUOTES, 'UTF-8') ?></p>
           </article>
         <?php endforeach; ?>
       </section>
@@ -189,8 +190,8 @@ $track = $tracks[0];
 
     <aside class="audio-drawer__panel" aria-label="<?= t('immersion_audio_player_aria') ?>" data-i18n-aria-label="immersion_audio_player_aria">
       <div class="audio-drawer__cassette" aria-hidden="true">
-        <img class="audio-drawer__cassette-image" data-audio-drawer-image src="<?= htmlspecialchars($track['image'], ENT_QUOTES, 'UTF-8') ?>" alt="">
-        <img class="audio-drawer__cassette-scotch" src="assets/img/scotch.png" alt="">
+        <img class="audio-drawer__cassette-image" data-audio-drawer-image src="<?= htmlspecialchars($track['image'], ENT_QUOTES, 'UTF-8') ?>" alt="" loading="lazy" decoding="async">
+        <img class="audio-drawer__cassette-scotch" src="assets/img/scotch.png" alt="" loading="lazy" decoding="async">
       </div>
 
       <h2 data-audio-drawer-title><?= htmlspecialchars(track_value($track, 'title_key'), ENT_QUOTES, 'UTF-8') ?></h2>

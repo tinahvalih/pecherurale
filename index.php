@@ -108,8 +108,8 @@ include_once 'includes/assets.php';
     </section>
 
     <div class="hero-logos" aria-label="Partenaires universitaires">
-      <img src="assets/img/uge_logo.png" alt="Universite Gustave Eiffel">
-      <img src="assets/img/dongeui_logo.png" alt="Universite Dong-eui">
+      <img src="assets/img/uge_logo.png" alt="Universite Gustave Eiffel" loading="lazy" decoding="async">
+      <img src="assets/img/dongeui_logo.png" alt="Universite Dong-eui" loading="lazy" decoding="async">
     </div>
 
   </main>

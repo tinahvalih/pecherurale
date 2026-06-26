@@ -6,22 +6,24 @@ body.archive-page {
   overflow-x: hidden;
   background:
     linear-gradient(rgba(247, 244, 225, 0.5), rgba(247, 244, 225, 0.5)),
-    url("../img/paper-texture.png");
-  background-size: cover;
-  background-position: center;
+    url("../img/ricepaper_texture.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top left;
   color: #3f3b57;
 }
 
 .archive-shell {
   width: min(1750px, calc(100vw - 180px));
   min-height: calc(100vh - clamp(28px, 4vh, 48px));
-  margin: 0 auto 42px;
+  margin: 0 auto;
   border: 2px solid #3f3b57;
   background:
     linear-gradient(rgba(247, 244, 225, 0.7), rgba(247, 244, 225, 0.7)),
-    url("../img/paper-texture.png");
-  background-size: cover;
-  background-position: center;
+    url("../img/ricepaper_texture.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top left;
 }
 
 .archive-hero {
@@ -64,18 +66,6 @@ body.archive-page {
   border-right: 2px solid #3f3b57;
 }
 
-.archive-card--2,
-.archive-card--4 {
-  padding-top: clamp(104px, 9vw, 170px);
-}
-
-.archive-card--2::before {
-  content: "";
-  width: min(780px, 90%);
-  height: clamp(92px, 8vw, 140px);
-  margin: calc(clamp(104px, 9vw, 170px) * -0.72) 0 clamp(42px, 4vw, 70px);
-  border: 2px dashed rgba(48, 54, 85, 0.48);
-}
 
 .archive-card__book {
   position: relative;
@@ -248,21 +238,23 @@ body.archive-detail-page {
   overflow-x: hidden;
   background:
     linear-gradient(rgba(247, 244, 225, 0.5), rgba(247, 244, 225, 0.5)),
-    url("../img/paper-texture.png");
-  background-size: cover;
-  background-position: center;
+    url("../img/ricepaper_texture.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top left;
   color: #3f3b57;
 }
 
 .archive-detail-shell {
   width: min(1750px, calc(100vw - 180px));
-  margin: 0 auto 42px;
+  margin: 0 auto;
   border: 2px solid #3f3b57;
   background:
     linear-gradient(rgba(247, 244, 225, 0.72), rgba(247, 244, 225, 0.72)),
-    url("../img/paper-texture.png");
-  background-size: cover;
-  background-position: center;
+    url("../img/ricepaper_texture.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top left;
 }
 
 .archive-detail-hero {
@@ -360,19 +352,42 @@ body.archive-detail-page {
 }
 
 .archive-detail-section__image {
+  position: relative;
   margin: 0;
   padding: clamp(32px, 4vw, 70px);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.archive-detail-section__image img {
+.archive-detail-section__visual {
   display: block;
   width: min(680px, 92%);
   max-height: clamp(360px, 34vw, 620px);
   object-fit: cover;
-  box-shadow: 0 18px 34px rgba(63, 59, 87, 0.16);
+}
+
+.archive-detail-section__scotch {
+  position: absolute;
+  top: clamp(28px, 3vw, 54px);
+  left: clamp(26px, 3vw, 56px);
+  z-index: 2;
+  width: clamp(126px, 10vw, 190px);
+  height: auto;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 2px rgba(48, 35, 18, 0.45));
+  transform: rotate(-24deg);
+}
+
+.archive-detail-section__image figcaption {
+  width: min(680px, 92%);
+  margin-top: 16px;
+  color: #3f3b57;
+  font-family: var(--font-mono);
+  font-size: clamp(11px, 0.82vw, 14px);
+  line-height: 1.45;
+  text-align: center;
 }
 
 @media (max-width: 1180px) {

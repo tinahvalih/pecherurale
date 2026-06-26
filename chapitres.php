@@ -36,7 +36,10 @@ $siteHeaderVariant = "journal";
 
       <section class="chapitres-grid" aria-label="<?= t('chapters_list_aria') ?>" data-i18n-aria-label="chapters_list_aria">
         <article class="chapitre-card chapitre-card--tilted-left">
-          <h2 data-i18n="chapters_chapter1_title"><?= t('chapters_chapter1_title') ?></h2>
+          <h2 class="chapitre-card__title">
+            <span data-i18n="chapters_chapter1_label"><?= t('chapters_chapter1_label') ?></span>
+            <span data-i18n="chapters_chapter1_name"><?= t('chapters_chapter1_name') ?></span>
+          </h2>
 
           <div class="chapitre-card__media">
             <img class="chapitre-card__tape chapitre-card__tape--left" src="assets/img/scotch.png" alt="" aria-hidden="true">
@@ -61,12 +64,15 @@ $siteHeaderVariant = "journal";
         </article>
 
         <article class="chapitre-card chapitre-card--tilted-right">
-          <h2 data-i18n="chapters_chapter2_title"><?= t('chapters_chapter2_title') ?></h2>
+          <h2 class="chapitre-card__title">
+            <span data-i18n="chapters_chapter2_label"><?= t('chapters_chapter2_label') ?></span>
+            <span data-i18n="chapters_chapter2_name"><?= t('chapters_chapter2_name') ?></span>
+          </h2>
 
           <div class="chapitre-card__media">
-            <img class="chapitre-card__tape chapitre-card__tape--right" src="assets/img/scotch.png" alt="" aria-hidden="true">
+            <img class="chapitre-card__tape chapitre-card__tape--right" src="assets/img/scotch.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
 
-            <img class="chapitre-card__thumbnail" src="assets/img/chapter2_thumbnail.png" alt="<?= t('chapters_chapter2_thumbnail_alt') ?>" data-i18n-alt="chapters_chapter2_thumbnail_alt">
+            <img class="chapitre-card__thumbnail" src="assets/img/chapter2_thumbnail.png" alt="<?= t('chapters_chapter2_thumbnail_alt') ?>" data-i18n-alt="chapters_chapter2_thumbnail_alt" loading="lazy" decoding="async">
 
             <a
               class="chapitre-card__play"
@@ -114,15 +120,47 @@ $siteHeaderVariant = "journal";
               src="assets/img/tape.png"
               alt="<?= t('chapters_sound_tape_alt') ?>"
               data-i18n-alt="chapters_sound_tape_alt"
+              loading="lazy"
+              decoding="async"
             >
           </article>
         </div>
 
         <div class="chapitres-next__rule" aria-hidden="true"></div>
 
+        <section class="chapitres-next__archive-about" aria-label="<?= t('chapters_archive_about_aria') ?>" data-i18n-aria-label="chapters_archive_about_aria">
+          <article class="chapitres-next__archives-card">
+            <img
+              class="chapitres-next__archive-book"
+              src="assets/img/carnet_trad.png"
+              alt="<?= t('chapters_archive_book_alt') ?>"
+              data-i18n-alt="chapters_archive_book_alt"
+              loading="lazy"
+              decoding="async"
+            >
+
+            <div class="chapitres-next__archives-copy">
+              <span class="chapitres-next__tag" data-i18n="chapters_articles_tag"><?= t('chapters_articles_tag') ?></span>
+              <h2 data-i18n="chapters_articles_title"><?= t('chapters_articles_title') ?></h2>
+              <a href="archive.php" class="chapitres-next__button" data-i18n="chapters_articles_cta">
+                <?= t('chapters_articles_cta') ?>
+              </a>
+            </div>
+          </article>
+
+          <article class="chapitres-next__about-card">
+            <h2 data-i18n="chapters_about_title"><?= t('chapters_about_title') ?></h2>
+            <a href="a-propos.php" class="chapitres-next__button" data-i18n="chapters_about_cta">
+              <?= t('chapters_about_cta') ?>
+            </a>
+          </article>
+        </section>
+
+        <div class="chapitres-next__rule" aria-hidden="true"></div>
+
         <div class="chapitres-next__documentary">
           <p data-i18n="chapters_full_doc_label"><?= t('chapters_full_doc_label') ?></p>
-          <a href="intro.php" class="chapitres-next__documentary-button">
+          <a href="documentaire.php" class="chapitres-next__documentary-button">
             <span data-i18n="chapters_full_doc_cta"><?= t('chapters_full_doc_cta') ?></span> &rarr;
           </a>
         </div>

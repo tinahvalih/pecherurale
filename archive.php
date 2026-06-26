@@ -21,21 +21,21 @@ $articles = [
     'title_key' => 'archive_article_2_title',
     'description_key' => 'archive_article_2_description',
     'alt_key' => 'archive_article_2_alt',
-    'url' => '#',
+    'url' => 'archive-detail.php?article=2',
   ],
   [
     'image' => 'assets/img/carnet_trad.png',
     'title_key' => 'archive_article_3_title',
     'description_key' => 'archive_article_3_description',
     'alt_key' => 'archive_article_3_alt',
-    'url' => '#',
+    'url' => 'archive-detail.php?article=4',
   ],
   [
     'image' => $fishingBookImage,
     'title_key' => 'archive_article_4_title',
     'description_key' => 'archive_article_4_description',
     'alt_key' => 'archive_article_4_alt',
-    'url' => '#',
+    'url' => 'archive-detail.php?article=3',
   ],
 ];
 ?>
@@ -73,6 +73,8 @@ $articles = [
                 src="<?= htmlspecialchars($article['image'], ENT_QUOTES, 'UTF-8') ?>"
                 alt="<?= t($article['alt_key']) ?>"
                 data-i18n-alt="<?= htmlspecialchars($article['alt_key'], ENT_QUOTES, 'UTF-8') ?>"
+                loading="lazy"
+                decoding="async"
               >
               <h2 data-i18n="<?= htmlspecialchars($article['title_key'], ENT_QUOTES, 'UTF-8') ?>"><?= t($article['title_key']) ?></h2>
 

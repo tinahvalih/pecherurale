@@ -15,14 +15,13 @@ function initImmersion() {
     let labels = getLabels();
 
     function getLabels() {
-        const lang = document.documentElement.lang === "ko" ? "ko" : "fr";
-
         return {
-            fallbackTitle: lang === "ko" ? "사운드 트랙" : "Bande sonore",
-            fallbackCategory: lang === "ko" ? "사운드 체험" : "Experience sonore",
-            pause: lang === "ko" ? "일시정지" : "Pause",
-            play: lang === "ko" ? "재생" : "Lecture",
+            fallbackTitle: "Bande sonore",
+            fallbackCategory: "Experience sonore",
+            pause: "Pause",
+            play: "Lecture",
         };
+
     }
 
     function getTrackFromCard(card) {

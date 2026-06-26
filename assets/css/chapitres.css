@@ -6,9 +6,10 @@ body.chapitres-page {
   overflow-x: hidden;
   background:
     linear-gradient(rgba(247, 244, 225, 0.456), rgba(247, 244, 225, 0.464)),
-    url("../img/paper-texture.png");
-  background-size: cover;
-  background-position: center;
+    url("../img/ricepaper_texture.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top left;
   color: #3f3b57;
 }
 
@@ -23,9 +24,10 @@ body.chapitres-page {
   border: 2px solid #3f3b57;
   background:
     linear-gradient(rgba(247, 244, 225, 0.68), rgba(247, 244, 225, 0.68)),
-    url("../img/paper-texture.png");
-  background-size: cover;
-  background-position: center;
+    url("../img/ricepaper_texture.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top left;
 }
 
 .journal-header {
@@ -163,6 +165,10 @@ body.menu-open .journal-header {
 }
 
 .chapitre-card h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(3px, 0.35vw, 7px);
   margin: 0 0 clamp(4px, 0.5vw, 6px);
 
   font-family: var(--font-offcanvas);
@@ -170,7 +176,12 @@ body.menu-open .journal-header {
   font-weight: 100;
   line-height: 0.9;
   letter-spacing: 1px;
+  text-align: center;
   text-transform: uppercase;
+}
+
+.chapitre-card h2 span {
+  display: block;
 }
 
 .chapitre-card__media {
@@ -224,7 +235,7 @@ body.menu-open .journal-header {
 }
 
 .chapitre-card__tape--left {
-  top: clamp(-24px, -1.8vw, -16px);
+  top: 0;
   left: clamp(-58px, -3.5vw, -28px);
   transform: rotate(-28deg);
 }
@@ -479,6 +490,95 @@ body.menu-open .journal-header {
   filter: drop-shadow(0 18px 24px rgba(63, 59, 87, 0.16));
 }
 
+.chapitres-next__archive-about {
+  min-height: clamp(420px, 33vw, 560px);
+  display: grid;
+  grid-template-columns: 68% 32%;
+  border-bottom: 2px solid #3f3b57;
+}
+
+.chapitres-next__archives-card {
+  min-width: 0;
+  padding: clamp(42px, 4vw, 68px) clamp(38px, 4vw, 72px);
+  display: grid;
+  grid-template-columns: minmax(220px, 0.34fr) minmax(340px, 0.66fr);
+  align-items: center;
+  gap: clamp(38px, 4.2vw, 74px);
+  border-right: 2px solid #3f3b57;
+}
+
+.chapitres-next__archive-book {
+  display: block;
+  width: min(310px, 100%);
+  height: auto;
+  justify-self: center;
+  filter: drop-shadow(18px 22px 20px rgba(20, 16, 12, 0.2));
+  transform: rotate(-0.6deg);
+}
+
+.chapitres-next__archives-copy {
+  min-width: 0;
+}
+
+.chapitres-next__archives-copy h2,
+.chapitres-next__about-card h2 {
+  margin: 0;
+  font-family: var(--font-offcanvas);
+  font-weight: 100;
+  line-height: 0.9;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.chapitres-next__archives-copy h2 {
+  margin-top: clamp(10px, 1vw, 18px);
+  font-size: clamp(56px, 5vw, 96px);
+}
+
+.chapitres-next__archives-copy .chapitres-next__button {
+  margin-top: clamp(22px, 2.2vw, 36px);
+}
+
+.chapitres-next__about-card {
+  position: relative;
+  min-width: 0;
+  padding: clamp(58px, 5vw, 88px) clamp(32px, 3.5vw, 56px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  text-align: center;
+}
+
+.chapitres-next__about-card::after {
+  content: "";
+  position: absolute;
+  left: -8%;
+  right: -18%;
+  bottom: -24%;
+  height: 78%;
+  background-image: url("../img/fish-pattern.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  opacity: 0.34;
+  pointer-events: none;
+}
+
+.chapitres-next__about-card h2 {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(56px, 4.7vw, 92px);
+}
+
+.chapitres-next__about-card .chapitres-next__button {
+  position: relative;
+  z-index: 1;
+  min-width: min(355px, 100%);
+  margin-top: clamp(24px, 2.4vw, 42px);
+}
+
 .chapitres-next__documentary {
   min-height: clamp(210px, 16vw, 280px);
   padding: clamp(42px, 4vw, 70px) 24px;
@@ -545,6 +645,15 @@ body.menu-open .journal-header {
 
   .chapitres-next__body {
     grid-template-columns: 34% 66%;
+  }
+
+  .chapitres-next__archive-about {
+    grid-template-columns: 66% 34%;
+  }
+
+  .chapitres-next__archives-card {
+    grid-template-columns: minmax(200px, 0.38fr) minmax(300px, 0.62fr);
+    gap: clamp(28px, 3vw, 48px);
   }
 
   .chapitres-next__immersion {
@@ -652,6 +761,27 @@ body.menu-open .journal-header {
     grid-template-columns: 1fr;
   }
 
+  .chapitres-next__archive-about {
+    grid-template-columns: 1fr;
+  }
+
+  .chapitres-next__archives-card {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    border-right: 0;
+    border-bottom: 2px solid #3f3b57;
+    text-align: center;
+  }
+
+  .chapitres-next__archive-book {
+    width: min(260px, 76vw);
+  }
+
+  .chapitres-next__about-card {
+    min-height: 280px;
+    justify-content: center;
+  }
+
   .chapitres-next__portraits {
     min-height: 300px;
     border-right: 0;
@@ -733,6 +863,11 @@ body.menu-open .journal-header {
 
   .chapitres-next__immersion h2 {
     font-size: clamp(42px, 14vw, 64px);
+  }
+
+  .chapitres-next__archives-copy h2,
+  .chapitres-next__about-card h2 {
+    font-size: clamp(42px, 13vw, 64px);
   }
 
   .chapitres-next__button {

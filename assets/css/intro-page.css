@@ -7,11 +7,11 @@ body.intro-page {
 
   background:
     linear-gradient(rgba(247, 244, 225, 0.72), rgba(247, 244, 225, 0.72)),
-    url("../img/paper-texture.png");
+    url("../img/ricepaper_texture.jpg");
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: top left;
+  background-repeat: repeat;
 
   color: #202846;
 }

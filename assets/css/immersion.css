@@ -6,9 +6,10 @@ body.immersion-page {
   overflow-x: hidden;
   background:
     linear-gradient(rgba(247, 244, 225, 0.5), rgba(247, 244, 225, 0.5)),
-    url("../img/paper-texture.png");
-  background-size: cover;
-  background-position: center;
+    url("../img/ricepaper_texture.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top left;
   color: #3f3b57;
 }
 
@@ -16,13 +17,14 @@ body.immersion-page {
   position: relative;
   z-index: 1;
   width: min(1750px, calc(100vw - 180px));
-  margin: 0 auto 42px;
+  margin: 0 auto;
   border: 2px solid #3f3b57;
   background:
     linear-gradient(rgba(247, 244, 225, 0.72), rgba(247, 244, 225, 0.72)),
-    url("../img/paper-texture.png");
-  background-size: cover;
-  background-position: center;
+    url("../img/ricepaper_texture.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top left;
 }
 
 .immersion-main {
@@ -259,6 +261,18 @@ body.immersion-page {
   width: min(520px, 92%);
 }
 
+.immersion-cassette .immersion-cassette__description {
+  width: min(560px, 92%);
+  margin: clamp(14px, 1.4vw, 24px) auto 0;
+  color: #303655;
+  font-family: var(--font-mono);
+  font-size: clamp(12px, 0.95vw, 15px);
+  line-height: 1.55;
+  letter-spacing: -0.02em;
+  text-align: center;
+  text-transform: none;
+}
+
 .immersion-tags,
 .audio-drawer__tags {
   display: flex;
@@ -292,40 +306,40 @@ body.immersion-page {
 }
 
 .immersion-footer-cta {
-  min-height: clamp(180px, 14vw, 240px);
-  padding: clamp(44px, 4vw, 64px) 24px;
+  min-height: clamp(165px, 13vw, 230px);
+  padding: clamp(32px, 3vw, 54px) 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background:
-    linear-gradient(rgba(48, 54, 85, 0.96), rgba(48, 54, 85, 0.96)),
+    linear-gradient(rgba(47, 54, 93, 0.96), rgba(47, 54, 93, 0.96)),
     url("../img/fish-pattern.png");
   background-size: cover;
-  background-position: center;
-  color: rgba(255, 255, 255, 0.65);
+  background-position: center right;
+  color: rgba(255, 255, 255, 0.62);
   text-align: center;
 }
 
-.immersion-footer-cta span {
-  margin-bottom: 12px;
+.immersion-footer-cta > span {
+  margin-bottom: 10px;
   font-family: var(--font-mono);
-  font-size: clamp(10px, 0.78vw, 13px);
+  font-size: clamp(10px, 0.8vw, 14px);
   text-transform: uppercase;
 }
 
 .immersion-footer-cta a {
-  min-width: min(460px, 84vw);
-  min-height: clamp(64px, 4.8vw, 86px);
-  padding: 16px 42px;
+  min-width: min(420px, 82vw);
+  min-height: clamp(62px, 4.5vw, 86px);
+  padding: 14px 36px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #303655;
+  color: #111111;
   text-decoration: none;
-  text-transform: uppercase;
   font-family: var(--font-mono);
-  font-size: clamp(14px, 1vw, 18px);
+  font-size: clamp(16px, 1.05vw, 21px);
+  text-transform: uppercase;
   background-image: url("../img/button-paper-2.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -380,9 +394,10 @@ body.audio-drawer-open .audio-drawer__backdrop {
     clamp(52px, 4.8vw, 82px);
   background:
     linear-gradient(rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)),
-    url("../img/paper-texture.png");
-  background-size: cover;
-  background-position: center;
+    url("../img/ricepaper_texture.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top left;
   color: #202846;
   transform: translateX(calc(-100% - var(--audio-tear-width)));
   transition: transform 0.88s var(--ease-premium);

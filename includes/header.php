@@ -110,7 +110,7 @@
         <span class="site-menu__text" data-i18n="menu_immersion"><?= t('menu_immersion') ?></span>
       </a>
 
-      <a href="#" class="site-menu__link" data-menu-link data-preview="https://i.pinimg.com/originals/95/6b/42/956b42ff1e70e4a535d4bc888f9cbb6a.gif">
+      <a href="a-propos.php" class="site-menu__link" data-menu-link data-preview="https://i.pinimg.com/originals/95/6b/42/956b42ff1e70e4a535d4bc888f9cbb6a.gif">
         <span class="site-menu__preview"></span>
         <span class="site-menu__text" data-i18n="menu_about"><?= t('menu_about') ?></span>
       </a>
@@ -120,11 +120,6 @@
         <span class="site-menu__text" data-i18n="menu_full_doc"><?= t('menu_full_doc') ?></span>
       </a>
     </nav>
-
-    <div class="site-menu__footer">
-      <a href="#" data-i18n="menu_legal"><?= t('menu_legal') ?></a>
-      <a href="#" data-i18n="menu_credits"><?= t('menu_credits') ?></a>
-    </div>
 
   </aside>
 </div>
